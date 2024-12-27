@@ -14,7 +14,7 @@ const SocialLinks = ({classNameHover})=> {
             <a href={route('twitter')}className={['opacity-70 hover:opacity-100 ml-3', classNameHover].join(' ')} >
                 <StaticImage src={'../../../assets/images/social/twitter-dark.png'} alt="twitter" />
             </a>
-            <a href={route('skype')} className={['opacity-60 hover:opacity-100 ml-3', classNameHover].join(' ')}>
+            <a href={route('skype')} className={['opacity-50 hover:opacity-100 ml-3', classNameHover].join(' ')}>
                 <StaticImage src={'../../../assets/images/social/skype.png'} alt="skype" />
             </a>
             <a href={route('linkedin')} className={['opacity-70 hover:opacity-100 ml-3', classNameHover].join(' ')}>

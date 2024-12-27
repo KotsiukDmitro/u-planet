@@ -11,7 +11,7 @@ import * as s from './header.module.css'
 const Header = () => {
 
     return (
-        <div className={['fixed top-0 flex items-center w-full', s.container].join(' ')}>
+        <div className={['fixed top-0 flex items-center w-full bg-white z-50', s.container].join(' ')}>
             <HeaderLogo />
             <Links />
             <SocialLinks />

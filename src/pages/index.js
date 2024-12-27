@@ -1,14 +1,20 @@
 import * as React from "react"
 import { Layout } from "../components/Layout"
-import { HomePage } from "../components"
+import { HomePage, AboutUs, ContactUs, OurServices } from "../components/HomePage"
 
 
 const IndexPage = () => {
 
   return (
     <Layout>
-      <div className="mt-24"></div>
-      <HomePage />    
+      <div className="mt-24 m-auto">
+        <HomePage />
+        <AboutUs />
+      </div>
+      <ContactUs />
+      <div className="m-auto">
+      <OurServices />
+      </div>
     </Layout>
   )
 

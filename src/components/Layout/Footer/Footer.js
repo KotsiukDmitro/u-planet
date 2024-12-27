@@ -2,8 +2,14 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import SocialLinks from "../Header/SocialLinks";
 import LinksFooter from "./LinksFooter";
+import profile from '../../../assets/images/footer/badges/view-profile.svg'
+import deliver from '../../../assets/images/footer/badges/deliver.svg'
+import member from '../../../assets/images/footer/badges/member.svg'
+import mobile from '../../../assets/images/footer/badges/mobile.svg'
 
 const Footer = () => {
+
+    const badges = [profile, deliver, member, mobile]
 
     return (
         <div className={'mt-auto bg-[#282b3e] max-h-[410px] w-full'}>
@@ -34,6 +40,10 @@ const Footer = () => {
                         </div>
 
                     </div>
+                </div>
+                <div className={'flex gap-5'}>
+                    {badges.map((badge, index) => <img src={badge} key={'footer-badge' + index} className={'max-w-[145px] max-h-[125px]'} />                       
+                    )}
                 </div>
                 <p className={'text-right mt-auto text-[#9A9A9A] text-xs'}>©2008-{(new Date().getFullYear())} UPlanet, All Rights Reserved</p>
             </div>
