@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { route } from "../../../routes";
 
 
-const Links = () => {
+const Links = ({scroll}) => {
 
     const links = [
         { name: 'home', path: route('home')},
@@ -19,7 +19,7 @@ const Links = () => {
 
     return (
         <ul className={'flex uppercase gap-5 ml-auto'}>
-            {links.map(link => <li key={link.name} className={'text-[#555] text-xs hover:text-[#24d5d1]'}><Link to={link.path} activeClassName={'text-[#24d5d1]'} >{link.name}</Link></li>
+            {links.map(link => <li key={link.name} className={[`text-slate-100 opacity-70 text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to={link.path} activeClassName={'text-[#24d5d1]'} >{link.name}</Link></li>
 
             )}
         </ul>

@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 
 
 
-const Layout = ({ transparentHeader=false, children }) => {
+const Layout = ({ children }) => {
 
     const [scroll, setScroll] = useState(false)
 
@@ -23,7 +23,7 @@ const Layout = ({ transparentHeader=false, children }) => {
 
     return (
         <div className={'min-h-screen flex flex-col'}>
-            <Header />
+            <Header scroll={scroll} />
             {children}
             <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`}/>
             <Footer />
@@ -39,7 +39,7 @@ const ScrollTopButton = (props) => {
         <div
             className={'fixed bottom-1 right-5 transition-opacity duration-500 ease-linear cursor-pointer ' + props?.className}
             onClick={handleClick} onKeyDown={handleClick} role={'button'} aria-label="button open" tabIndex={0} >
-            <StaticImage src={'../../../assets/images/rocket.png'} />
+            <StaticImage src={'../../../assets/images/rocket.png'} alt="rocket" />
         </div>
     )
 }

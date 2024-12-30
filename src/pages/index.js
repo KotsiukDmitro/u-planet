@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Layout } from "../components/Layout"
-import { HomePage, AboutUs, ContactUs, OurServices } from "../components/HomePage"
+import { HomePage, AboutUs, ContactUs, OurServices, ContactUsForm } from "../components/HomePage"
 
 
 const IndexPage = () => {
@@ -15,6 +15,7 @@ const IndexPage = () => {
       <div className="m-auto">
       <OurServices />
       </div>
+      <ContactUsForm />
     </Layout>
   )
 

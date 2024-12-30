@@ -41,12 +41,12 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <div className={'flex gap-5'}>
-                    {badges.map((badge, index) => <img src={badge} key={'footer-badge' + index} className={'max-w-[145px] max-h-[125px]'} />                       
-                    )}
+                    <div className={'flex gap-5'}>
+                        {badges.map((badge, index) => <img src={badge} key={'footer-badge' + index} className={'max-w-[145px] max-h-[125px]'} alt="badge" />
+                        )}
+                    </div>
+                    <p className={'text-right mt-auto text-[#9A9A9A] text-xs'}>©2008-{(new Date().getFullYear())} UPlanet, All Rights Reserved</p>
                 </div>
-                <p className={'text-right mt-auto text-[#9A9A9A] text-xs'}>©2008-{(new Date().getFullYear())} UPlanet, All Rights Reserved</p>
-            </div>
         </div>
     )
 }

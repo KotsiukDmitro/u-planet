@@ -9,7 +9,7 @@ const ContactUs = () => {
 
     return (
         <div className={'flex items-center justify-center mb-20'}>
-            <div className={'relative'}>
+            <div className={'relative w-full'}>
                 <StaticImage src={'../../../assets/images/contact-us/welcome-separator.png'} class={'w-full h-[112px]'} alt="background" />
             </div>
             <CustomButton onClick={() => navigate(route('home.contact-us'))} classNameButton={'absolute z-50'} >Contact Us</CustomButton>
