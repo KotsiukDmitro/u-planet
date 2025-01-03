@@ -8,10 +8,13 @@ const SliderItem = ({ project }) => {
     const { title, field_goal: goal, relationships, path: { alias: path }, field_color_text: color } = project
     const gatsbyImageData = getImage(relationships.field_overview_image.localFile)
 
+    console.log(gatsbyImageData);
+    
+
     const colorText = color?.trim() || '#fff'
 
     return (
-        <Link to={path} onClick={event => event.stopPropagation()}>
+        // <Link to={path} onClick={event => event.stopPropagation()}>
             <div className={'flex justify-center items-start h-full relative overflow-hidden projectSlide'}
                 role={'presentation'}>
                 <div
@@ -29,7 +32,7 @@ const SliderItem = ({ project }) => {
                     </span>
                 </div>
             </div>
-        </Link>
+        // </Link>
     )
 }
 

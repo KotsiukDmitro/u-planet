@@ -25,7 +25,6 @@ const CategoryButtons = ({selectedCategory, setSelectedCategory, setAllCases}) =
     }
 
     return (
-        <>
             <div className={'flex flex-wrap justify-center items-center gap-2 sm:gap-10 bg-[#282b3e] w-full py-3'}>
                 <CategoryButton title={'ALL'} callback={() => selectCategory(0)} id={0}
                                 selectedCategory={selectedCategory}/>
@@ -34,7 +33,6 @@ const CategoryButtons = ({selectedCategory, setSelectedCategory, setAllCases}) =
                                     selectedCategory={selectedCategory}/>
                 )}
             </div>
-        </>
     )
 }
 

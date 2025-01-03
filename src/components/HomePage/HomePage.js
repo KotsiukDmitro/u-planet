@@ -12,8 +12,6 @@ const HomePage = () => {
         }
       }
     `)
-
-    console.log(blockContentWhoWeAre);
     
 
   const {
