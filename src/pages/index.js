@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { Layout } from "../components/Layout"
-import { HomePage, AboutUs, ContactUs, OurServices, ContactUsForm, Portfolio } from "../components/HomePage"
+import { MainInfo, HomePage, AboutUs, ContactUs, OurServices, ContactUsForm, Portfolio } from "../components/HomePage"
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver"
 
 
@@ -18,6 +18,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <MainInfo />
       <div className="mt-24 m-auto">
         <HomePage />
         <AboutUs />

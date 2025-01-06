@@ -21,26 +21,6 @@ const OurServices = ()=> {
     const images = ImagesServices.allFile.nodes.map(image => getImage(image))
 
    
-    // const titleWeb = 'Web Design & Development'
-    // const subTitleWeb =<>Websites and web applications <br /> of any complexity</>
-    // const contentWeb = 'Full range of web development services: websites and web applications for all types of business, corporate web portals, social networking apps, landing pages. Creating comprehensive eCommerce solutions on different platforms, custom Shopify stores development, design and implementation.'
-    // const imageWeb = images[3]
-
-    // const titleMobile = 'Mobile apps development'
-    // const subTitleMobile = 'iOS/Android'
-    // const contentMobile = 'Native mobile apps development. Messengers, Video, Social, GPS, etc.'
-    // const imageMobile = images[2]
-
-    // const titleSolutions = 'Comprehensive enterprise solutions'
-    // const contentSolutions = 'Full range of software development services for manufacturing, enterprises, banking, small and medium businesses, and consultancy services.'
-    // const imageSolutions = images[1]
-
-    // const titleQA = 'Development & Software testing'
-    // const subTitleQA = 'Quality Assurance'
-    // const contentQA = 'The testing process is a critical part of the software development cycle in our company. For each project, depending on its complexity and requirements, an individual testing plan is created. This plan allows us to release a product of the highest quality, while saving critical development time and resources.'
-    // const imageQA = images[0]
-    // const btnName = 'learn more'
-
     const services = [
       {
         title: 'Web Design & Development',

@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import Slider from 'react-slick'
 import SliderItem from './SliderItem'
 import {NextArrow, PrevArrow} from './CustomArrows'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const settings = {
     infinite: true,
@@ -67,7 +67,7 @@ const ProjectSlider = ({projects, sliderRef}) => {
     return (
         <>
             {isMounted &&
-                <Slider className={'w-full flex'} {...settings} ref={sliderRef}>
+                <Slider className={'w-full SliderProjects'} {...settings} ref={sliderRef}>
                     {projects.map(p =>
                         <SliderItem key={p.drupal_id} project={p}/>
                     )}

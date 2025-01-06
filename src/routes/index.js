@@ -12,6 +12,9 @@ const routes = {
     'home.contact-us': {
         path: '/#ContactUs'
     },
+    'home.portfolio': {
+        path: '/#Portfolio'
+    },
 
     // Socials Links
     'facebook': {

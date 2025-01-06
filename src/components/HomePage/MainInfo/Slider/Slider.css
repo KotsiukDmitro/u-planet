@@ -1,0 +1,22 @@
+
+.custom-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    margin-bottom: 35px;
+  }
+
+  .custom-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .custom-dots .slick-active .custom-dot {
+    background: white;
+  }

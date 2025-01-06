@@ -13,7 +13,7 @@ const Header = ({scroll}) => {
 
     return (
 
-        <div className={[`fixed top-0 flex items-center w-full z-[100] ${scroll && 'bg-white'}`, s.container].join(' ')}>
+        <div className={[`fixed top-0 flex items-center w-full z-[100] ${scroll && 'bg-white border border-b-[#eee]'}`, s.container].join(' ')}>
             {scroll ?  <HeaderLogo /> : <HeaderLogoWhite />}
             <Links scroll={scroll} />
             <SocialLinks scroll={scroll} />

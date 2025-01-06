@@ -29,7 +29,7 @@ const Portfolio = ({ load, defaultSelectedCategory = 0 }) => {
 
 
     return (
-        <div className={'portfolio relative flex flex-col justify-center items-center mb-20'}>
+        <div id='Portfolio' className={'portfolio relative flex flex-col justify-center items-center mb-20'}>
             <CustomTitleComponent name='Portfolio' />
             <p className='mb-10'>10 years of successful work, hundreds of international projects</p>
 
