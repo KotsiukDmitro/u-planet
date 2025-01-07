@@ -1,22 +1,22 @@
 
-.mainInfo .custom-dots {
+.ourClients .custom-dots {
     display: flex;
     justify-content: center;
     gap: 10px;
     padding: 10px 0;
-    margin-bottom: 35px;
+    margin-bottom: -60px;
   }
 
-.mainInfo .custom-dot {
+.ourClients .custom-dot {
     width: 10px;
     height: 10px;
-    border: 1px solid white;
+    border: 1px solid #24d5d1;
     border-radius: 50%;
     background: transparent;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
   }
   
-.mainInfo .custom-dots .slick-active .custom-dot {
-    background: white;
+.ourClients .custom-dots .slick-active .custom-dot {
+    background: #24d5d1;
   }

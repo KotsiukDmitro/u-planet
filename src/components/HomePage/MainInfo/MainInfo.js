@@ -5,7 +5,7 @@ import SliderProjects from "./Slider/SliderProjects";
 const MainInfo = ()=> {
 
     return (
-        <div>
+        <div className={'mb-24'}>
             <SliderProjects />
         </div>
 

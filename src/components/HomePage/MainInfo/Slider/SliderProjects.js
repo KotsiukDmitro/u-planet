@@ -1,7 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import SlideMobileApp from './SlideMobileApp'
 import SlideSolutions from './SlideSolutions'
 import SlideWeb from './SlideWeb'
@@ -23,7 +21,7 @@ const settings = {
 const SliderProjects = () => {
 
     return (     
-            <Slider className={'w-full cursor-move'} {...settings}>
+            <Slider className={'mainInfo cursor-move'} {...settings}>
                 <SlideMobileApp />
                 <SlideSolutions />
                 <SlideWeb />
