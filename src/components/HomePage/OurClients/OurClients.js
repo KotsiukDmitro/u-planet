@@ -27,7 +27,7 @@ const OurClients = ({ load }) => {
 
     const settings = {
         dots: true,
-        autoplay: true,
+        // autoplay: true,
         infinite: true,
         speed: 1000,
         slidesToShow: 2,
@@ -36,12 +36,21 @@ const OurClients = ({ load }) => {
         customPaging: (i) => (
             <div className="custom-dot"></div>
         ),
-        dotsClass: "slick-dots custom-dots"
+        dotsClass: "slick-dots custom-dots",
+        responsive: [
+          {
+              breakpoint: 768,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+              }
+          }
+      ]
 
     }
 
     return (
-        <div className={'ourClients max-w-[1170px] m-auto flex flex-col justify-center items-center mb-40'}>
+        <div id='OurClients' className={'ourClients max-w-[1170px] xl:m-auto flex flex-col justify-center items-center mb-14 sm:mb-28 xl:mb-40 px-10'}>
             <CustomTitleComponent name='Our Clients. Testimonials' />
             {load &&
                 <div className={'w-full'}>

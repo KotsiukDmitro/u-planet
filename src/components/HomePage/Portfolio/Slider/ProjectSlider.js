@@ -6,7 +6,7 @@ import {NextArrow, PrevArrow} from './CustomArrows'
 
 const settings = {
     infinite: true,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     slidesToShow: 6,

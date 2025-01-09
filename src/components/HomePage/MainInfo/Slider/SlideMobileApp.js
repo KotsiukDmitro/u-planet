@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { navigate } from "gatsby";
 import { route } from "../../../../routes";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import CustomButton from "../../../common/CustomButton/CustomButton";
 
 
@@ -23,9 +23,8 @@ const SlideMobileApp = () => {
                     <p className={'text-white mb-10 text-[22px]'}>native mobile apps iOS, Android</p>
                     <div>
                         <CustomButton
-                            onClick={() => navigate(route('home.portfolio'))}
                             classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
-                            View Portfolio
+                                <AnchorLink to={route('home.portfolio')}>View Portfolio</AnchorLink>                           
                         </CustomButton>
                     </div>
                 </div>

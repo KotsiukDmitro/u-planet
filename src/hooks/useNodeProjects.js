@@ -45,7 +45,7 @@ const useNodeProjects = (selectedCategory)=> {
                     return filteredProject?.field_our_work_service.find(p => p.drupal_internal__target_id === selectedCategory)
                 }
             }))
-    }, [selectedCategory, projectsData])  
+    }, [selectedCategory, projectsData])     
 
     return projects
 }

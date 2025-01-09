@@ -9,11 +9,17 @@ const routes = {
     'home.about-us': {
         path: '/#AboutUs'
     },
+    'home.services': {
+        path: '/#OurServices'
+    },
     'home.contact-us': {
-        path: '/#ContactUs'
+        path: '/#ContactUsForm'
     },
     'home.portfolio': {
         path: '/#Portfolio'
+    },
+    'home.clients': {
+        path: '/#OurClients'
     },
 
     // Socials Links

@@ -7,6 +7,7 @@ const SliderItem = ({ project }) => {
 
     const { title, field_goal: goal, relationships, path: { alias: path }, field_color_text: color } = project
     const gatsbyImageData = getImage(relationships.field_overview_image.localFile)
+  
    
 
     const colorText = color?.trim() || '#fff'

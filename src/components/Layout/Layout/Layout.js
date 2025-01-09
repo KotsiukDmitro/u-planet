@@ -37,7 +37,7 @@ const ScrollTopButton = (props) => {
     }
     return (
         <div
-            className={'fixed bottom-1 right-5 transition-opacity duration-500 ease-linear cursor-pointer ' + props?.className}
+            className={'fixed bottom-1 right-5 transition-opacity duration-500 ease-linear cursor-pointer z-50 ' + props?.className}
             onClick={handleClick} onKeyDown={handleClick} role={'button'} aria-label="button open" tabIndex={0} >
             <StaticImage src={'../../../assets/images/rocket.png'} alt="rocket" />
         </div>

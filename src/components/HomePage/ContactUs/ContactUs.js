@@ -1,8 +1,8 @@
 import React from "react";
 import { route } from "../../../routes";
-import { navigate } from "gatsby";
 import CustomButton from "../../common/CustomButton/CustomButton";
 import { StaticImage } from "gatsby-plugin-image";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 
 const ContactUs = () => {
@@ -12,7 +12,9 @@ const ContactUs = () => {
             <div className={'relative w-full'}>
                 <StaticImage src={'../../../assets/images/contact-us/welcome-separator.png'} class={'w-full h-[112px]'} alt="background" />
             </div>
-            <CustomButton onClick={() => navigate(route('home.contact-us'))} classNameButton={'absolute z-50'} >Contact Us</CustomButton>
+            <CustomButton classNameButton={'absolute z-50'} >
+                <AnchorLink to={route('home.contact-us')}>Contact Us</AnchorLink>               
+            </CustomButton>
         </div>
     )
 }

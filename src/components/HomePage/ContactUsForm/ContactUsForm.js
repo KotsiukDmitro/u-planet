@@ -37,7 +37,7 @@ const ContactUsForm = () => {
 
     return (
 
-        <div className={'flex items-center justify-center relative w-full'}>
+        <div id="ContactUsForm" className={'flex items-center justify-center relative w-full'}>
             <div className="absolute h-full w-full text-center -z-10">
                 <StaticImage src={'../../../assets/images/contact-us-form/contact-us.jpg'} class={'h-full'} alt="background" />
             </div>
@@ -94,7 +94,7 @@ const ContactUsForm = () => {
                             />
                             {errors.message && <p className={'text-red-700 text-sm'}>{errors.message.message}</p>}
                         </div>
-                        <div className={'flex items-center justify-between'}>
+                        <div className={'flex items-center justify-between gap-2'}>
                             <label htmlFor="recaptcha" className={'relative border border-gray-300 rounded-md outline-none p-3 flex items-center justify-between w-[300px] cursor-pointer'}>
                                 <div className={'flex items-center'}>
                                     <input
@@ -106,7 +106,7 @@ const ContactUsForm = () => {
                                     <span >I'm not a robot</span>
                                 </div>
                                 <div className={'flex flex-col items-center'}>
-                                    <StaticImage src={'https://www.gstatic.com/recaptcha/api2/logo_48.png'} className={'w-8'} />
+                                    <StaticImage src={'https://www.gstatic.com/recaptcha/api2/logo_48.png'} className={'w-8'} alt="recaptcha" />
                                     <span className={'text-[#555] text-[10px]'}>reCAPTCHA</span>
                                     <span className={'text-[8px] text-[#555]'}>
                                         <a href="https://policies.google.com/privacy?hl=en" target={'_blank'} rel={'noopener noreferrer'} className={'hover:underline'}>Privacy</a> - 
@@ -133,8 +133,8 @@ const ContactUsForm = () => {
                                 )}
                             </div>
 
-                            <span onClick={handleReset} className={'text-[14px] text-[#5F6467] underline hover:no-underline hover:cursor-pointer'}>Clear Form</span>
-                            <div className={'mr-10'}>
+                            <button onClick={handleReset} className={'text-[14px] text-[#5F6467] underline hover:no-underline hover:cursor-pointer'}>Clear Form</button>
+                            <div className={'xl:mr-10'}>
                                 <CustomButton>Send Message</CustomButton>
                             </div>
                         </div>

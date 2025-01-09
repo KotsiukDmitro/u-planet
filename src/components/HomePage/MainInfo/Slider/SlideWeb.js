@@ -1,7 +1,8 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { navigate } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { route } from "../../../../routes";
+
 import CustomButton from "../../../common/CustomButton/CustomButton";
 
 
@@ -24,9 +25,8 @@ const SlideWeb = () => {
                         <p className={'text-white mb-10 text-[22px]'}>and web applications of any complexity</p>
                         <div>
                             <CustomButton
-                                onClick={() => navigate(route('home.portfolio'))}
-                                classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
-                                View Portfolio
+                                classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>                                   
+                                <AnchorLink to={route('home.portfolio')}>View Portfolio</AnchorLink>
                             </CustomButton>
                         </div>
                     </div>
