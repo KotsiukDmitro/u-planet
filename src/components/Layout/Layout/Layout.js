@@ -1,13 +1,20 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
+import Drawer from "../Drawer/Drawer";
+import HeaderLogoWhite from "../../common/Logo/HeaderLogoWhite";
+import iconBars from '../../../assets/images/icon-bars.svg'
 
 
 const Layout = ({ children }) => {
 
     const [scroll, setScroll] = useState(false)
+    const [isDrawerIsOpen, setDrawerIsOpen] = useState(false)
+
+    const handleDrawerToggle = () => {
+        setDrawerIsOpen(!isDrawerIsOpen)
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,11 +30,26 @@ const Layout = ({ children }) => {
 
     return (
         <div className={'min-h-screen flex flex-col'}>
-            <Header scroll={scroll} />
+            <div>
+                <div className={'hidden md:block'}>
+                    <Header scroll={scroll} />
+                </div>
+                <div className={`fixed w-full flex items-center justify-between py-5 px-7 z-[100] md:hidden ${scroll && 'border-b border-b-[#eee] bg-slate-100'}`}>
+                    <div className={'max-w-[120px]'}>
+                        <HeaderLogoWhite />
+                    </div>
+                    <button onClick={handleDrawerToggle} className={'transition-all duration-300'}
+                        style={{ transform: `translateX(${isDrawerIsOpen ? 50 : 0}px)` }}>
+                        <img src={iconBars} alt="iconBars" />
+                    </button>
+                </div>
+            </div>
+            <Drawer toggleOpen={handleDrawerToggle} isOpen={isDrawerIsOpen} />
+
             {children}
-            <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`}/>
+            <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`} />
             <Footer />
-        </div>
+        </div >
     )
 }
 

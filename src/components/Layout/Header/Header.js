@@ -14,12 +14,12 @@ const Header = ({ scroll }) => {
 
     return (
 
-        <div className={[`fixed top-0 flex items-center w-full z-[100] ${scroll && 'bg-white border border-b-[#eee]'}`, s.container].join(' ')}>
+        <div className={[`fixed top-0 flex items-center w-full z-[100] ${scroll && 'bg-white border-b border-b-[#eee]'}`, s.container].join(' ')}>
             {scroll ? <HeaderLogo /> : <HeaderLogoWhite />}
             <Links scroll={scroll} />
-            <div className={'hidden xl:flex pt-1'}>
-                <SocialLinks scroll={scroll} />
-                <AnchorLink to={route('home.contact-us')} className="pt-0.5 opacity-70 hover:opacity-100 ml-3">
+            <div className={'hidden xl:flex pt-1 ml-5'}>
+                <SocialLinks />
+                <AnchorLink to={route('home.contact-us')} className={'pt-0.5 opacity-70 hover:opacity-100 ml-3'}>
                     <StaticImage src={'../../../assets/images/social/contact-dark.png'} alt="contact-us" />
                 </AnchorLink>
             </div>

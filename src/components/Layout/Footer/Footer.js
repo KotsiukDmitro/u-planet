@@ -20,7 +20,7 @@ const Footer = () => {
                         <div className="bg-[#24d5d1] w-14 h-1 mt-8 mb-8"></div>
                     </div>
                     <div className={'flex md:flex-col items-end'}>
-                        <div className={'text-[#5a5c69] text-[17px] md:text-[26px] md:mb-6'}>FOLLOW THE JOURNEY:</div>
+                        <div className={'text-[#5a5c69] text-[17px] md:text-[26px] md:mb-6 mr-5 md:mr-0'}>FOLLOW THE JOURNEY:</div>
                         <div className={'flex items-center '}>
                             <SocialLinks classNameHover={'hover:bg-[#24d5d1]'} />
                         </div>
