@@ -7,7 +7,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const HeaderLogoWhite = () => {
     return (
         <Link to={route('home')}>
-            <StaticImage src={'../../../assets/images/main-logo.png'} alt='logo'/>
+            <StaticImage src={'../../../assets/images/main-logo.png'} alt='logo' className={'w-36 lg:w-full'}/>
         </Link>
     )
 }

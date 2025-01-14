@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
                 <div className={'hidden md:block'}>
                     <Header scroll={scroll} />
                 </div>
-                <div className={`fixed w-full flex items-center justify-between py-5 px-7 z-[100] md:hidden ${scroll && 'border-b border-b-[#eee] bg-slate-100'}`}>
+                <div className={`fixed w-full flex items-center justify-between transition-all duration-500 ease-in-out ${scroll ? 'pt-4 border-b border-b-[#eee] bg-slate-100' : 'pt-5'} pb-5 px-7 z-[100] md:hidden`}>
                     <div className={'max-w-[120px]'}>
                         <HeaderLogoWhite />
                     </div>

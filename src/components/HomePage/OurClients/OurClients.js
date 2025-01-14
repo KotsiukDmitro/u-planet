@@ -27,7 +27,7 @@ const OurClients = ({ load }) => {
 
     const settings = {
         dots: true,
-        // autoplay: true,
+        autoplay: true,
         infinite: true,
         speed: 1000,
         slidesToShow: 2,

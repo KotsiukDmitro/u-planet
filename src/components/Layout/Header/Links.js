@@ -17,10 +17,10 @@ const Links = ({ scroll }) => {
     ]
 
     return (
-        <ul className={'flex uppercase gap-5 ml-auto'}>
-            {links.map(link => <li key={link.name} className={[`text-slate-100 opacity-70 text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to={link.path} activeClassName={'text-[#24d5d1]'}>{link.name}</Link></li>
+        <ul className={'flex uppercase gap-3 lg:gap-5 ml-auto'}>
+            {links.map(link => <li key={link.name} className={[`text-slate-100 opacity-70 text-[10px] lg:text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to={link.path} activeClassName={'text-[#24d5d1]'}>{link.name}</Link></li>
             )}
-            <li className={[`text-slate-100 opacity-70 text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li>
+            <li className={[`text-slate-100 opacity-70 text-[10px] lg:text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li>
         </ul>
     )
 }
