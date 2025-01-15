@@ -19,7 +19,7 @@ const Header = ({ scroll }) => {
             <Links scroll={scroll} />
             <div className={'hidden xl:flex pt-1 ml-5'}>
                 <SocialLinks />
-                <AnchorLink to={route('home.contact-us')} className={'pt-0.5 opacity-70 hover:opacity-100 ml-3'}>
+                <AnchorLink to={route('home.contact-us')} className={'pt-0.5 opacity-70 hover:opacity-100 ml-5 2xl:ml-7'}>
                     <StaticImage src={'../../../assets/images/social/contact-dark.png'} alt="contact-us" />
                 </AnchorLink>
             </div>

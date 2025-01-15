@@ -7,7 +7,7 @@ import { route } from "../../../routes";
 const SocialLinks = ({ classNameHover, classNameGroup})=> {
 
     return (
-        <div className={['flex gap-3', classNameGroup].join(' ')}>
+        <div className={['flex gap-5 2xl:gap-7', classNameGroup].join(' ')}>
             <a href={route('facebook')} className={['opacity-70 hover:opacity-100', classNameHover].join(' ')}>
                 <StaticImage src={'../../../assets/images/social/facebook-dark.png'} alt="facebook"/>
             </a>

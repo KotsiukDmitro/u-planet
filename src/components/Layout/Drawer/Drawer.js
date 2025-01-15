@@ -6,35 +6,17 @@ import facebook from '../../../assets/images/social/facebook.svg'
 import twitter from '../../../assets/images/social/twitter.svg'
 import linkedin from '../../../assets/images/social/linkedin.svg'
 import contact from '../../../assets/images/social/contact.svg'
+import { links } from "../../../helpers/Links";
 
 
 const Drawer = ({ isOpen, toggleOpen }) => {
 
-    const links = [
-        { name: 'home', path: route('home') },
-        { name: 'about us', path: route('home.about-us') },
-        { name: 'services', path: route('home.services') },
-        { name: 'qa', path: '#qa' },
-        { name: 'portfolio', path: route('home.portfolio') },
-        {
-            name: 'our products',
-            path: '#products',
-            children: [
-                { name: 'smart assistant', path: '#smart-assistant' },
-                { name: 'indoor navigation', path: '#indoor-navigation' },
-                { name: 'online streaming', path: '#online-streaming' }
-            ]
-        },
-        { name: 'clients', path: route('home.clients') },
-        { name: 'contacts', path: route('home.contact-us') },
-    ]
 
     const socialLinks = [
         { name: 'facebook', image: facebook, path: route('facebook') },
         { name: 'twitter', image: twitter, path: route('twitter') },
         { name: 'linkedin', image: linkedin, path: route('linkedin') },
         { name: 'contact', image: contact, path: route('home.contact-us') },
-
     ]
 
     return (
@@ -66,13 +48,15 @@ const Drawer = ({ isOpen, toggleOpen }) => {
                 <div className={'w-full mb-5'}>
                     <ul className={'flex flex-col uppercase gap-5 text-white text-[17px]'}>
                         {links.map(link => {
-                            return <li key={link.name} className={['px-10', link.children && 'border-2 border-y-[#4665d6] border-x-0 py-5'].join(' ')}>
-                                <Link onClick={toggleOpen} to={link.path}>{link.name}</Link>
-
+                            return <li key={'drawer' + link.name} className={['px-10', link.children && 'border-2 border-y-[#4665d6] border-x-0 py-5'].join(' ')}>
+                                {!link.children
+                                    ? <Link onClick={toggleOpen} to={link.path}>{link.name}</Link>
+                                    : <span>{link.name}</span>
+                                }
                                 {link.children &&
                                     <ul className={'pl-5 flex flex-col gap-3 mt-3 text-[13px]'}>
                                         {link.children.map(child => {
-                                            return <li key={child.name}><Link onClick={toggleOpen} to={child.path}>{child.name}</Link></li>
+                                            return <li key={'drawer' + child.name}><Link onClick={toggleOpen} to={child.path}>{child.name}</Link></li>
                                         })}
                                     </ul>
                                 }

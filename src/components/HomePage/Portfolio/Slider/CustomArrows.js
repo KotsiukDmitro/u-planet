@@ -10,7 +10,7 @@ export function NextArrow ({className, style, onClick}) {
                 ...style,
                 right: `0!important`,
                 zIndex: `1`,
-
+                top: `45.5%`
             }}
             onClick={onClick}
         />
@@ -27,7 +27,7 @@ export function PrevArrow ({className, style, onClick}) {
                 ...style,
                 left: `0!important`,
                 zIndex: `1`,
-
+                top: `45.5%`
             }}
             onClick={onClick}
         />
