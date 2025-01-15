@@ -9,12 +9,12 @@ import CustomButton from "../../../common/CustomButton/CustomButton";
 const SlideMobileApp = () => {
 
     return (
-        <div className={'relative min-h-screen flex items-center'}>
+        <div className={'relative min-h-screen sm:flex sm:items-center'}>
             <div className={'w-full h-full absolute z-[-10]'}>
                 <StaticImage className={'w-full h-full'} src={'../../../../assets/images/main-info/slide-mob-app/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
             </div>
-            <div className={'xl:w-[1170px] sm:m-auto pl-10 '}>
-                <div className={'flex flex-col justify-start mt-[-250px] sm:mt-0'}>
+            <div className={'xl:w-[1170px] sm:m-auto pl-10 pt-28 sm:pt-0'}>
+                <div className={'flex flex-col justify-start sm:mt-0'}>
                     <h4 className={'sm:text-[22px] font-bold uppercase leading-none mb-3'}>10 years of <br /> successful work</h4>
                     <div className={'uppercase text-white leading-none font-bold mb-3'}>
                         <span className={'sm:text-[100px]'}>mobile</span><br />
