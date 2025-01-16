@@ -6,6 +6,7 @@ import profile from '../../../assets/images/footer/badges/view-profile.svg'
 import deliver from '../../../assets/images/footer/badges/deliver.svg'
 import member from '../../../assets/images/footer/badges/member.svg'
 import mobile from '../../../assets/images/footer/badges/mobile.svg'
+import { route } from "../../../routes";
 
 const Footer = () => {
 
@@ -30,15 +31,9 @@ const Footer = () => {
                 <div className={'lg:flex mb-10'}>
                     <div className={'mb-3 lg:mb-0'}>
                         <LinksFooter />
-                        <div className={'mt-8 uppercase flex flex-wrap text-white gap-y-1 gap-5 text-[13px]'}>
-                            <span className={'text-[#747474]'}>Our products:</span>
-                            <span className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Smart Assistant</span>
-                            <span className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Indoor Navigation</span>
-                            <span className={'hover:text-[#24d5d1] cursor-pointer'}>online streaming</span>
-                        </div>
                     </div>
                     <div className={'flex items-center ml-auto mt-auto mb-1 gap-3 md:gap-5 text-[#24d5d1] text-[12px] md:text-[16px]'}>
-                        <span className={'border-r border-r-[#24d5d1] pr-3 md:pr-5'}>+1(720)951-9470</span>
+                        <a href={route('skype')} className={'border-r border-r-[#24d5d1] pr-3 md:pr-5'}>+1(720)951-9470</a>
                         <span>info@uplanet.biz</span>
                     </div>
                 </div>

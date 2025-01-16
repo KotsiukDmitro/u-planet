@@ -2,6 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { route } from "../../../routes";
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent"
 import CustomButton from "../../common/CustomButton/CustomButton";
 import * as yup from "yup";
@@ -62,10 +63,10 @@ const ContactUsForm = () => {
                             <StaticImage src={'../../../assets/images/contact-us-form/logo-contact.png'} alt="logo" className={'w-72 sm:w-full'} objectFit="contain" />
                         </div>
                         <div className={'flex flex-col lg:flex-row gap-10 lg:ml-auto lg:mr-10'}>
-                            <div className={'flex items-center justify-center gap-2'}>
+                            <a href={route('skype')} className={'flex items-center justify-center gap-2'}>
                                 <StaticImage src={'../../../assets/images/contact-us-form/phone.png'} alt="phone" />
                                 <span className={'hover:text-[#24d5d1]'}>+1(720)951-9470</span>
-                            </div>
+                            </a>
 
                             <div className={'flex items-center justify-center gap-2'}>
                                 <StaticImage src={'../../../assets/images/contact-us-form/envelope.png'} alt="envelope" />

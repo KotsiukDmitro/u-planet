@@ -13,7 +13,7 @@ const SliderItem = ({ project }) => {
     const colorText = color?.trim() || '#fff'
 
     return (
-        // <Link to={path} onClick={event => event.stopPropagation()}>
+        <Link to={path} onClick={event => event.stopPropagation()}>
             <div className={'flex justify-center items-start h-full relative overflow-hidden projectSlide'}
                 role={'presentation'}>
                 <div
@@ -31,7 +31,7 @@ const SliderItem = ({ project }) => {
                     </span>
                 </div>
             </div>
-        // </Link>
+        </Link>
     )
 }
 

@@ -15,7 +15,7 @@ const SlideWeb = () => {
                 <StaticImage className={'w-full h-full'} src={'../../../../assets/images/main-info/slide-web/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
             </div>
 
-            <div className={'relative flex xl:w-[1170px] m-auto px-10 pt-28 sm:pt-0'}>
+            <div className={'relative flex xl:w-[1170px] xl:m-auto px-10 pt-28 sm:pt-0'}>
                 <div>
                     <div className={'flex flex-col justify-start sm:mt-0'}>
                         <h4 className={'sm:text-[22px] font-bold uppercase leading-none mb-3'}>Hundreds of<br />international projects</h4>
@@ -33,13 +33,13 @@ const SlideWeb = () => {
                 </div>
 
                 <div className={'sm:mr-10'}>
-                    <div className={'absolute bottom-[-320px] sm:top-[-20px] left-0 sm:left-auto right-0 w-[300px] xl:w-auto m-auto'}>
+                    <div className={'absolute bottom-[-320px] sm:top-[-20px] left-0 sm:left-auto right-0 sm:right-auto xl:right-0 w-[300px] lg:w-[380px] xl:w-[430px] m-auto'}>
                         <StaticImage src={'../../../../assets/images/main-info/slide-web/comp.png'} alt={'phone'} loading={'lazy'} quality={100} />
                     </div>
-                    <div className={'absolute bottom-[-425px] sm:bottom-[-290px] right-[50%] sm:right-[30%] w-[180px] sm:w-auto'}>
+                    <div className={'absolute bottom-[-425px] sm:bottom-[-215px] right-1/2 sm:right-0 xl:right-1/4 w-[180px] xl:w-[230px]'}>
                         <StaticImage src={'../../../../assets/images/main-info/slide-web/pad.png'} alt={'phone'} loading={'lazy'} quality={100} />
                     </div>
-                    <div className={'absolute bottom-[-450px] sm:bottom-[-300px] right-[40%] sm:right-[24%] w-[90px] sm:w-auto'}>
+                    <div className={'absolute bottom-[-450px] sm:bottom-[-230px] right-[135px] sm:right-0 xl:right-[220px] w-[85px] xl:w-[110px]'}>
                         <StaticImage src={'../../../../assets/images/main-info/slide-web/phone.png'} alt={'phone'} loading={'lazy'} quality={100} />
                     </div>
                 </div> 
