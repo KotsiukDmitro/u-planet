@@ -1,20 +1,31 @@
-.modal {
-    box-shadow: 0 11px 12px rgba(0, 0, 0, .175);
+.modalScrolled {
+    box-shadow: 0 7px 12px rgba(0, 0, 0, .175);
     background-color: rgb(250, 250, 250);
+}
+.modal {
+    box-shadow: 0 7px 12px rgba(255, 255, 255, .175);
+    background-color: rgb(255, 255, 255, 0.3);
 }
 
 
-.modal::before {
+.modal::before, .modalScrolled::before {
     content: "";
     position: absolute;
-    top: -8px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid rgb(250, 250, 250);
+    border-right: 10px solid transparent;  
     background: transparent;
+}
+
+.modal::before {
+    border-bottom: 10px solid rgb(255, 255, 255, 0.3); 
+}
+
+.modalScrolled::before {
+    border-bottom: 10px solid rgb(250, 250, 250);
 }
 

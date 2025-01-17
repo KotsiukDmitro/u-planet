@@ -1,12 +1,13 @@
 import React from "react";
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
-import { StaticImage } from "gatsby-plugin-image";
 import { route } from "../../../routes";
 import HeaderLogo from "../../common/Logo/HeaderLogo";
 import HeaderLogoWhite from "../../common/Logo/HeaderLogoWhite";
 import Links from "./Links";
 import SocialLinks from "./SocialLinks";
 import DropdownSocial from "../DropdownSocial/DropdownSocial";
+import contact from '../../../assets/images/social/contact.svg'
+import contact_dark from '../../../assets/images/social/contact-dark.svg'
 // import * as s from './header.module.css'
 
 
@@ -18,13 +19,13 @@ const Header = ({ scroll }) => {
             {scroll ? <HeaderLogo /> : <HeaderLogoWhite />}
             <Links scroll={scroll} />
             <div className={'hidden xl:flex pt-1 ml-10'}>
-                <SocialLinks />
-                <AnchorLink to={route('home.contact-us')} className={'pt-0.5 opacity-70 hover:opacity-100 ml-5 2xl:ml-7'}>
-                    <StaticImage src={'../../../assets/images/social/contact-dark.png'} alt="contact-us" />
+                <SocialLinks scroll={scroll} />
+                <AnchorLink to={route('home.contact-us')} className={'pt-0.5 ml-5 2xl:ml-7'}>
+                    <img src={scroll ? contact_dark : contact} alt="contact-us" className={'h-[18px] opacity-50 hover:opacity-100'} />
                 </AnchorLink>
             </div>
             <div className={'xl:hidden mx-4 pt-1.5'}>
-                <DropdownSocial />
+                <DropdownSocial scroll={scroll} />
             </div>
         </div>
 

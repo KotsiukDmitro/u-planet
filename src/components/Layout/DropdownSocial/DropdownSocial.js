@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
-import { StaticImage } from "gatsby-plugin-image";
 import { route } from "../../../routes";
 import iconPlus from '../../../assets/images/social/button-plus.svg'
 import iconMinus from '../../../assets/images/social/button-minus.svg'
-import SocialLinks from "../Header/SocialLinks";
+import SocialLinks from "../Header/SocialLinks"
+import contact from '../../../assets/images/social/contact.svg'
+import contact_dark from '../../../assets/images/social/contact-dark.svg'
 import * as s from './DropdownSocial.module.css'
 
-const DropdownSocial = () => {
+const DropdownSocial = ({ scroll }) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const dropdownRef = useRef(null)
@@ -33,14 +34,13 @@ const DropdownSocial = () => {
 
         <div className={'relative inline-block'} ref={dropdownRef}>
             <button onClick={toggleDropdown} className={'focus:outline-none'}>
-                <img src={isOpen ? iconMinus : iconPlus} alt={isOpen ? 'close' : 'open'} />
+                <img src={isOpen ? iconMinus : iconPlus} alt={isOpen ? 'close' : 'open'} className={'opacity-85 hover:opacity-100'} />
             </button>
             {isOpen && <>
-                {/* <div className={s.showModal}></div> */}
-                <div className={['absolute -left-2 w-9 rounded mt-2.5 py-2', s.modal].join(' ')}>
-                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-3'} />
-                    <AnchorLink to={route('home.contact-us')} className="opacity-70 hover:opacity-100 ml-1.5 ">
-                        <StaticImage src={'../../../assets/images/social/contact-dark.png'} alt="contact-us" />
+                <div className={['absolute -left-2 w-9 rounded mt-2.5 py-2 px-2', scroll ? s.modalScrolled : s.modal].join(' ')}>
+                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-5'} scroll={scroll} />
+                    <AnchorLink to={route('home.contact-us')}>
+                        <img src={scroll ? contact_dark : contact} alt="contact-us" className={'h-[18px] opacity-50 hover:opacity-100'} />
                     </AnchorLink>
                 </div>
             </>

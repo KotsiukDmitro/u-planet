@@ -1,9 +1,22 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import { route } from "../../../routes";
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent";
 import Service from "./Service/Service";
-import { route } from "../../../routes";
+import icon_html5 from '../../../assets/images/services/icons/html5.svg'
+import icon_css3 from '../../../assets/images/services/icons/css3.svg'
+import icon_drupal from '../../../assets/images/services/icons/drupal.svg'
+import icon_wordpress from '../../../assets/images/services/icons/wordpress.svg'
+import icon_shopify from '../../../assets/images/services/icons/shopify.svg'
+import icon_android from '../../../assets/images/services/icons/android.svg'
+import icon_apple from '../../../assets/images/services/icons/apple.svg'
+import icon_windows from '../../../assets/images/services/icons/windows.svg'
+import icon_file from '../../../assets/images/services/icons/file.svg'
+import icon_object from '../../../assets/images/services/icons/object.svg'
+import icon_cart from '../../../assets/images/services/icons/cart.svg'
+import icon_chrome from '../../../assets/images/services/icons/chrome.svg'
+
 
 
 const OurServices = ()=> {
@@ -29,7 +42,12 @@ const OurServices = ()=> {
         content: <>Full range of web development services: websites and web applications for all types of business, corporate web portals, social networking apps, landing pages. Creating comprehensive <Link to="#" className={'text-[#24d5d1]'}>eCommerce solutions</Link> on different platforms, custom <Link to="#" className={'text-[#24d5d1]'}>Shopify</Link> stores development, design and implementation</>,
         image: images[3],
         btnName: 'start project',
-        path: route('home.contact-us')
+        path: route('home.contact-us'),
+        icons: [icon_html5, icon_css3, icon_drupal, icon_wordpress],
+        iconLink: {
+          src: icon_shopify,
+          path: '#'
+        }
       },
       {
         title: 'Mobile apps development',
@@ -37,14 +55,16 @@ const OurServices = ()=> {
         content: 'Native mobile apps development. Messengers, Video, Social, GPS, etc.',
         image: images[0],
         btnName: 'start project', 
-        path: route('home.contact-us')
+        path: route('home.contact-us'),
+        icons: [icon_android, icon_apple, icon_windows]
       },
       {
         title: 'Comprehensive enterprise solutions',
         content: 'Full range of software development services for manufacturing, enterprises, banking, small and medium businesses, and consultancy services.',
         image: images[1],
         btnName: 'start project', 
-        path: route('home.contact-us')
+        path: route('home.contact-us'),
+        icons: [icon_file, icon_object, icon_cart],
       },
       {
         title: 'Development & Software testing',
@@ -52,9 +72,9 @@ const OurServices = ()=> {
         content: 'The testing process is a critical part of the software development cycle in our company. For each project, depending on its complexity and requirements, an individual testing plan is created. This plan allows us to release a product of the highest quality, while saving critical development time and resources.',
         image: images[2],
         btnName: 'learn more', 
-        onClick: () => {}
+        onClick: () => {},
+        icons: [icon_android, icon_apple, icon_chrome],
       },
-
     ]
     
 
