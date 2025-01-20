@@ -4,6 +4,9 @@ const routes = {
     'home': {
         path: '/'
     },
+    'qa': {
+        path: '/quality-assurance'
+    },
 
     // Anchors
     'home.about-us': {

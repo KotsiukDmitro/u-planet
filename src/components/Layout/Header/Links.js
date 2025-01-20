@@ -9,9 +9,9 @@ const Links = ({ scroll }) => {
 
     return (
         <ul className={'flex uppercase gap-3 lg:gap-5 xl:gap-8 ml-auto'}>
-            {links.map(link => <li key={'header' + link.name} className={[` opacity-70 text-[10px] lg:text-xs  ${scroll ? 'text-[#555]' : 'text-slate-200'}`].join(' ')}>
+            {links.map(link => <li key={'header' + link.name} className={[` opacity-70 text-[10px] lg:text-xs  ${scroll ? 'text-[#555]' : 'text-[#ffffffb3]'}`].join(' ')}>
                 {!link.children
-                    ? <Link to={link.path} className={`${scroll ? 'hover:!text-[#24d5d1]' : 'hover:text-white'}`} activeClassName={'text-[#24d5d1]'}>{link.name}</Link>
+                    ? <Link to={link.path} className={`${scroll ? 'hover:!text-[#24d5d1]' : 'hover:text-white'}`} activeClassName={`${scroll ? 'text-[#24d5d1]' : 'text-white'}`}>{link.name}</Link>
                     : <span className={'relative'}>{link.name}</span>
                 }
 
@@ -21,7 +21,7 @@ const Links = ({ scroll }) => {
                             {link.children.map((child, index) => {
                                 const isLast = index === link.children.length - 1
                                 return <li key={'header' + child.name} className={`py-1 hover:text-white ${scroll && 'hover:bg-blue-500'}`}>
-                                    <Link to={child.path} className={`px-2 border-r ${isLast ? 'border-r-transparent' : scroll ? 'border-r-[#555]' : 'border-r-white'}`}>{child.name}</Link>
+                                    <Link to={child.path} className={`px-2 border-r ${isLast ? 'border-r-transparent' : scroll ? 'border-r-[#555]' : 'border-r-white'}`} activeClassName={`text-white ${scroll && 'bg-blue-500'}`}>{child.name}</Link>
                                 </li>
                             })}
                         </ul>
@@ -30,7 +30,7 @@ const Links = ({ scroll }) => {
 
             </li>
             )}
-            <li className={[`text-slate-100 opacity-70 text-[10px] lg:text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li>
+            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${scroll && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li>
         </ul>
     )
 }

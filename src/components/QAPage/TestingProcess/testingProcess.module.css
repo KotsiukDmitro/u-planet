@@ -1,0 +1,32 @@
+.container {
+    max-width: 825px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 675px;
+    }
+    .img {
+        max-width: 205px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .container {
+        max-width: 510px;
+    }
+    .img {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .img {
+       display: none;
+}
+}

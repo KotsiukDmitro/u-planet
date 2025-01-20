@@ -5,7 +5,7 @@ export const links = [
     { name: 'home', path: route('home') },
     { name: 'about us', path: route('home.about-us') },
     { name: 'services', path: route('home.services') },
-    { name: 'qa', path: '#qa' },
+    { name: 'qa', path: 'qa' },
     { name: 'portfolio', path: route('home.portfolio') },
     {
         name: 'our products',
