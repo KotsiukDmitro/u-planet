@@ -15,6 +15,11 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
+    extend: {
+      fontFamily: {
+        'open-sans': 'OpenSans, sans-serif',
+      },
+    },
   },
   plugins: [],
 }
