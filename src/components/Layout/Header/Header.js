@@ -15,7 +15,7 @@ const Header = ({ scroll }) => {
 
     return (
 
-        <div className={`fixed top-0 flex items-center w-full z-[100] pb-4 pl-5 lg:pl-10 lg:pr-5 xl:pr-10 transition-all duration-500 ease-in-out ${scroll ? 'bg-white border-b border-b-[#eee] pt-4' : 'pt-5'}`}>
+        <div className={`fixed top-0 flex items-center w-full z-[100] pb-4 pl-4 lg:pl-10 lg:pr-5 xl:pr-10 transition-all duration-500 ease-in-out ${scroll ? 'bg-white border-b border-b-[#eee] pt-4' : 'pt-5'}`}>
             {scroll ? <HeaderLogo /> : <HeaderLogoWhite />}
             <Links scroll={scroll} />
             <div className={'hidden xl:flex pt-1 ml-10'}>

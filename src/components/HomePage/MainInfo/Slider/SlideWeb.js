@@ -18,11 +18,11 @@ const SlideWeb = () => {
             <div className={'relative flex xl:w-[1170px] xl:m-auto px-10 pt-28 sm:pt-0'}>
                 <div>
                     <div className={'flex flex-col justify-start sm:mt-0'}>
-                        <h4 className={'sm:text-[22px] font-bold uppercase leading-none mb-3'}>Hundreds of<br />international projects</h4>
-                        <div className={'sm:text-[100px] uppercase text-white leading-none font-bold mb-3'}>
+                        <h4 className={'text-[15px] sm:text-[22px] font-bold uppercase leading-none mb-3'}>Hundreds of<br />international projects</h4>
+                        <div className={'text-[55px] sm:text-[100px] uppercase text-white leading-none font-bold mb-3'}>
                             Websites
                         </div>
-                        <p className={'text-white mb-10 sm:text-[22px]'}>and web applications of any complexity</p>
+                        <p className={'text-white mb-10 text-[14px] sm:text-[22px]'}>and web applications of any complexity</p>
                         <div>
                             <CustomButton
                                 classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>                                   

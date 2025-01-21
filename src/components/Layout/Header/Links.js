@@ -8,8 +8,8 @@ import * as s from './header.module.css'
 const Links = ({ scroll }) => {
 
     return (
-        <ul className={'flex uppercase gap-3 lg:gap-5 xl:gap-8 ml-auto'}>
-            {links.map(link => <li key={'header' + link.name} className={[` opacity-70 text-[10px] lg:text-xs  ${scroll ? 'text-[#555]' : 'text-[#ffffffb3]'}`].join(' ')}>
+        <ul className={'flex uppercase gap-2.5 lg:gap-5 xl:gap-8 ml-auto'}>
+            {links.map(link => <li key={'header' + link.name} className={[`opacity-70 text-[10px] lg:text-xs  ${scroll ? 'text-[#555]' : 'text-[#ffffffb3]'}`].join(' ')}>
                 {!link.children
                     ? <Link to={link.path} className={`${scroll ? 'hover:!text-[#24d5d1]' : 'hover:text-white'}`} activeClassName={`${scroll ? 'text-[#24d5d1]' : 'text-white'}`}>{link.name}</Link>
                     : <span className={'relative'}>{link.name}</span>

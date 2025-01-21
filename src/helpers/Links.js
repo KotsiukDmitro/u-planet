@@ -10,7 +10,7 @@ export const links = [
     {
         name: 'our products',
         children: [
-            { name: 'smart assistant', path: '#smart-assistant' },
+            { name: 'smart assistant', path: 'smart-assistant' },
             { name: 'indoor navigation', path: '#indoor-navigation' },
             { name: 'online streaming', path: '#online-streaming' }
         ]

@@ -40,7 +40,13 @@ const routes = {
     },
     'phone': {
         path: 'tel:+1 (647) 302 1020'
-    }
+    },
+
+    //Our products
+    'smart-assistant': {
+        path: '/smart-assistant'
+    },
+
 }
 
 

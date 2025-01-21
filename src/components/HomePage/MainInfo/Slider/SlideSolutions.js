@@ -15,11 +15,11 @@ const SlideSolutions = () => {
             </div>
             <div className={'xl:w-[1170px] m-auto'}>
                 <div className={'text-center leading-none'}>
-                    <h4 className={'sm:text-[22px] font-bold uppercase mb-3'}>dozens of regulars customers</h4>
-                    <div className={'sm:text-[80px] uppercase text-white font-bold mb-3'}>
+                    <h4 className={'text-[16px] sm:text-[22px] font-bold uppercase mb-3'}>dozens of regulars customers</h4>
+                    <div className={'text-[48px] sm:text-[80px] uppercase text-white font-bold mb-3'}>
                         enterprise<br /> solutions
                     </div>
-                    <p className={'text-white mb-10 sm:text-[22px]'}>
+                    <p className={'text-white mb-10 text-[13px] sm:text-[22px]'}>
                         comprehensive solutions for company's software<br />
                         infrastructure (CRM / ERP business progress<br />
                         management system)
