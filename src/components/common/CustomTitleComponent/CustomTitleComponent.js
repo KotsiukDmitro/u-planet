@@ -4,8 +4,7 @@ const CustomTitleComponent = ({name}) => {
 
     return (
         <div className={'text-center'}>
-            <h1 className={'mb-5 text-[40px] font-light text-[#3e3e3e] leading-none'}>{name}</h1>
-            <div className={'w-14 h-[3px] bg-[#24d5d1] mb-5 m-auto'}></div>
+            <h1 className={'relative mb-10 text-[40px] font-light text-[#3e3e3e] leading-none after:absolute after:w-14 after:h-[3px] after:bg-[#24d5d1] after:m-auto after:left-0 after:right-0 after:-bottom-6'}>{name}</h1>
         </div>
 
     )

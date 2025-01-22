@@ -36,9 +36,9 @@ const TypesBots = () => {
     const titleAll = <>All support <br/>for any kind of tasks</>
 
     return (
-        <div className={'max-w-[750px] lg:max-w-[970px] xl:max-w-[1200px] w-full m-auto mb-10 px-7 sm:px-5'}>
+        <div className={'max-w-[750px] lg:max-w-[970px] xl:max-w-[1200px] w-full m-auto mb-10 sm:mb-20 px-7 sm:px-5'}>
             <CustomTitleComponent name='Types of Bots:' />
-            <div className={'grid sm:grid-cols-2 md:grid-cols-3 gap-[30px] mt-10'}>
+            <div className={'grid sm:grid-cols-2 md:grid-cols-3 gap-[30px] mt-20'}>
                 <BotTemplate title={titleSocial} icons={socialIcons} borderColor={'border-[#84d4f3]'} />
                 <BotTemplate title={titleMessengers} icons={messengersIcons} borderColor={'border-[#ffd996]'} />
                 <BotTemplate title={titleVoice} icons={voiceIcons} borderColor={'border-[#c2b1f2]'} />

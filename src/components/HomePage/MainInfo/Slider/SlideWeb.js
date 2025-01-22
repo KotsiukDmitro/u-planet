@@ -23,12 +23,11 @@ const SlideWeb = () => {
                             Websites
                         </div>
                         <p className={'text-white mb-10 text-[14px] sm:text-[22px]'}>and web applications of any complexity</p>
-                        <div>
-                            <CustomButton
-                                classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>                                   
-                                <AnchorLink to={route('home.portfolio')}>View Portfolio</AnchorLink>
+                        <AnchorLink to={route('home.portfolio')}>
+                            <CustomButton classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
+                                View Portfolio
                             </CustomButton>
-                        </div>
+                        </AnchorLink>
                     </div>
                 </div>
 
@@ -42,7 +41,7 @@ const SlideWeb = () => {
                     <div className={'absolute bottom-[-450px] sm:bottom-[-230px] right-[135px] sm:right-0 xl:right-[220px] w-[85px] xl:w-[110px]'}>
                         <StaticImage src={'../../../../assets/images/main-info/slide-web/phone.png'} alt={'phone'} loading={'lazy'} quality={100} />
                     </div>
-                </div> 
+                </div>
 
             </div>
 

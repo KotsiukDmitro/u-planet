@@ -30,20 +30,28 @@ const Service = ({ services }) => {
 
                                 </div>
                                 <div>
-                                    <CustomButton
-                                        onClick={service.onClick}
-                                        classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
-                                        {service.path ? <AnchorLink to={service.path}>{service.btnName}</AnchorLink> : service.btnName}
-                                    </CustomButton>
+                                    {service.path
+                                        ? <AnchorLink to={service.path}>
+                                            <CustomButton
+                                                onClick={service.onClick}
+                                                classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
+                                                {service.btnName}
+                                            </CustomButton>
+                                        </AnchorLink>
+                                        :
+                                        <CustomButton
+                                            onClick={service.onClick}
+                                            classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
+                                            {service.btnName}
+                                        </CustomButton>
+                                    }
                                 </div>
                             </div>
                         </div>
                     )
                 })
             }
-
-
-        </div>
+        </div >
     )
 }
 

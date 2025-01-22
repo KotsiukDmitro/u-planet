@@ -11,7 +11,7 @@ const SlideSolutions = () => {
     return (
         <div className={'relative min-h-screen flex items-center'}>
             <div className={'w-full h-full absolute z-[-10]'}>
-                <StaticImage className={'w-full h-full'} src={'../../../../assets/images/main-info/slide-solutions/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100}/>
+                <StaticImage className={'w-full h-full'} src={'../../../../assets/images/main-info/slide-solutions/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
             </div>
             <div className={'xl:w-[1170px] m-auto'}>
                 <div className={'text-center leading-none'}>
@@ -24,18 +24,14 @@ const SlideSolutions = () => {
                         infrastructure (CRM / ERP business progress<br />
                         management system)
                     </p>
-                    <div>
-                        <CustomButton
-                            classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
-                           <AnchorLink to={route('home.portfolio')}>View Portfolio</AnchorLink>
+                    <AnchorLink to={route('home.portfolio')}>
+                        <CustomButton classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
+                            View Portfolio
                         </CustomButton>
-                    </div>
+                    </AnchorLink>
                 </div>
             </div>
-
-
         </div>
-
     )
 }
 

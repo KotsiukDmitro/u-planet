@@ -12,9 +12,11 @@ const ContactUs = () => {
             <div className={'relative w-full'}>
                 <StaticImage src={'../../../assets/images/contact-us/welcome-separator.png'} class={'w-full h-[112px]'} alt="background" />
             </div>
-            <CustomButton classNameButton={'absolute z-50'} >
-                <AnchorLink to={route('home.contact-us')}>Contact Us</AnchorLink>               
-            </CustomButton>
+
+            <AnchorLink to={route('home.contact-us')} className={'absolute z-50'}>
+                <CustomButton >Contact Us</CustomButton>
+            </AnchorLink>
+
         </div>
     )
 }

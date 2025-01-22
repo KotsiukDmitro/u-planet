@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "../components/Layout";
-import { MainInfo, MainInfoMobile, TypesBots } from "../components/SmartAssistantPage";
+import { MainInfo, MainInfoMobile, TypesBots, TasksForBots, Advantages, AlexaSkills } from "../components/SmartAssistantPage";
 
 
 const SmartAssistantPage = () => {
@@ -10,6 +10,9 @@ const SmartAssistantPage = () => {
             <MainInfo />
             <MainInfoMobile />
             <TypesBots />
+            <TasksForBots />
+            <Advantages />
+            <AlexaSkills />
         </Layout>
     )
 }
