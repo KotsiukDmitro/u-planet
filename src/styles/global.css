@@ -8,3 +8,29 @@
 html {
     font-family: 'Open Sans', sans-serif;
   }
+
+.colorGreen {
+    color: #24D5D1;
+}  
+.container {
+    width: 1170px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+    .container {
+        width: 740px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: auto;
+    }
+}

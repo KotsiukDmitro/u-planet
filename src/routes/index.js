@@ -46,6 +46,9 @@ const routes = {
     'smart-assistant': {
         path: '/smart-assistant'
     },
+    'indoor-navigation': {
+        path: '/indoor-navigation'
+    },
 
 }
 

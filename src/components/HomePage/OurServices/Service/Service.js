@@ -1,7 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import CustomButton from "../../../common/CustomButton/CustomButton";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 
 
@@ -30,20 +29,12 @@ const Service = ({ services }) => {
 
                                 </div>
                                 <div>
-                                    {service.path
-                                        ? <AnchorLink to={service.path}>
-                                            <CustomButton
-                                                onClick={service.onClick}
-                                                classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
-                                                {service.btnName}
-                                            </CustomButton>
-                                        </AnchorLink>
-                                        :
+                                    {<Link to={service.path}>
                                         <CustomButton
-                                            onClick={service.onClick}
                                             classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
                                             {service.btnName}
                                         </CustomButton>
+                                    </Link>
                                     }
                                 </div>
                             </div>

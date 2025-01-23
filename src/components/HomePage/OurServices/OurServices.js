@@ -72,7 +72,7 @@ const OurServices = ()=> {
         content: 'The testing process is a critical part of the software development cycle in our company. For each project, depending on its complexity and requirements, an individual testing plan is created. This plan allows us to release a product of the highest quality, while saving critical development time and resources.',
         image: images[2],
         btnName: 'learn more', 
-        onClick: () => {},
+        path: route('qa'),
         icons: [icon_android, icon_apple, icon_chrome],
       },
     ]
