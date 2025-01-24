@@ -1,6 +1,13 @@
 import React from "react";
 import { Layout } from "../components/Layout";
-import { MainInfo, EasyToNavigate, WhatIndoorNav } from "../components/IndoorNavigationPage";
+import {
+    MainInfo,
+    EasyToNavigate,
+    WhatIndoorNav,
+    HowItWork,
+    WhyChooseUs,
+    Advantages
+} from "../components/IndoorNavigationPage";
 
 
 
@@ -11,6 +18,9 @@ const IndoorNavigationPage = () => {
             <MainInfo />
             <EasyToNavigate />
             <WhatIndoorNav />
+            <HowItWork />
+            <WhyChooseUs />
+            <Advantages />
         </Layout>
     )
 }
