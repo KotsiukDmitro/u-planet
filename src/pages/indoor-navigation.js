@@ -6,7 +6,9 @@ import {
     WhatIndoorNav,
     HowItWork,
     WhyChooseUs,
-    Advantages
+    Advantages,
+    PremisesForPlatform, 
+    WhoUses
 } from "../components/IndoorNavigationPage";
 
 
@@ -21,6 +23,8 @@ const IndoorNavigationPage = () => {
             <HowItWork />
             <WhyChooseUs />
             <Advantages />
+            <PremisesForPlatform />
+            <WhoUses />
         </Layout>
     )
 }
