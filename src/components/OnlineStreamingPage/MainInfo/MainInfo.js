@@ -7,7 +7,7 @@ import * as s from '../OnlineStreame.module.css'
 const MainIfo = () => {
 
     return (
-        <div className={'relative min-h-screen grid place-items-center text-white'}>
+        <div className={'relative min-h-screen grid place-items-center text-white font-lato'}>
 
             <div className={'absolute w-full h-full'}>
                 <StaticImage src={'../../../assets/images/online-stream/mainInfo/main-bg.png'}
@@ -15,7 +15,7 @@ const MainIfo = () => {
                 />
             </div>
 
-            <div className={'text-center font-bold uppercase leading-none z-10'}>
+            <div className={'text-center font-extrabold uppercase leading-none z-10'}>
                 <h1 className={s.titleFontSize}>Online</h1>
                 <h2 className={['mb-8', s.subTitleFontSize].join(' ')}>Streaming</h2>
                 <a href="https://video-room.devserver.app/" target="_blanc">
@@ -24,7 +24,7 @@ const MainIfo = () => {
 
             </div>
 
-            <div className={'absolute right-0 bottom-0 z-10'}>
+            <div className={'absolute right-0 bottom-0 z-10 hidden md:block'}>
                 <StaticImage src={'../../../assets/images/online-stream/mainInfo/popup-demo.png'}
                     alt="demo" loading={'lazy'} quality={100}
                 />
@@ -34,12 +34,10 @@ const MainIfo = () => {
                     <span className={'mt-auto pb-2'}>in</span>
                     <span className={'text-[65px] font-light'}>2018</span>
                     <span className={'text-[21px] mt-auto pb-2'}>live streaming<br></br> REACHED</span>
-                    <span className={'text-[64px] font-bold'}>79%</span>
+                    <span className={'text-[64px] font-extrabold'}>79%</span>
                 </div>
-                <p className={'text-[#ccc] text-[27px] uppercase font-bold'}>Of all internet traffic</p>
+                <p className={'text-[#ccc] text-[27px] uppercase font-bold tracking-widest'}>Of all internet traffic</p>
                 <p className={'text-[#ccc] text-[15px] font-bold'}>Latest studies say that in the near future this figure will grow.</p>
-
-
             </div>
         </div>
     )

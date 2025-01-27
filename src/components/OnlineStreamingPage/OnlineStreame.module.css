@@ -1,9 +1,11 @@
 .titleFontSize {
     font-size: calc((100vw - 480px) /(1920 - 480)*(135 - 45) + 45px);
     letter-spacing: 6px;
+    text-shadow: -1px 3px 5px #0000008f;
 }
 
 .subTitleFontSize {
     font-size: calc((100vw - 480px) /(1920 - 480)*(81 - 27) + 27px);
     letter-spacing: 5px;
+    text-shadow: -1px 3px 5px #0000008f;
 }

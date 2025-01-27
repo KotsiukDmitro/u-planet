@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'open-sans': 'OpenSans, sans-serif',
+        'lato': 'Lato, sans-serif',
       },
     },
   },
