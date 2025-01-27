@@ -30,8 +30,8 @@ const Portfolio = ({ load, defaultSelectedCategory = 0 }) => {
 
     return (
         <div id='Portfolio' className={'portfolio relative flex flex-col justify-center items-center mb-20'}>
-            <CustomTitleComponent name='Portfolio' />
-            <p className={'mb-10 px-10'}>10 years of successful work, hundreds of international projects</p>
+            <CustomTitleComponent name='Our Portfolio' />
+            <p className={'mb-10 px-10 text-center text-[#222] text-[24px] xl:text-[26px]'}>10 years of successful work, hundreds of international projects</p>
 
             <CategoryButtons selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}
                 setAllCases={setAllCases} />

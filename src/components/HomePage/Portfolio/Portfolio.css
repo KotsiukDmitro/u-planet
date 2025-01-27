@@ -226,9 +226,6 @@
 }
 
 @media screen and (max-width: 640px) {
-    .portfolio {
-        margin-top: 74px;
-    }
 
     .portfolio .skeleton {
         height: 320px;

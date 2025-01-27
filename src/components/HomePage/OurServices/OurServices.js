@@ -79,9 +79,9 @@ const OurServices = ()=> {
     
 
     return (
-        <div className={'max-w-[1170px] m-auto mb-20 px-10'} id="OurServices">
+        <div className={'container m-auto mb-10 md:mb-20 px-5 md:px-10'} id="OurServices">
             <CustomTitleComponent name='Our Services' />
-            <p className={'text-center text-[26px] max-w-[900px] mt-5 mb-20'}>Web Application Development, Mobile Application Development, Software Quality Assurance, Consultancy services.</p>
+            <p className={'text-center m-auto text-[16px] md:text-[24px] xl:text-[26px] max-w-[900px] mt-5 mb-20'}>Web Application Development, Mobile Application Development, Software Quality Assurance, Consultancy services.</p>
             <div className=" flex flex-col gap-10">
                 <Service services={services} />
             </div>
