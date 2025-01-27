@@ -1,0 +1,9 @@
+.titleFontSize {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(135 - 45) + 45px);
+    letter-spacing: 6px;
+}
+
+.subTitleFontSize {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(81 - 27) + 27px);
+    letter-spacing: 5px;
+}

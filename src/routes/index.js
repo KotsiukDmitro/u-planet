@@ -49,6 +49,9 @@ const routes = {
     'indoor-navigation': {
         path: '/indoor-navigation'
     },
+    'online-streaming': {
+        path: '/online-streaming'
+    },
 
 }
 
