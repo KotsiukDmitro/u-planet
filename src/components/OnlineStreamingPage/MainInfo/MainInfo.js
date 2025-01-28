@@ -16,8 +16,8 @@ const MainIfo = () => {
             </div>
 
             <div className={'text-center font-extrabold uppercase leading-none z-10'}>
-                <h1 className={s.titleFontSize}>Online</h1>
-                <h2 className={['mb-8', s.subTitleFontSize].join(' ')}>Streaming</h2>
+                <h1 className={s.mainInfoTitle}>Online</h1>
+                <h2 className={['mb-8', s.mainInfoSubTitle].join(' ')}>Streaming</h2>
                 <a href="https://video-room.devserver.app/" target="_blanc">
                     <CustomButton classNameButton={'bg-[#db1e46] border-[#db1e46] hover:text-[#db1e46]'}>Try a demo</CustomButton>
                 </a>

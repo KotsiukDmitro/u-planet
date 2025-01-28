@@ -1,11 +1,78 @@
-.titleFontSize {
+.mainInfoTitle {
     font-size: calc((100vw - 480px) /(1920 - 480)*(135 - 45) + 45px);
     letter-spacing: 6px;
+}
+
+.mainInfoSubTitle {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(81 - 27) + 27px);
+    letter-spacing: 5px;
+}
+
+.mainInfoTitle, .mainInfoSubTitle {
     text-shadow: -1px 3px 5px #0000008f;
 }
 
-.subTitleFontSize {
-    font-size: calc((100vw - 480px) /(1920 - 480)*(81 - 27) + 27px);
-    letter-spacing: 5px;
-    text-shadow: -1px 3px 5px #0000008f;
+.liveStreamingTitle, .FeaturesTitle  {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(62 - 32) + 32px);
+    letter-spacing: 2px;
+    line-height: 25px;
+    margin-bottom: 7px;
+    font-weight: 700;
+}
+
+.liveStreamingSubTitle {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(48 - 26) + 26px);
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    color: #ccc;
+    font-weight: 700;
+}
+
+
+.FeaturesLiTitle {
+    font-size: calc((100vw - 480px) /(1500 - 480)*(19 - 14) + 14px);
+    color: #3b3e49;
+}
+
+.solutionTitle {
+    font-size: calc((100vw - 480px) /(1920 - 320)*(44 - 19) + 19px);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.solutionText {
+    font-size: calc((100vw - 320px) /(1920 - 320)*(19 - 14) + 14px);
+}
+
+.solutionTextIcon {
+    font-size: calc((100vw - 480px) /(1920 - 480)*(28 - 18) + 18px);
+    line-height: 1.2;
+}
+
+.techStackTitle {
+    font-size: 46px;
+}
+
+.techStackName {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+    .techStackTitle {
+        font-size: 3.05vmax;
+    }
+    
+    .techStackName {
+        font-size: 1.35vmax;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .techStackTitle {
+        font-size: 46px;
+    }
+
+    .techStackName {
+        font-size: 20px;
+    }
 }
