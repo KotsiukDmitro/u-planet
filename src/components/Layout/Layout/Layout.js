@@ -7,7 +7,7 @@ import HeaderLogoWhite from "../../common/Logo/HeaderLogoWhite";
 import iconBars from '../../../assets/images/icon-bars.svg'
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isTransparent=false }) => {
 
     const [scroll, setScroll] = useState(false)
     const [isDrawerIsOpen, setDrawerIsOpen] = useState(false)
@@ -32,9 +32,9 @@ const Layout = ({ children }) => {
         <div className={'min-h-screen flex flex-col'}>
             <div>
                 <div className={'hidden md:block'}>
-                    <Header scroll={scroll} />
+                    <Header scroll={scroll} isTransparent={isTransparent} />
                 </div>
-                <div className={`fixed w-full flex items-center justify-between transition-all duration-500 ease-in-out ${scroll ? 'pt-4 border-b border-b-[#eee] bg-slate-100' : 'pt-5'} pb-5 px-7 z-[100] md:hidden`}>
+                <div className={`fixed w-full flex items-center justify-between transition-all duration-500 ease-in-out ${scroll || isTransparent ? 'pt-4 border-b border-b-[#eee] bg-slate-100' : 'pt-5'} pb-5 px-7 z-[100] md:hidden`}>
                     <div className={'max-w-[120px]'}>
                         <HeaderLogoWhite />
                     </div>

@@ -11,21 +11,21 @@ import linkedin_dark from '../../../assets/images/social/linkedin-dark.svg'
 
 
 
-const SocialLinks = ({ scroll, classNameHover, classNameGroup }) => {
+const SocialLinks = ({ scroll, isTransparent, classNameHover, classNameGroup }) => {
 
     return (
         <div className={['flex gap-5 2xl:gap-7', classNameGroup].join(' ')}>
             <a href={route('facebook')}>
-                <img src={scroll ? fb_dark : fb} alt="facebook" className={['h-5 opacity-50 hover:opacity-100 pl-0.5', classNameHover].join(' ')}/>
+                <img src={scroll || isTransparent ? fb_dark : fb} alt="facebook" className={['h-5 opacity-50 hover:opacity-100 pl-0.5', classNameHover].join(' ')}/>
             </a>
             <a href={route('twitter')}>
-                <img src={scroll ? twitter_dark : twitter} alt="twitter" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
+                <img src={scroll || isTransparent ? twitter_dark : twitter} alt="twitter" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
             </a>
             <a href={route('skype')}>
-                <img src={scroll ? skype_dark : skype} alt="skype" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
+                <img src={scroll || isTransparent ? skype_dark : skype} alt="skype" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
             </a>
             <a href={route('linkedin')}>
-                <img src={scroll ? linkedin_dark : linkedin} alt="linkedin" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
+                <img src={scroll || isTransparent ? linkedin_dark : linkedin} alt="linkedin" className={['h-5 opacity-50 hover:opacity-100', classNameHover].join(' ')}/>
             </a>
         </div>
     )

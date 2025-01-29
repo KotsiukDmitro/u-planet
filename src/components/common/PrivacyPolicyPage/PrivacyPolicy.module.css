@@ -1,0 +1,21 @@
+
+.privacyText h3 {
+    max-width: 835px;
+    color: #464646;
+    margin: 70px auto 0;
+    font-size: 21px;
+}
+
+.privacyText a {
+    color: #24d5d1;
+    cursor: pointer;
+    
+}
+
+.privacyText p {
+    max-width: 835px;
+    margin: auto;
+    font-size: 14px;
+    color: #747474;
+}
+

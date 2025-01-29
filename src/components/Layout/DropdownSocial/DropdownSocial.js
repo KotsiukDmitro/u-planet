@@ -8,7 +8,7 @@ import contact from '../../../assets/images/social/contact.svg'
 import contact_dark from '../../../assets/images/social/contact-dark.svg'
 import * as s from './DropdownSocial.module.css'
 
-const DropdownSocial = ({ scroll }) => {
+const DropdownSocial = ({ scroll, isTransparent }) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const dropdownRef = useRef(null)
@@ -37,10 +37,10 @@ const DropdownSocial = ({ scroll }) => {
                 <img src={isOpen ? iconMinus : iconPlus} alt={isOpen ? 'close' : 'open'} className={'opacity-85 hover:opacity-100'} />
             </button>
             {isOpen && <>
-                <div className={['absolute -left-2 w-9 rounded mt-2.5 py-2 px-2', scroll ? s.modalScrolled : s.modal].join(' ')}>
-                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-5'} scroll={scroll} />
+                <div className={['absolute -left-2 w-9 rounded mt-2.5 py-2 px-2', scroll || isTransparent ? s.modalScrolled : s.modal].join(' ')}>
+                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-5'} scroll={scroll} isTransparent={isTransparent} />
                     <AnchorLink to={route('home.contact-us')}>
-                        <img src={scroll ? contact_dark : contact} alt="contact-us" className={'h-[18px] opacity-50 hover:opacity-100'} />
+                        <img src={scroll || isTransparent ? contact_dark : contact} alt="contact-us" className={'h-[18px] opacity-50 hover:opacity-100'} />
                     </AnchorLink>
                 </div>
             </>

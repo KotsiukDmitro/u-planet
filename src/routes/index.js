@@ -7,6 +7,9 @@ const routes = {
     'qa': {
         path: '/quality-assurance'
     },
+    'privacy-policy': {
+        path: '/privacy-policy'
+    },
 
     // Anchors
     'home.about-us': {

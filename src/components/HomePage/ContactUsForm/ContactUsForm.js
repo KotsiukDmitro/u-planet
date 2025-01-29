@@ -1,11 +1,13 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { route } from "../../../routes";
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent"
 import CustomButton from "../../common/CustomButton/CustomButton";
 import * as yup from "yup";
+
 
 
 const ContactUsForm = () => {
@@ -145,7 +147,7 @@ const ContactUsForm = () => {
                                         className={'mr-2 cursor-pointer'}
                                     />
                                     <label htmlFor="privacyPolicy" className={'max-w-[300px] text-[13px] text-gray-500 cursor-pointer'}>
-                                        Check here to send the form and to indicate that you have read and agree to our <span className={'text-[#24d5d1]'}>Privacy Policy</span>. We are committed to respecting your privacy.
+                                        Check here to send the form and to indicate that you have read and agree to our <Link to={route('privacy-policy')} className={'text-[#24d5d1]'}>Privacy Policy</Link>. We are committed to respecting your privacy.
                                     </label>
 
                                     {errors.privacyPolicy && (
