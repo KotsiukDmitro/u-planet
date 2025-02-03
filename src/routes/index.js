@@ -10,6 +10,9 @@ const routes = {
     'privacy-policy': {
         path: '/privacy-policy'
     },
+    'shopify': {
+        path: '/shopify-development'
+    },
 
     // Anchors
     'home.about-us': {

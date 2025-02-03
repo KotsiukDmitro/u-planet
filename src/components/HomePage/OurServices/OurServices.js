@@ -39,14 +39,14 @@ const OurServices = ()=> {
       {
         title: 'Web Design & Development',
         subTitle: <>Websites and web applications <br /> of any complexity</>,
-        content: <>Full range of web development services: websites and web applications for all types of business, corporate web portals, social networking apps, landing pages. Creating comprehensive <Link to="#" className={'text-[#24d5d1]'}>eCommerce solutions</Link> on different platforms, custom <Link to="#" className={'text-[#24d5d1]'}>Shopify</Link> stores development, design and implementation</>,
+        content: <>Full range of web development services: websites and web applications for all types of business, corporate web portals, social networking apps, landing pages. Creating comprehensive <Link to={route('shopify')} className={'text-[#24d5d1]'}>eCommerce solutions</Link> on different platforms, custom <Link to={route('shopify')} className={'text-[#24d5d1]'}>Shopify</Link> stores development, design and implementation</>,
         image: images[3],
         btnName: 'start project',
         path: route('home.contact-us'),
         icons: [icon_html5, icon_css3, icon_drupal, icon_wordpress],
         iconLink: {
           src: icon_shopify,
-          path: '#'
+          path: route('shopify')
         }
       },
       {
