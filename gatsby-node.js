@@ -108,6 +108,35 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     metatagsValidation(allNodes.data.allNodeArticle.nodes, 'статьи блога')
     reporter.info('Валидация прошла успешно')
 
+    const projectIds = await graphql(`
+      query {
+        allNodeOurWork(filter: {status: {eq: true}}) {
+          edges {
+            node {
+              id
+              path {
+                alias
+              }
+              field_metatags {
+                robots
+              }
+            }
+          }
+        }
+      }
+    `)
+      const regexp = /noindex|nofollow|noarchive|nosnippet|noimageindex|notranslate/ig
+      projectIds.data.allNodeOurWork.edges.forEach(edge => {
+          createPage({
+              path: edge.node.path.alias,
+              component: path.resolve(`src/templates/SingleProject/single-project.js`),
+              context: {
+                  id: edge.node.id,
+                  noindex: regexp.test(edge.node.field_metatags.robots)
+              }
+          })
+      })
+
 }
 
 exports.onPostBuild = () => {

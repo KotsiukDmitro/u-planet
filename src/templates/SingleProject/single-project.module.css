@@ -1,0 +1,188 @@
+.singleProjectPage {
+    max-width: 1920px;
+    padding: 84px 0 0 226px;
+    color: #3B3E49;
+}
+
+.headerLeftContent {
+    margin: 0 auto 76px;
+    padding-right: 55px;
+}
+
+.singleProjectContent {
+    padding-right: 190px;
+}
+
+.fieldWrap {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 17px;
+    padding-top: 48px;
+}
+
+.fieldWrap:nth-of-type(1) {
+    padding-top: 34px;
+}
+
+.breakLine {
+    color: #D7D7D7;
+    margin: 80px 0 32px;
+}
+
+.breakLine:last-of-type {
+    margin-bottom: 84px;
+}
+
+.fieldTitle {
+    font-size: 39px;
+    line-height: 1.6;
+    color: #8E8E8E;
+    width: 31%;
+    font-family: "Be Vietnam", sans-serif;
+    font-weight: 500;
+}
+
+.fieldContent {
+    max-width: 800px;
+}
+
+.fieldContent a,
+.fieldContent * > a {
+    color: #24d5d1;
+    cursor: pointer;
+}
+
+.fieldContent a:hover,
+.fieldContent * > a:hover {
+    text-decoration: underline;
+}
+
+.tagsContent > * {
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 36px;
+    line-height: 1.7;
+    color: #8E8E8E;
+}
+
+.footerInfoWrap {
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+
+.footerInfoTitle {
+    font-size: 40px;
+    line-height: 1.6;
+    color: #8E8E8E;
+    font-family: "Be Vietnam", sans-serif;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+@media screen and (max-width: 1680px){
+    .singleProjectPage {
+        padding: 100px 0 0 100px;
+    }
+    .headerLeftContent {
+        padding-right: 100px;
+        margin-bottom: 30px;
+    }
+    .singleProjectContent {
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1536px){
+    .singleProjectPage {
+        padding-left: 80px;
+    }
+    .headerLeftContent {
+        padding-right: 80px;
+        margin-bottom: 30px;
+    }
+    .singleProjectContent {
+        padding-right: 80px;
+    }
+    .breakLine {
+        margin: 50px 0 32px;
+    }
+    .fieldTitle {
+        font-size: 32px;
+        width: 20%;
+    }
+    .tagsContent > * {
+        font-size: 25px;
+    }
+    .footerInfoTitle {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .headerLeftContent {
+        margin-bottom: 50px;
+        padding-right: 0;
+    }
+    .singleProjectPage {
+        padding: 100px 20px 0;
+    }
+    .singleProjectContent {
+        padding-right: 0;
+    }
+    .fieldWrap {
+        display: flex;
+        flex-direction: column;
+    }
+    .fieldTitle {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .fieldContent {
+        width: 100%;
+        max-width: none;
+        flex-direction: column;
+        padding-top: 24px;
+    }
+    .footerInfoTitle {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .singleProjectPage {
+        padding: 100px 0 0;
+    }
+    .singleProjectContent {
+        padding-right: 16px;
+    }
+    .fieldWrap {
+        padding-top: 17px;
+    }
+    .fieldWrap:first-of-type {
+        padding-top: 0;
+    }
+    .headerLeftContent {
+        margin-top: 90px;
+        margin-bottom: 25px;
+    }
+    .footerInfoWrap {
+        padding-bottom: 16px;
+    }
+    .breakLine {
+        display: none;
+    }
+    .fieldTitle {
+        font-size: 24px;
+        margin-bottom: 13px;
+    }
+    .fieldContent {
+        margin-bottom: 38px;
+        padding-top: 0;
+    }
+    .tagsContent > * {
+        font-size: 18px;
+    }
+    .footerInfoTitle {
+        font-size: 24px;
+        margin-bottom: 11px;
+    }
+}

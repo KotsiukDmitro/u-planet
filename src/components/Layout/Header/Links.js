@@ -8,7 +8,7 @@ import * as s from './header.module.css'
 const Links = ({ scroll, isTransparent }) => {
 
     return (
-        <ul className={'flex uppercase gap-2.5 lg:gap-5 xl:gap-8 ml-auto'}>
+        <ul className={'flex uppercase gap-2.5 lg:gap-5 xl:gap-7 2xl:gap-8 ml-auto'}>
             {links.map(link => <li key={'header' + link.name} className={[`opacity-70 text-[10px] lg:text-xs  ${scroll || isTransparent ? 'text-[#555]' : 'text-[#ffffffb3]'}`].join(' ')}>
                 {!link.children
                     ? <Link to={link.path} className={`${scroll || isTransparent ? 'hover:!text-[#24d5d1]' : 'hover:text-white'}`} activeClassName={`${scroll || isTransparent ? 'text-[#24d5d1]' : 'text-white'}`}>{link.name}</Link>
