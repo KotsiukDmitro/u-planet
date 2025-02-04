@@ -22,8 +22,8 @@ const Info = ()=> {
 
     return (
         <div className={'text-center md:text-left'}>
-                    <StaticImage src={'../../../assets/images/shopify/mainInfo/shopify-logo.png'} alt="logo-shopify" className={'w-[100px] md:w-[215px] xl:w-auto mb-1 md:mb-[60px]'} />
-                    <h2 className={'text-[#221f1f] font-bold mb-2 md:mb-10 text-[28px] md:text-[22px] lg:text-[32px] xl:text-[36px]'}>
+                    <StaticImage src={'../../../assets/images/shopify/mainInfo/shopify-logo.png'} alt="logo-shopify" className={'w-[100px] sm:w-[130px] lg:w-[170px] xl:w-[215px] 2xl:w-auto mb-1 sm:mb-5 xl:mb-[60px]'} />
+                    <h2 className={'text-[#221f1f] font-bold mb-2 md:mb-10 text-[28px] md:text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px]'}>
                         eCommerce - Your Big<br /> Business Opportunity
                     </h2>
                     <div className={'flex gap-3 lg:gap-10 items-center justify-center md:justify-start mb-10'}>

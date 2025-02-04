@@ -1,0 +1,34 @@
+
+.imageMix {
+    width: 750px;
+}
+
+@media screen and (max-width: 1370px) {
+    .imageMix {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .imageMix {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .imageMix {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imageMix {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .imageMix {
+        width: 340px;
+    }
+}
