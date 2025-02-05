@@ -1,5 +1,6 @@
 .singleProjectPage {
     max-width: 1920px;
+    width: 100%;
     padding: 84px 0 0 226px;
     color: #3B3E49;
 }
@@ -38,7 +39,6 @@
     line-height: 1.6;
     color: #8E8E8E;
     width: 31%;
-    font-family: "Be Vietnam", sans-serif;
     font-weight: 500;
 }
 
@@ -58,7 +58,6 @@
 }
 
 .tagsContent > * {
-    font-family: 'Be Vietnam', sans-serif;
     font-size: 36px;
     line-height: 1.7;
     color: #8E8E8E;
@@ -73,7 +72,6 @@
     font-size: 40px;
     line-height: 1.6;
     color: #8E8E8E;
-    font-family: "Be Vietnam", sans-serif;
     font-weight: 500;
     margin-bottom: 35px;
 }
