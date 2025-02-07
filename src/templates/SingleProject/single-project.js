@@ -80,15 +80,15 @@ const SingleProject = ({ data, pageContext }) => {
         ]
     }
 
-    // useEffect(() => {
-    //     const startAutoplay = setTimeout(() => {
-    //         singleProjectSlider.current.slickPlay()
-    //     }, 3000)
+    useEffect(() => {
+        const startAutoplay = setTimeout(() => {
+            singleProjectSlider.current.slickPlay()
+        }, 3000)
 
-    //     return () => {
-    //         clearTimeout(startAutoplay)
-    //     }
-    // }, [])
+        return () => {
+            clearTimeout(startAutoplay)
+        }
+    }, [])
 
     return (
         <Layout isTransparent={true}>
