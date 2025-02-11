@@ -1,0 +1,9 @@
+.webform .form-group label{
+    display: none;
+}
+
+.webform {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

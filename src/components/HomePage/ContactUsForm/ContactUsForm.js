@@ -4,6 +4,7 @@ import { route } from "../../../routes";
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent"
 import CustomForm from "./CustomForm/CustomForm";
 import FormContact from "./WebForm/WebForm";
+import './WebForm.css'
 
 const ContactUsForm = () => {
 
@@ -33,8 +34,8 @@ const ContactUsForm = () => {
                             </div>
                         </div>
                     </div>
-                    <CustomForm />
-                    {/* <FormContact /> */}
+                    {/* <CustomForm /> */}
+                    <FormContact />
                 </div>
             </div>
         </div>
