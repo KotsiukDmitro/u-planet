@@ -1,23 +1,23 @@
 import React, { useState, useRef, useCallback } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import Webform from "gatsby-drupal-webform";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useUserLocation } from "../../../../hooks/useUserLocation";
 import { useValidationWebForm } from "../../../../hooks/useValidationWebForm";
 import { useRecaptcha } from "../../../../hooks/useRecaptcha";
-import Webform from "gatsby-drupal-webform";
 import { WebformInput, WebformTextarea, ButtonSubmit } from "../CustomWebForms";
 import { FormContext } from "../../../../helpers/FormContext";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import SubmitMessage from "../../../common/SubmitMessage/SubmitMessage";
 import * as yup from 'yup'
 import '../WebForm.css'
+
 
 const validationSchema = yup.object({
     name: yup.string().required("Name is required"),
     email: yup.string().email("Invalid email").required("Email is required"),
     message: yup.string().required("Message is required"),
 })
-
-
 
 
 const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) => {
@@ -43,15 +43,14 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
     })
 
 
-
     const formRef = useRef(null)
     const token = useRef(null)
     const validate = useValidationWebForm(validationSchema)
     const { ip, location, getUserLocation } = useUserLocation()
     const [validationErrors, setValidationErrors] = useState([])
     const [isFormSubmitted, setFormSubmitted] = useState(false)
-    // const [isSubmitSuccesses, setSubmitSuccesses] = useState(false)
-    // const [isSubmitMessageVisible, setSubmitMessageVisible] = useState(false)
+    const [isSubmitSuccesses, setSubmitSuccesses] = useState(false)
+    const [isSubmitMessageVisible, setSubmitMessageVisible] = useState(false)
     const [executeRecaptcha, handleRecaptchaFocus] = useRecaptcha()
     const handleReCaptchaVerify = useCallback(async () => {
         if (!executeRecaptcha) {
@@ -66,9 +65,8 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
         getUserLocation()
     }
 
-
     const validationForm = (event) => {
-        // setSubmitMessageVisible(false)
+        setSubmitMessageVisible(false)
         if (!formRef.current) formRef.current = event.target
         const form = new FormData(event.target)
         const formData = Object.fromEntries(form.entries())
@@ -100,6 +98,8 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
 
     return (
         <FormContext.Provider value={{ register, validationErrors, getInputClasses }}>
+            <SubmitMessage success={isSubmitSuccesses} visible={isSubmitMessageVisible} setVisible={setSubmitMessageVisible} />
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div onFocus={handleFocus}>
                 <Webform
                     className={webformClass}
@@ -107,13 +107,13 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
                     endpoint={process.env.GATSBY_API_WEBFORM_SUBMIT_URL}
                     onError={() => {
                         setFormSubmitted(false)
-                        // setSubmitSuccesses(false)
-                        // setSubmitMessageVisible(true)
+                        setSubmitSuccesses(false)
+                        setSubmitMessageVisible(true)
                     }}
                     onSuccess={() => {
                         setFormSubmitted(false)
-                        // setSubmitSuccesses(true)
-                        // setSubmitMessageVisible(true)
+                        setSubmitSuccesses(true)
+                        setSubmitMessageVisible(true)
                         formRef?.current.reset()
                     }}
                     onValidate={(event) => validationForm(event)}
@@ -126,8 +126,18 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
                         textfield: WebformInput,
                         textarea: WebformTextarea,
                     }}
-      
+
                 />
+                <div className={'recaptcha-message text-gray-500 text-center mt-8 sm:mt-14 font-semibold text-xs'}>
+                    This site is protected by reCAPTCHA and the Google&nbsp;
+                    <a href={'https://policies.google.com/privacy?hl=en'} target={'_blank'} rel={'noopener noreferrer'} 
+                    className={'text-[#24d5d1]'}>
+                        Privacy Policy</a> and&nbsp;
+                    <a href={'https://policies.google.com/terms?hl=en'} target={'_blank'} rel={'noopener noreferrer'}
+                    className={'text-[#24d5d1]'}>
+                        Terms of Service
+                    </a> apply.
+                </div>
             </div>
         </FormContext.Provider>
     )

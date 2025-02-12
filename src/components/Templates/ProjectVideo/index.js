@@ -12,6 +12,7 @@ const ProjectVideo = ({ videoUrl, sliderRef, videoCover, videoClass }) => {
 
     return (
         <div className={'relative'}>
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video controls
                 poster={videoCover}
                 onPause={onPauseVideo}

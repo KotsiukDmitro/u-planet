@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
 html {
     font-family: 'Open Sans', sans-serif;
   }

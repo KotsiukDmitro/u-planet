@@ -2,7 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { route } from "../../../routes";
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent"
-import CustomForm from "./CustomForm/CustomForm";
+// import CustomForm from "./CustomForm/CustomForm";
 import FormContact from "./WebForm/WebForm";
 import './WebForm.css'
 
