@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import Drawer from "../Drawer/Drawer";
 import HeaderLogoWhite from "../../common/Logo/HeaderLogoWhite";
 import iconBars from '../../../assets/images/icon-bars.svg'
+import CookieConsentModal from "../../common/CookieConsentModal/CookieConsentModal";
 
 
 const Layout = ({ children, isTransparent=false }) => {
@@ -49,6 +50,7 @@ const Layout = ({ children, isTransparent=false }) => {
             {children}
             <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`} />
             <Footer />
+            <CookieConsentModal />
         </div >
     )
 }

@@ -1,0 +1,11 @@
+
+.cookieConsentButton {
+    background: url("../../../assets/images/icons/check.svg") no-repeat;
+}
+
+@media screen and (max-width: 320px){
+    .cookieConsentContainer {
+        width: 90%;
+        height: auto;
+    }
+}
