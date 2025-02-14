@@ -7,11 +7,17 @@ const routes = {
     'qa': {
         path: '/quality-assurance'
     },
+    'shopify': {
+        path: '/shopify-development'
+    },
     'privacy-policy': {
         path: '/privacy-policy'
     },
-    'shopify': {
-        path: '/shopify-development'
+    'cookie-policy': {
+        path: '/cookie-policy'
+    },
+    'terms-conditions': {
+        path: '/terms-conditions'
     },
 
     // Anchors

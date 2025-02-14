@@ -20,9 +20,9 @@ const CookieConsentModal = () => {
                 We use cookies to give you the best experience possible. By continuing we'll assume you're on board with
                 our.
                 <div className={'flex flex-col lg:block lg:whitespace-nowrap lg:m-auto underline'}>
-                    <Link to={route('privacy-policy')} className={'mb-1 lg:mb-0 lg:mr-4'}>Cookie Policy</Link>
+                    <Link to={route('cookie-policy')} className={'mb-1 lg:mb-0 lg:mr-4'}>Cookie Policy</Link>
                     <Link to={route('privacy-policy')} className={'mb-1 lg:mb-0 lg:mr-4'}>Privacy Policy</Link>
-                    <Link to={route('privacy-policy')} className={'lg:mr-4'}>Terms & Conditions</Link>
+                    <Link to={route('terms-conditions')} className={'lg:mr-4'}>Terms & Conditions</Link>
                 </div>
             </div>
         </CookieConsent>
