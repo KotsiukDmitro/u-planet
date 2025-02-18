@@ -29,7 +29,7 @@ const WhatIndoorNav = () => {
 
 
     return (
-        <div className={'container m-auto mb-14 md:mb-20'}>
+        <div className={'container mx-auto mb-14 md:mb-20'}>
             <CustomTitleComponent name='What is Indoor Navigation?' />
             <p className={'md:max-w-[500px] xl:max-w-[760px] m-auto text-[14px] sm:text-[18px] md:text-[13px] xl:text-[20px] text-[#515151] mt-12 md:mt-20 mb-14 px-5 md:px-0'}>
                 Navigation has become a part of our everyday life, we use it wherever we go:

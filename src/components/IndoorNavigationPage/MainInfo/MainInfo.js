@@ -30,7 +30,7 @@ const MainInfo = () => {
                     layout="fullWidth" alt="Background" className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit="fill"
                 />
             </div>
-            <div className={'container relative mt-[100px] m-auto md:mt-auto z-10 uppercase'}>
+            <div className={'container relative mt-[100px] mx-auto md:mt-auto z-10 uppercase'}>
                 <div className={'xl:mb-10 sm:px-20 md:px-0'}>
                     <div className={'mb-5 flex gap-3 xl:gap-0'}>
                         {icons.map((icon, index) => {
@@ -54,7 +54,7 @@ const MainInfo = () => {
                 </div>
             </div>
            
-            <div className={'container absolute bottom-4 xl:bottom-7 left-0 right-0 m-auto hidden md:block'}>
+            <div className={'container absolute bottom-4 xl:bottom-7 left-0 right-0 mx-auto hidden md:block'}>
                 <div className={'flex justify-between mt-auto uppercase text-[10px] lg:text-[12px] xl:text-[16px] text-[#24D5D1] font-light'}>
                     {purposes.map((purpose, index) => {
                         return <span key={`${index}-purpose`}>{purpose}</span>

@@ -14,7 +14,7 @@ const MainInfo = () => {
                 <StaticImage src={'../../../assets/images/qa/quality-mobile.jpg'} layout="fullWidth" alt="Background" className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit="fill" />
             </div>
 
-            <div className={'relative max-w-[1170px] w-full px-5 lg:pl-20 mb-36 sm:mb-28 lg:m-auto flex justify-center lg:justify-start text-center lg:text-left'}>
+            <div className={'relative container px-5 lg:pl-20 mb-36 sm:mb-28 mx-auto flex justify-center lg:justify-start text-center lg:text-left'}>
                 <h1 className={'text-[42px] sm:text-[56px] text-white uppercase font-extrabold leading-[1.1]'}>quality <br /> assurance</h1>
             </div>
 

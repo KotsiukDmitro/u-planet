@@ -5,7 +5,6 @@ import { route } from "../../../../routes";
 import CustomButton from "../../../common/CustomButton/CustomButton";
 
 
-
 const SlideSolutions = () => {
 
     return (
@@ -13,7 +12,7 @@ const SlideSolutions = () => {
             <div className={'w-full h-full absolute z-[-10]'}>
                 <StaticImage className={'w-full h-full'} src={'../../../../assets/images/main-info/slide-solutions/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
             </div>
-            <div className={'xl:w-[1170px] m-auto'}>
+            <div className={'container mx-auto'}>
                 <div className={'text-center leading-none'}>
                     <h4 className={'text-[16px] sm:text-[22px] font-bold uppercase mb-3'}>dozens of regulars customers</h4>
                     <div className={'text-[48px] sm:text-[80px] uppercase text-white font-bold mb-3'}>

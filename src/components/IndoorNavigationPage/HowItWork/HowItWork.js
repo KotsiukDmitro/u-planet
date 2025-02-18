@@ -53,7 +53,7 @@ const HowItWork = () => {
 
     return (
         <div className={'bg-slate-100 pt-14 pb-10 md:pt-28 md:pb-20 text-[#515151]'}>
-            <div className={'container m-auto'}>
+            <div className={'container mx-auto'}>
                 <CustomTitleComponent name='How it works?' />
                 <p className={'mt-14 mb-14 xl:mb-20 text-center text-[14px] md:text-[17px] xl:text-[26px] px-5'}>
                     The technical solution is based on using of iBeacons and a unique internally developed<br />

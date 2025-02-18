@@ -21,10 +21,10 @@ const settings = {
 const SliderProjects = () => {
 
     return (     
-            <Slider className={'mainInfo cursor-move'} {...settings}>
+            <Slider className={'mainInfo cursor-move'} {...settings}>               
                 <SlideMobileApp />
-                <SlideSolutions />
                 <SlideWeb />
+                <SlideSolutions />               
             </Slider>
     )
 }

@@ -14,7 +14,7 @@ const ContactUsForm = () => {
             <div className="absolute h-full w-full text-center -z-10">
                 <StaticImage src={'../../../assets/images/contact-us-form/contact-us.jpg'} class={'h-full'} alt="background" />
             </div>
-            <div className={'py-20 z-50 max-w-[1170px] xl:min-w-[1170px]'}>
+            <div className={'container py-20 z-50'}>
                 <div className={''}>
                     <CustomTitleComponent name='Contact Us' />
                     <div className={'flex flex-col lg:flex-row items-start lg:items-center mt-14 sm:mt-28 mb-10'}>

@@ -37,7 +37,7 @@ const PremisesForPlatform = () => {
                 />
             </div>
 
-            <div className={'container m-auto py-14 lg:py-32 px-7 md:px-5 z-10'}>
+            <div className={'container mx-auto py-14 lg:py-32 px-7 md:px-5 z-10'}>
                 <h1 className={'text-left md:text-center text-[21px] md:text-[23px] xl:text-[40px] mb-14 md:mb-24 font-light text-white leading-none relative after:absolute  after:w-8 after:md:w-14 after:h-[3px] after:bg-white after:sm:m-auto after:left-0 after:right-0 after:-bottom-5 after:md:-bottom-10'}>What premises the Platform can be implemented in?</h1>
                 <div className={'grid grid-cols-2 md:grid-cols-7 gap-y-5 gap-2 text-center'}>
                     {premises.map(premise => {

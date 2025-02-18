@@ -30,7 +30,7 @@ const Advantages = () => {
     const subTitleVisitor = '(user of the system):'
 
     return (
-        <div className={'container m-auto mb-28 px-5'}>
+        <div className={'container mx-auto mb-28 px-5'}>
             <h1 className={'relative mb-20 text-[23px] xl:text-[40px] font-light text-[#48494e] after:absolute after:w-14 after:h-[3px] after:bg-[#24d5d1] after:left-0  after:-bottom-8'}>Advantages</h1>
             <div className={'grid md:grid-cols-2 gap-12 md:gap-20'}>
                 <TemplateItem advantages={owner} title={titleOwen} subTitle ={subTitleOwen}/>

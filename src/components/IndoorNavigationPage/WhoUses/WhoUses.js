@@ -25,7 +25,7 @@ const WhoUses = () => {
     ]
 
     return (
-        <div className={'container m-auto px-5 mb-16 xl:mb-28'}>
+        <div className={'container mx-auto px-5 mb-16 xl:mb-28'}>
             <CustomTitleComponent name='Who uses the Platform today?' />
             <div className={'grid md:grid-cols-3 gap-3 lg:gap-10 mb-10 md:mb-20 mt-16 xl:mt-28'}>
                 {places.map((place, index) => {

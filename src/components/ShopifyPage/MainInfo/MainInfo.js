@@ -15,7 +15,7 @@ const MainInfo = () => {
                         layout="fullWidth" alt="Background" className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit="cover"
                     />
                 </div>
-                <div className={'container mx-auto z-50 flex flex-col-reverse md:flex-row justify-between gap-5 mb-3 sm:mb-10 mt-20 md:mt-28 2xl:mt-40'}>
+                <div className={'container mx-auto z-50 flex flex-col-reverse md:flex-row justify-between gap-5 mb-3 sm:mb-5 mt-20 md:mt-28 2xl:mt-40'}>
                     <div className={'hidden md:block 2xl:pt-20'}>
                         <Info />
                     </div>
