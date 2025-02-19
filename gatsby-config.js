@@ -59,7 +59,8 @@ module.exports = {
   siteMetadata: {
     title: process.env.GATSBY_SITE_TITLE,
     description: process.env.GATSBY_SITE_DESCRIPTION,
-    // siteUrl: process.env.GATSBY_SITE_URL
+    // siteUrl: process.env.GATSBY_SITE_URL,
+    twitterUsername: process.env.GATSBY_TWITTER_USER_NAME
   },
   plugins: [
     'gatsby-plugin-image',
