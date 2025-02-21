@@ -18,7 +18,6 @@ const SEO = ({
         siteMetadata {
           title
           description
-          siteUrl
           twitterUsername
         }
       }
@@ -34,12 +33,12 @@ const SEO = ({
     return (
         <>
             <title>{metaTitle}</title>
-            {metaDescription && <meta name="description" content={metaDescription} />}
+            <meta name="description" content={metaDescription} />
             {/* Open Graph for Facebook & social */}
             <meta property="og:site_name" content={site.siteMetadata.title} />
             <meta property="og:type" content="website" />
-            {metaOgTitle && <meta property="og:title" content={metaOgTitle} />}
-            {metaOgDescription && <meta property="og:description" content={metaOgDescription} />}
+            <meta property="og:title" content={metaOgTitle} />
+            <meta property="og:description" content={metaOgDescription} />
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content={metaOgTitle} />
