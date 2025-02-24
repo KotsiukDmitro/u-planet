@@ -108,6 +108,58 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   metatagsValidation(allNodes.data.allNodeArticle.nodes, 'статьи блога')
   reporter.info('Валидация прошла успешно')
 
+  const articlePostTemplate = path.resolve(`src/templates/SingleBlogPost/single-blog-post.js`)
+  const articlePostIds = await graphql(`
+    query {
+      allNodeArticle(sort: {created: DESC}, filter: {status: {eq: true}}) {
+        edges {
+          node {
+            id
+            path {
+              alias
+            }
+          }
+          next {
+            path {
+              alias
+            }
+          }
+          previous {
+            path {
+              alias
+            }
+          }
+        }
+      }
+    }
+  `)
+  const postEdges = articlePostIds.data.allNodeArticle.edges
+
+  postEdges.forEach(edge => {
+    createPage({
+      path: edge.node.path.alias,
+      component: articlePostTemplate,
+      context: {
+        id: edge.node.id,
+        nextPost: edge.next?.path.alias || postEdges[0].node.path.alias,
+        previousPost: edge.previous?.path.alias || postEdges[postEdges.length - 1].node.path.alias
+      }
+    })
+  })
+
+  const postsPerPage = 10
+  const numPages = Math.ceil(postEdges.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      component: path.resolve(`src/templates/Blog/blog-page.js`),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage
+      }
+    })
+  })
+
   const projectIds = await graphql(`
       query {
         allNodeOurWork(filter: {status: {eq: true}}) {
