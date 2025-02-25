@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-// import { route } from "../../../routes";
+import { route } from "../../../routes";
 import { links } from "../../../helpers/Links";
 import * as s from './header.module.css'
 
@@ -31,7 +31,7 @@ const Links = ({ scroll, isTransparent }) => {
             </li>
             )}
             {/* <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li> */}
-            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to="#">blog</Link></li>
+            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to={route('blog')}>blog</Link></li>
         </ul>
     )
 }

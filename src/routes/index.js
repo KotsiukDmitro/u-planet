@@ -19,6 +19,7 @@ const routes = {
     'terms-conditions': {
         path: '/terms-conditions'
     },
+    
 
     // Anchors
     'home.about-us': {
@@ -35,6 +36,9 @@ const routes = {
     },
     'home.clients': {
         path: '/#OurClients'
+    },
+    'blog': {
+        path: '/blog'
     },
 
     // Socials Links
