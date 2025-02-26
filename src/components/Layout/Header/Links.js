@@ -20,7 +20,7 @@ const Links = ({ scroll, isTransparent }) => {
                         <ul className={[`flex mt-1.5 text-[9px] lg:text-[13px] ${scroll || isTransparent ? 'bg-[#e4e4e4]' : 'bg-white bg-opacity-15'}`, s.arrow, (scroll || isTransparent) && s.scrolled].join(' ')}>
                             {link.children.map((child, index) => {
                                 const isLast = index === link.children.length - 1
-                                return <li key={'header' + child.name} className={`py-1 hover:text-white ${(scroll || isTransparent )&& 'hover:bg-blue-500'}`}>
+                                return <li key={'header' + child.name} className={`py-1 hover:text-white ${(scroll || isTransparent) && 'hover:bg-blue-500'}`}>
                                     <Link to={child.path} className={`px-2 border-r ${isLast ? 'border-r-transparent' : (scroll || isTransparent) ? 'border-r-[#555]' : 'border-r-white'}`} activeClassName={`text-white ${(scroll || isTransparent) && 'py-1 bg-blue-500'}`}>{child.name}</Link>
                                 </li>
                             })}
@@ -31,7 +31,9 @@ const Links = ({ scroll, isTransparent }) => {
             </li>
             )}
             {/* <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li> */}
-            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><Link to={route('blog')}>blog</Link></li>
+            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}>
+                <Link to={route('blog')} activeClassName={`${scroll || isTransparent ? 'text-[#24d5d1]' : 'text-white'}`}>blog</Link>
+            </li>
         </ul>
     )
 }

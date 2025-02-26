@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import PostItem from './PostItem/PostItem'
 import { route } from '../../../routes'
+import PostItem from './PostItem/PostItem'
+import BlogTop from '../BlogTop/BlogTop'
 import './post-list.css'
 
 const PostsList = ({ posts, currentPage, totalPages, hasPreviousPage, hasNextPage }) => {
@@ -18,7 +19,7 @@ const PostsList = ({ posts, currentPage, totalPages, hasPreviousPage, hasNextPag
                     <Link
                         key={page}
                         to={route('blog') + (page > 1 ? `/page/${page}` : '')}
-                        className=" flex justify-center items-center text-center text-base sm:text-2xl w-[30px] sm:w-[45px] h-[30px] sm:h-[45px] rounded-md sm:rounded-[10px] mx-0.5 pagination-link"
+                        className="pagination-link"
                         activeClassName="active"
                     >
                         {page}
@@ -33,14 +34,17 @@ const PostsList = ({ posts, currentPage, totalPages, hasPreviousPage, hasNextPag
     }
 
     return (
-        <>         
+        <>
+            {!!posts.length &&
+                <BlogTop post={posts[0]} currentPage={currentPage} isBlogPage />
+            }
             <div className="flex justify-start items-start flex-wrap post-list-wrapper">
                 {posts.slice(1).map(post => (
                     <PostItem key={post.id} post={post} />
                 ))}
             </div>
 
-            <div className="pagination pt-0 pb-10 sm:pt-10 sm:pb-16 lg:pt-16 lg:pb-28 sm:flex items-baseline justify-center">
+            <div className="pt-0 pb-10 sm:pt-10 sm:pb-16 lg:pt-16 lg:pb-28 sm:flex items-baseline justify-center">
                 <div className="flex mb-3">
                     <Link className={['pagination-link pagination-arrow', !hasPreviousPage ? 'disabled' : ''].join(' ')} to={prevPage}>
                         <StaticImage src="../../../assets/images/icons/pagination-svg.svg" alt="arrow" />

@@ -1,3 +1,4 @@
-import PostsList from "./PostsList/PostsList,js";
+import PostsList from "./PostsList/PostsList.js";
+import BlogTop from "./BlogTop/BlogTop";
 
-export {PostsList}
+export {PostsList, BlogTop}
