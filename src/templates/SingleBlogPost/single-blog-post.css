@@ -1,0 +1,126 @@
+
+.single-blog-body-wrapper {
+    max-width: 850px;
+}
+
+.single-blog-body {
+    max-width: 750px;
+}
+
+.single-blog-body div,
+.single-blog-body p,
+.single-blog-body li,
+.single-blog-body span {
+    color: #3B3E49;
+}
+
+.single-blog-body blockquote {
+    margin-bottom: 20px;
+}
+
+.single-blog-body blockquote,
+.single-blog-body blockquote div {
+    color: #000000;
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 711px;
+}
+
+.single-blog-body li {
+    margin: 15px 0;
+}
+
+.single-blog-body h1,
+.single-blog-body h2,
+.single-blog-body h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    font-size: revert;
+}
+
+.single-blog-body ul {
+    list-style: disc;
+    /* list-style-position: inside; */
+    margin-left: 20px;
+}
+
+.pagination-btns {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    color: #828282;
+    font-size: 16px;
+}
+
+.pagination-btns > a:hover {
+    color: #24d5d1;
+    cursor: pointer;
+}
+
+
+.single-blog-body a,
+.single-blog-body * > a {
+    color: #24d5d1;
+    cursor: pointer;
+}
+
+.single-blog-body a:hover,
+.single-blog-body * > a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+    .single-blog-body blockquote,
+    .single-blog-body blockquote div {
+        max-width: 810px;
+    }
+
+    .single-blog-body blockquote {
+        margin-bottom: 55px;
+    }
+
+    .single-blog-body img {
+        max-width: 815px;
+        width: 100%;
+        height: auto;
+        margin: 35px 0 0;
+    }
+
+    .single-blog-body-wrapper {
+        max-width: 900px;
+    }
+
+    .single-blog-body {
+        max-width: 850px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .single-blog-body blockquote {
+        margin-bottom: 10px;
+    }
+
+    .single-blog-body blockquote,
+    .single-blog-body blockquote div {
+        line-height: 1.4;
+    }
+
+    .single-blog-body img {
+        margin-top: 5px;
+    }
+
+    .single-blog-body h1,
+    .single-blog-body h2,
+    .single-blog-body h3 {
+        margin-bottom: 15px;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .single-blog-body blockquote,
+    .single-blog-body blockquote div {
+        font-size: 16px;
+    }
+
+}
