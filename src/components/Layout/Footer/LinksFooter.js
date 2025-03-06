@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { links } from "../../../helpers/Links";
+import { route } from "../../../routes";
 
 
 const LinksFooter = () => {
@@ -18,9 +19,9 @@ const LinksFooter = () => {
 
             <div className={'uppercase flex flex-wrap text-white gap-y-2 gap-5 text-[13px]'}>
                 <span className={'text-[#747474]'}>Our products:</span>
-                <Link to="#" className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Smart Assistant</Link>
-                <Link to="#" className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Indoor Navigation</Link>
-                <Link to="#" className={'hover:text-[#24d5d1] cursor-pointer'}>Online streaming</Link>
+                <Link to={route('smart-assistant')} className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Smart Assistant</Link>
+                <Link to={route('indoor-navigation')} className={'hover:text-[#24d5d1] cursor-pointer pr-5 border-r border-r-[#747474]'}>Indoor Navigation</Link>
+                <Link to={route('online-streaming')} className={'hover:text-[#24d5d1] cursor-pointer'}>Online streaming</Link>
             </div>
         </>
     )

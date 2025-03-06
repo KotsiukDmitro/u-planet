@@ -19,6 +19,9 @@ const routes = {
     'terms-conditions': {
         path: '/terms-conditions'
     },
+    'blog': {
+        path: '/blog'
+    },
     
 
     // Anchors
@@ -36,9 +39,6 @@ const routes = {
     },
     'home.clients': {
         path: '/#OurClients'
-    },
-    'blog': {
-        path: '/blog'
     },
 
     // Socials Links
