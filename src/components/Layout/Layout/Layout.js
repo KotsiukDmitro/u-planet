@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -11,22 +11,20 @@ import CookieConsentModal from "../../common/CookieConsentModal/CookieConsentMod
 const Layout = ({ children, isTransparent=false }) => {
 
     const [scroll, setScroll] = useState(false)
-    const [isDrawerIsOpen, setDrawerIsOpen] = useState(false)
+    const [isDrawerOpen, setDrawerOpen] = useState(false)
 
-    const handleDrawerToggle = () => {
-        setDrawerIsOpen(!isDrawerIsOpen)
-    }
+    const handleDrawerToggle = useCallback(() => {
+        setDrawerOpen((prev) => !prev)
+    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
-            if ((!scroll && window.scrollY < 200) || (scroll && window.scrollY >= 200)) {
-                return
-            }
-            setScroll(() => window.scrollY >= 200)
+            setScroll(window.scrollY >= 200)
         }
+
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
-    }, [scroll])
+    }, [])
 
 
     return (
@@ -39,17 +37,16 @@ const Layout = ({ children, isTransparent=false }) => {
                     <div className={'max-w-[120px]'}>
                         <HeaderLogoWhite />
                     </div>
-                    <button onClick={handleDrawerToggle} className={'transition-all duration-300'}
-                        style={{ transform: `translateX(${isDrawerIsOpen ? 50 : 0}px)` }}>
+                    <button onClick={handleDrawerToggle} className={`transition-all duration-300 ${isDrawerOpen && 'translate-x-12'}`}>
                         <img src={iconBars} alt="iconBars" />
                     </button>
                 </div>
             </div>
-            <Drawer toggleOpen={handleDrawerToggle} isOpen={isDrawerIsOpen} />
+            <Drawer toggleOpen={handleDrawerToggle} isOpen={isDrawerOpen} />
 
             {children}
             <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`} />
-            <Footer />
+            <Footer scroll={scroll} />
             <CookieConsentModal />
         </div >
     )

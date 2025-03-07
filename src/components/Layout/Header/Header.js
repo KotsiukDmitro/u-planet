@@ -21,7 +21,7 @@ const Header = ({ scroll, isTransparent }) => {
             <div className={'hidden xl:flex pt-1 ml-10'}>
                 <SocialLinks scroll={scroll} isTransparent={isTransparent} />
                 <AnchorLink to={route('home.contact-us')} className={'pt-0.5 ml-5 2xl:ml-7'}>
-                    <img src={scroll || isTransparent ? contact_dark : contact} alt="contact-us" className={'h-[18px] opacity-50 hover:opacity-100'} />
+                    <img src={scroll || isTransparent ? contact_dark : contact} alt="contact-us" className={`h-[18px] opacity-50 hover:opacity-100 ${(scroll || isTransparent) ? 'hover:[filter:invert(62%)_sepia(78%)_saturate(800%)_hue-rotate(140deg)_brightness(85%)_contrast(110%)]': ''}`} />
                 </AnchorLink>
             </div>
             <div className={'xl:hidden mx-4 pt-1.5'}>
