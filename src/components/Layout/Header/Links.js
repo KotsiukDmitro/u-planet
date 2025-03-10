@@ -1,11 +1,14 @@
 import React from "react";
+import { useScrollContext } from "../../../hooks/useScrollContext";
 import { Link } from "gatsby";
 import { route } from "../../../routes";
 import { links } from "../../../helpers/Links";
 import * as s from './header.module.css'
 
 
-const Links = ({ scroll, isTransparent }) => {
+const Links = () => {
+
+    const {scroll, isTransparent} = useScrollContext()
 
     return (
         <ul className={'flex uppercase gap-2.5 lg:gap-5 xl:gap-7 2xl:gap-8 ml-auto'}>

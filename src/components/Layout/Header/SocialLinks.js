@@ -1,4 +1,5 @@
 import React from "react";
+import { useScrollContext } from "../../../hooks/useScrollContext";
 import { route } from "../../../routes";
 import fb from '../../../assets/images/social/facebook.svg'
 import fb_dark from '../../../assets/images/social/facebook-dark.svg'
@@ -11,7 +12,9 @@ import linkedin_dark from '../../../assets/images/social/linkedin-dark.svg'
 
 
 
-const SocialLinks = ({ scroll, isTransparent, classNameGroup }) => {
+const SocialLinks = ({ classNameGroup }) => {
+
+    const {scroll, isTransparent} = useScrollContext()
 
     const socialLinks = [
         { name: 'facebook', src: fb, darkSrc: fb_dark },

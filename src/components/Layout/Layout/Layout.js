@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { ScrollContext } from "../../../helpers/ScrollContextProvider";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Drawer from "../Drawer/Drawer";
@@ -28,10 +29,11 @@ const Layout = ({ children, isTransparent=false }) => {
 
 
     return (
+        <ScrollContext.Provider value={{scroll, isTransparent}}>
         <div className={'min-h-screen flex flex-col'}>
             <div>
                 <div className={'hidden md:block'}>
-                    <Header scroll={scroll} isTransparent={isTransparent} />
+                    <Header />
                 </div>
                 <div className={`fixed w-full flex items-center justify-between transition-all duration-500 ease-in-out ${scroll || isTransparent ? 'pt-4 border-b border-b-[#eee] bg-slate-100' : 'pt-5'} pb-5 px-7 z-[100] md:hidden`}>
                     <div className={'max-w-[120px]'}>
@@ -46,9 +48,10 @@ const Layout = ({ children, isTransparent=false }) => {
 
             {children}
             <ScrollTopButton className={`${scroll ? 'visible' : 'invisible'}`} />
-            <Footer scroll={scroll} />
+            <Footer />
             <CookieConsentModal />
         </div >
+        </ScrollContext.Provider>
     )
 }
 

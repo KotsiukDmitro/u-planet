@@ -8,7 +8,7 @@ import member from '../../../assets/images/footer/badges/member.svg'
 import mobile from '../../../assets/images/footer/badges/mobile.svg'
 import { route } from "../../../routes";
 
-const Footer = ({ scroll }) => {
+const Footer = () => {
 
     const badges = [profile, deliver, member, mobile]
 
@@ -23,7 +23,7 @@ const Footer = ({ scroll }) => {
                     <div className={'flex md:flex-col items-end'}>
                         <div className={'text-[#5a5c69] text-[17px] md:text-[26px] md:mb-6 mr-5 md:mr-0'}>FOLLOW THE JOURNEY:</div>
                         <div className={'flex items-center md:mr-2'}>
-                            <SocialLinks scroll={scroll} />
+                            <SocialLinks />
                         </div>
                     </div>
 
