@@ -50,7 +50,7 @@ const OurClients = ({ load }) => {
     }
 
     return (
-        <div id='OurClients' className={'ourClients container mx-auto flex flex-col justify-center items-center mb-14 sm:mb-28 xl:mb-40 px-10'}>
+        <div id='OurClients' className={'ourClients container mx-auto flex flex-col justify-center items-center mb-14 sm:mb-28 xl:mb-40 px-5'}>
             <CustomTitleComponent name='Our Clients. Testimonials' />
             {load &&
                 <div className={'w-full'}>

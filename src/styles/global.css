@@ -18,6 +18,8 @@ html {
 }  
 .container {
     width: 1170px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1200px) {

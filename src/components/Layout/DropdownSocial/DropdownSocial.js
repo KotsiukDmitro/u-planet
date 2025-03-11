@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { useScrollContext } from "../../../hooks/useScrollContext";
 import { route } from "../../../routes";
 import iconPlus from '../../../assets/images/social/button-plus.svg'
 import iconMinus from '../../../assets/images/social/button-minus.svg'
@@ -8,8 +9,9 @@ import contact from '../../../assets/images/social/contact.svg'
 import contact_dark from '../../../assets/images/social/contact-dark.svg'
 import * as s from './DropdownSocial.module.css'
 
-const DropdownSocial = ({ scroll, isTransparent }) => {
+const DropdownSocial = () => {
 
+    const {scroll, isTransparent} = useScrollContext()
     const [isOpen, setIsOpen] = useState(false)
     const dropdownRef = useRef(null)
 

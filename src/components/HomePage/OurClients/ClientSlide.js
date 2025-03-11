@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const ClientSlide = ({ body, name, location }) => {
     return (
-        <div className={'mt-10 sm:px-6'}>
+        <div className={'mt-5 sm:mt-10 px-2 sm:px-6'}>
             <div className={'flex'}>
                 <div>
                     <StaticImage src={'../../../assets/images/review.png'} alt='review' className={'w-8 sm:w-10 lg:w-14'} />
