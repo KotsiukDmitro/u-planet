@@ -14,7 +14,7 @@ const Links = () => {
         <ul className={'flex uppercase gap-2.5 lg:gap-5 xl:gap-7 2xl:gap-8 ml-auto'}>
             {links.map(link => <li key={'header' + link.name} className={[`opacity-70 text-[10px] lg:text-xs  ${scroll || isTransparent ? 'text-[#555]' : 'text-[#ffffffb3]'}`].join(' ')}>
                 {!link.children
-                    ? <Link to={link.path} className={`${scroll || isTransparent ? 'hover:!text-[#24d5d1]' : 'hover:text-white'}`} activeClassName={`${scroll || isTransparent ? 'text-[#24d5d1]' : 'text-white'}`}>{link.name}</Link>
+                    ? <Link to={link.path} className={`${scroll || isTransparent ? 'hover:text-greenCustom' : 'hover:text-white'}`} activeClassName={`${scroll || isTransparent ? 'text-greenCustom' : 'text-white'}`}>{link.name}</Link>
                     : <span className={'relative'}>{link.name}</span>
                 }
 
@@ -33,9 +33,9 @@ const Links = () => {
 
             </li>
             )}
-            {/* <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li> */}
-            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-[#24d5d1]'}`].join(' ')}>
-                <Link to={route('blog')} activeClassName={`${scroll || isTransparent ? 'text-[#24d5d1]' : 'text-white'}`}>blog</Link>
+            {/* <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-greenCustom'}`].join(' ')}><a href={route('skype')}>+1(720)951-9470</a></li> */}
+            <li className={[`text-[#ffffffb3] opacity-70 text-[10px] lg:text-xs hover:text-white ${(scroll || isTransparent) && '!text-[#555] hover:!text-greenCustom'}`].join(' ')}>
+                <Link to={route('blog')} activeClassName={`${scroll || isTransparent ? 'text-greenCustom' : 'text-white'}`}>blog</Link>
             </li>
         </ul>
     )

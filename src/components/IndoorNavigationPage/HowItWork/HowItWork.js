@@ -71,7 +71,7 @@ const HowItWork = () => {
                         <p className={'text-[14px] md:text-[11px] xl:text-[16px] font-bold mb-10 xl:mb-14'}>is analogous to the problem solved by already familiar to us GPS navigators, namely:</p>
                         <div className={'flex flex-col gap-8'}>
                             {problems.map(item => {
-                                return <div key={item.body} className={'flex flex-col pl-14 xl:pl-24 relative after:absolute after:w-7 after:xl:w-10 after:h-0.5 md:after:h-[3px] after:bg-[#24d5d1] after:left-0 after:top-5 after:md:bottom-4 after:xl:bottom-8'}>
+                                return <div key={item.body} className={'flex flex-col pl-14 xl:pl-24 relative after:absolute after:w-7 after:xl:w-10 after:h-0.5 md:after:h-[3px] after:bg-greenCustom after:left-0 after:top-5 after:md:bottom-4 after:xl:bottom-8'}>
                                     <span className={'font-bold text-[18px] md:text-[16px] xl:text-[24px] uppercase'}>{item.title}</span>
                                     <span className={'text-[14px] md:text-[11px] xl:text-[16px]'}>{item.body}</span>
                                 </div>

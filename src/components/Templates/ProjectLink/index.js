@@ -10,7 +10,7 @@ const ProjectLink = ({viewLink}) => {
         <>
             {(viewLink && isLinkActive) &&
                 <button onClick={() => window.open(viewLink?.uri, '_blank')}
-                      className={'hover:cursor-pointer hover:underline text-[#24d5d1] text-base'}>
+                      className={'hover:cursor-pointer hover:underline text-greenCustom text-base'}>
                     {viewLink?.uri}
                 </button>
             }

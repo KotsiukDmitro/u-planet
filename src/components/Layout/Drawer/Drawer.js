@@ -30,17 +30,19 @@ const Drawer = ({ isOpen, toggleOpen }) => {
                     transform: `translateX(-${!isOpen ? 340 : 0}px)`
                 }}>
                 <button onClick={toggleOpen} className={`absolute right-4 top-4 z-10`} aria-label="button open">
-                    <svg width="25" height="25" viewBox="0 0 25 25">
-                        <g>
-                            <path d="M5.39502 18.5876L6.80923 20.0019L19.5372 7.27394L18.1229 5.85972L5.39502 18.5876Z" fill="#24d5d1" />
-                            <path d="M19.5371 18.5876L18.1229 20.0019L5.39497 7.27394L6.80919 5.85972L19.5371 18.5876Z" fill="#24d5d1" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_1413_2358">
-                                <rect width="24" height="24" fill="#24d5d1" transform="translate(0.466064 0.930664)" />
-                            </clipPath>
-                        </defs>
-                    </svg>
+                    <div className='text-greenCustom'>
+                        <svg width="25" height="25" viewBox="0 0 25 25">
+                            <g>
+                                <path d="M5.39502 18.5876L6.80923 20.0019L19.5372 7.27394L18.1229 5.85972L5.39502 18.5876Z" fill="currentColor" />
+                                <path d="M19.5371 18.5876L18.1229 20.0019L5.39497 7.27394L6.80919 5.85972L19.5371 18.5876Z" fill="currentColor" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1413_2358">
+                                    <rect width="24" height="24" fill="currentColor" transform="translate(0.466064 0.930664)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </button>
                 <div className={'w-32 ml-10 mb-10'}>
                     <HeaderLogoWhite />
@@ -74,7 +76,7 @@ const Drawer = ({ isOpen, toggleOpen }) => {
                         })}
                     </div>
                     <hr className={'w-5 h-0.5 bg-white mt-5 mb-5'}></hr>
-                    <a href={route('skype')} className={'text-[#24d5d1] font-semibold'}>+1(720)951-9470</a>
+                    <a href={route('skype')} className={'text-greenCustom font-semibold'}>+1(720)951-9470</a>
                 </div>
             </div>
         </div>

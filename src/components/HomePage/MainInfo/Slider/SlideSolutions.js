@@ -24,7 +24,7 @@ const SlideSolutions = () => {
                         management system)
                     </p>
                     <AnchorLink to={route('home.portfolio')}>
-                        <CustomButton classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
+                        <CustomButton classNameButton={'bg-white border-white !text-greenCustom hover:!text-white hover:!bg-greenCustom'}>
                             View Portfolio
                         </CustomButton>
                     </AnchorLink>

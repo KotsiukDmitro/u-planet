@@ -52,10 +52,10 @@ const WhatIndoorNav = () => {
             <div className={'md:flex'}>
                 <h2 className={'text-[23px] xl:text-[36px] text-[#48494e] px-5 relative md:w-2/6 mb-5'}>Sounds familiar?</h2>
                 <div className={'px-5 md:w-4/6'}>
-                    <h2 className={'text-[18px] sm:text-[24px] md:text-[19px] xl:text-[30px] text-[#24D5D1] font-bold '}>
+                    <h2 className={'text-[18px] sm:text-[24px] md:text-[19px] xl:text-[30px] text-greenCustom font-bold '}>
                         Indoor Navigation is the exact<br /> solution in such situations
                     </h2>
-                    <p className={'text-[13px] sm:text-[18px] md:text-[13px] xl:text-[20px] text-[#48494e] relative after:absolute after:w-8 md:after:w-16 after:h-0.5 md:after:h-[3px] after:bg-[#24d5d1]  after:left-0 after:right-0 after:-bottom-8 mb-16'}>For starting a navigation all the visitor needs is a smartphone</p>
+                    <p className={'text-[13px] sm:text-[18px] md:text-[13px] xl:text-[20px] text-[#48494e] relative after:absolute after:w-8 md:after:w-16 after:h-0.5 md:after:h-[3px] after:bg-greenCustom  after:left-0 after:right-0 after:-bottom-8 mb-16'}>For starting a navigation all the visitor needs is a smartphone</p>
                     <p className={'text-[13px] sm:text-[18px] md:text-[11px] xl:text-[16px] text-[#515151] mb-5'}>
                         Indoor navigation systems use techniques different from those used in outdoor navigations systems like GPS for the purpose of finding a route to an object in a premises. Today numerous types of indoor navigation systems are available.
                     </p>

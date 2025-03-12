@@ -16,7 +16,7 @@ const Skills = () => {
 
     return (
         <div className={'px-6 md:px-0 mb-20 md:mb-0 xl:max-w-[585px]'}>
-            <h1 className={'mb-8 sm:mb-12  text-[30px] sm:text-[60px] md:text-[32px] xl:text-[40px] font-light text-[#3e3e3e] leading-none relative after:absolute md:after:w-16 after:h-[3px] after:bg-[#24d5d1] after:-bottom-6 after:left-0'}>Want to give your brand a voice?<br className={'hidden md:block'} />Create Alexa Skills with Uplanet!</h1>
+            <h1 className={'mb-8 sm:mb-12  text-[30px] sm:text-[60px] md:text-[32px] xl:text-[40px] font-light text-[#3e3e3e] leading-none relative after:absolute md:after:w-16 after:h-[3px] after:bg-greenCustom after:-bottom-6 after:left-0'}>Want to give your brand a voice?<br className={'hidden md:block'} />Create Alexa Skills with Uplanet!</h1>
 
             <p className={'font-bold mb-8  text-[17px] sm:text-[32px] md:text-[12px] lg:text-[14px] xl:text-[16px]'}>
                 Voice activation comes to the fore in any life situation. Let your customers be in touch with you every minute they need! Make a conversation with your audience more natural. Give your brand a voice with Amazon Alexa.

@@ -9,7 +9,7 @@ const ButtonSubmit = ({ buttonName, isFormSubmitted }) => {
             {buttonName}
             {isFormSubmitted &&
                 <span className={'absolute inset-0 bg-gray-600 bg-opacity-40 flex items-center justify-center'} >
-                    <span className={'w-7 h-7 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 rounded-full border-t-4 border-[#24d5d1] border-r-transparent animate-spin'}></span>
+                    <span className={'w-7 h-7 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 rounded-full border-t-4 border-greenCustom border-r-transparent animate-spin'}></span>
                 </span>
             }
         </CustomButton>

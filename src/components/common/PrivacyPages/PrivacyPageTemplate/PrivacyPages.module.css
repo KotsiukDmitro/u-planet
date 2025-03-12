@@ -7,7 +7,7 @@
 }
 
 .privacyText a {
-    color: #24d5d1;
+    color: var(--color-green);
     cursor: pointer;
     
 }

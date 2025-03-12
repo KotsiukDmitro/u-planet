@@ -22,7 +22,7 @@ const SlideWeb = () => {
                         </div>
                         <p className={'text-white mb-5 text-[14px] sm:text-[22px]'}>and web applications of any complexity</p>
                         <AnchorLink to={route('home.portfolio')}>
-                            <CustomButton classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
+                            <CustomButton classNameButton={'bg-white border-white !text-greenCustom hover:!text-white hover:!bg-greenCustom'}>
                                 View Portfolio
                             </CustomButton>
                         </AnchorLink>

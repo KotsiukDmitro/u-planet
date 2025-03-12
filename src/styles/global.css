@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-green: #24D5D1;
+}
+
 .grecaptcha-badge {
     visibility: hidden;
 }
@@ -14,12 +18,11 @@ html {
   }
 
 .colorGreen {
-    color: #24D5D1;
+    color: var(--color-green);
 }  
 .container {
     width: 1170px;
     max-width: 100%;
-    overflow: hidden;
 }
 
 @media screen and (max-width: 1200px) {

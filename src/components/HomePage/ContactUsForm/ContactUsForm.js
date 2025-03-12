@@ -19,18 +19,18 @@ const ContactUsForm = () => {
                     <CustomTitleComponent name='Contact Us' />
                     <div className={'flex flex-col lg:flex-row items-start lg:items-center mt-14 sm:mt-28 mb-10'}>
                         <div className={'flex flex-col relative mb-10 lg:mb-0'}>
-                            <span className={'absolute right-0 sm:-right-2.5 -top-4 sm:-top-6 sm:text-[26px] font-bold text-[#24d5d1]'}>Get in touch with us:</span>
+                            <span className={'absolute right-0 sm:-right-2.5 -top-4 sm:-top-6 sm:text-[26px] font-bold text-greenCustom'}>Get in touch with us:</span>
                             <StaticImage src={'../../../assets/images/contact-us-form/logo-contact.png'} alt="logo" className={'w-72 sm:w-full'} objectFit="contain" />
                         </div>
                         <div className={'flex flex-col lg:flex-row gap-10 lg:ml-auto lg:mr-10'}>
                             <a href={route('skype')} className={'flex items-center justify-center gap-2'}>
                                 <StaticImage src={'../../../assets/images/contact-us-form/phone.png'} alt="phone" />
-                                <span className={'hover:text-[#24d5d1]'}>+1(720)951-9470</span>
+                                <span className={'hover:text-greenCustom'}>+1(720)951-9470</span>
                             </a>
 
                             <div className={'flex items-center justify-center gap-2'}>
                                 <StaticImage src={'../../../assets/images/contact-us-form/envelope.png'} alt="envelope" />
-                                <span className={'hover:text-[#24d5d1]'}>info@uplanet.biz</span>
+                                <span className={'hover:text-greenCustom'}>info@uplanet.biz</span>
                             </div>
                         </div>
                     </div>

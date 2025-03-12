@@ -16,7 +16,7 @@ const Service = ({ services }) => {
                                 <GatsbyImage image={service.image} alt="image-service" />
                             </div>
                             <div className={'flex-1'}>
-                                <p className={'text-[14px] text-[#24d5d1] mb-3 mt-3 md:mt-0'}>{service.title}</p>
+                                <p className={'text-[14px] text-greenCustom mb-3 mt-3 md:mt-0'}>{service.title}</p>
                                 <p className={'text-[20px] xl:text-[26px] mb-3'}>{service.subTitle}</p>
                                 <p className={'text-[#414042] text-[14px] xl:text-[16px] leading-8 mb-10 max-w-[540px]'}>{service.content}</p>
                                 <div className={'flex gap-2 mb-10'}>
@@ -31,7 +31,7 @@ const Service = ({ services }) => {
                                 <div>
                                     {<Link to={service.path}>
                                         <CustomButton
-                                            classNameButton={'bg-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1] uppercase'}>
+                                            classNameButton={'bg-white !text-greenCustom hover:!text-white hover:!bg-greenCustom uppercase'}>
                                             {service.btnName}
                                         </CustomButton>
                                     </Link>

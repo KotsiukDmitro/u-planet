@@ -38,13 +38,13 @@ const Platform = () => {
 
     return (
         <div className={'container mx-auto text-center mb-20 md:mb-40 px-5'}>
-            <p className={'text-[#24D5D1] text-[14px] sm:text-[16px] mb-3'}>Shopify is a well known platform</p>
+            <p className={'text-greenCustom text-[14px] sm:text-[16px] mb-3'}>Shopify is a well known platform</p>
             <CustomTitleComponent name={`For Development Online Stores <br/>of Any Level and Size.`} />
             <StaticImage src={'../../../assets/images/shopify/platform/main-logo.png'} alt="shopify" className={'mt-10 lg:mt-20 mb-10 lg:mb-20 max-w-[340px] sm:max-w-max sm:w-[450px] lg:w-[600px] xl:w-auto'} objectFit="contain" />
             <div className={'columns-1 md:columns-3 gap-4 md:mb-20'}>
                 {solutions.map(solution => {
                     return <div key={solution.body} className={'px-3'}>
-                        <div className={'relative after:absolute after:w-[50px] after:h-[3px] after:bg-[#24d5d1] after:m-auto after:left-0 after:right-0 after:-bottom-7 mb-14 lg:mb-20'}>
+                        <div className={'relative after:absolute after:w-[50px] after:h-[3px] after:bg-greenCustom after:m-auto after:left-0 after:right-0 after:-bottom-7 mb-14 lg:mb-20'}>
                             <GatsbyImage image={solution.img} alt="solution-icon" className={'w-[65px] sm:w-auto'} />
                         </div>
                         <p className={'text-[#3a3d48] leading-5 lg:leading-6 xl:leading-7 tracking-wide text-[15px] md:text-[10px] lg:text-[13px] xl:text-[16px] max-w-[300px] sm:max-w-max m-auto mb-10 md:mb-0'}>{solution.body}</p>

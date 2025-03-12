@@ -121,7 +121,7 @@ const CustomForm = () => {
                             className={'mr-2 cursor-pointer'}
                         />
                         <label htmlFor="privacyPolicy" className={'max-w-[300px] text-[13px] text-gray-500 cursor-pointer'}>
-                            Check here to send the form and to indicate that you have read and agree to our <Link to={route('privacy-policy')} className={'text-[#24d5d1]'}>Privacy Policy</Link>. We are committed to respecting your privacy.
+                            Check here to send the form and to indicate that you have read and agree to our <Link to={route('privacy-policy')} className={'text-greenCustom'}>Privacy Policy</Link>. We are committed to respecting your privacy.
                         </label>
 
                         {errors.privacyPolicy && (

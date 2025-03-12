@@ -22,7 +22,7 @@ const WhoUses = () => {
         { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[2] },
         { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[0], logo: photos[1] },
         { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[3] },
-    ]
+    ]    
 
     return (
         <div className={'container mx-auto px-5 mb-16 xl:mb-28'}>
@@ -48,7 +48,7 @@ const WhoUses = () => {
                 a positioning system in your premises or you are interested in investing in such technologies
                 and further development with us, we will be happy to see a message from you!
             </p>
-            <p className={'text-[#24D5D1] text-center text-[27px] xl:text-[43px]'}>Let's get it navigated!</p>
+            <p className={'text-greenCustom text-center text-[27px] xl:text-[43px]'}>Let's get it navigated!</p>
         </div>
     )
 }

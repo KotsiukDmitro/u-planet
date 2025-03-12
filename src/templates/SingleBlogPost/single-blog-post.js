@@ -26,7 +26,7 @@ const SingleBlogPost = ({ data, pageContext }) => {
         <BlogTop post={data.nodeArticle} />
       </div>
 
-      <Link className={'hidden sm:inline-flex text-[#24d5d1] items-center mx-auto w-full sm:pl-10 lg:pl-0 mt-1 lg:mt-9 mb-5 lg:mb-14 max-w-[875px] lg:max-w-[800px]'} to={route('blog')}>
+      <Link className={'hidden sm:inline-flex text-greenCustom items-center mx-auto w-full sm:pl-10 lg:pl-0 mt-1 lg:mt-9 mb-5 lg:mb-14 max-w-[875px] lg:max-w-[800px]'} to={route('blog')}>
         <img src={arrowBack} alt='arrow-back' className={'mr-2'} />
         <span>Back to Blog</span>
       </Link>
@@ -46,11 +46,11 @@ const SingleBlogPost = ({ data, pageContext }) => {
             })}
           </div>
           <div className={'hidden sm:flex items-center justify-between mt-16 text-[#828282] text-base pagination-btns'}>
-            <Link to={previousPost} className={'flex items-center hover:text-[#24d5d1]'}>
+            <Link to={previousPost} className={'flex items-center hover:text-greenCustom'}>
               <img src={arrow} alt="previous" width={25} className={'mr-4 opacity-70 pagination-btn-arrow'} />
               PREVIOUS
             </Link>
-            <Link to={nextPost} className={'flex items-center hover:text-[#24d5d1]'}>
+            <Link to={nextPost} className={'flex items-center hover:text-greenCustom'}>
               NEXT
               <img src={arrow} alt="previous" width={25} className={'ml-4 opacity-70 rotate-180 pagination-btn-arrow'} />
             </Link>

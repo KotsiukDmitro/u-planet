@@ -12,7 +12,7 @@ const ClientSlide = ({ body, name, location }) => {
                 <div className={'pl-1.5 pb-5 md:pl-5 pt-3 md:pt-5'}>
                     <div dangerouslySetInnerHTML={{ __html: body }} className={'mb-5 text-[10px] sm:text-[16px]'} />
                     <div className={'flex items-center gap-2'} >
-                        <span className={'text-[#24d5d1]'}>{name}</span>
+                        <span className={'text-greenCustom'}>{name}</span>
                         <span>{location}</span>
                     </div>
                 </div>

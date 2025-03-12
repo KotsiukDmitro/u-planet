@@ -5,7 +5,7 @@ import useWindowSize from '../../../../hooks/useWindowSize'
 
 const CategoryButtons = ({ selectedCategory, setSelectedCategory, setAllCases }) => {
 
-const categories = useStaticQuery(graphql`
+    const categories = useStaticQuery(graphql`
         query {
           allTaxonomyTermService {
             nodes {
@@ -39,14 +39,16 @@ const categories = useStaticQuery(graphql`
 const CategoryButton = ({ callback, selectedCategory, title, id }) => {
 
     const [isHovered, setIsHovered] = useState(false)
-    
+
     return (
-        <button onClick={callback} className={'w-full md:w-auto uppercase'} style={{
-            color: `${selectedCategory === id || isHovered  ? '#24d5d1' : '#fff'}`
-        }}
+        <button
+            onClick={callback}
+            className={`w-full md:w-auto uppercase ${selectedCategory === id || isHovered ? 'text-greenCustom' : 'text-white'}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-        >{title}</button>
+        >
+            {title}
+        </button>
     )
 }
 

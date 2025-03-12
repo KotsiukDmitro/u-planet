@@ -21,7 +21,7 @@ const SlideMobileApp = () => {
                     </div>
                     <p className={'text-white mb-5 sm:mb-10 text-[15px] sm:text-[17px]'}>native mobile apps iOS, Android</p>
                     <AnchorLink to={route('home.portfolio')}>
-                        <CustomButton classNameButton={'bg-white border-white !text-[#24d5d1] hover:!text-white hover:!bg-[#24d5d1]'}>
+                        <CustomButton classNameButton={'bg-white border-white !text-greenCustom hover:!text-white hover:!bg-greenCustom'}>
                             View Portfolio
                         </CustomButton>
                     </AnchorLink>

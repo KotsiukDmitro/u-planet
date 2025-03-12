@@ -20,6 +20,9 @@ module.exports = {
         'open-sans': 'OpenSans, sans-serif',
         'lato': 'Lato, sans-serif',
       },
+      colors: {
+        greenCustom: "#24D5D1",
+      },
     },
   },
   plugins: [],

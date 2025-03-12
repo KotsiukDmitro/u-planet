@@ -93,7 +93,7 @@ const SingleProject = ({ data, pageContext }) => {
     return (
         <Layout isTransparent={true}>
             <div className={['mx-auto px-0 md:px-5', style.singleProjectPage].join(' ')}>
-                <AnchorLink className={'text-[#24d5d1] items-center inline-flex mt-5 ml-5 md:ml-0'} to={route('home.portfolio')}>
+                <AnchorLink className={'text-greenCustom items-center inline-flex mt-5 ml-5 md:ml-0'} to={route('home.portfolio')}>
                     <img src={arrowBack} alt='arrow-back' className={'mr-2'} />
                     <span>Back to Portfolio</span>
                 </AnchorLink>

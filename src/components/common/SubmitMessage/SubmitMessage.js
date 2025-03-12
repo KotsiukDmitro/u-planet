@@ -20,7 +20,7 @@ const SubmitMessage = ({ success, visible, setVisible }) => {
         <>
             {visible &&
                 <div
-                    className={`text-lg mt-5  text-center flex items-center justify-center ${success ? 'text-[#24d5d1]' : 'text-[#C34C4C]'}`}>
+                    className={`text-lg mt-5  text-center flex items-center justify-center ${success ? 'text-greenCustom' : 'text-[#C34C4C]'}`}>
                     {success
                         ? <StaticImage src={'../../../assets/images/icons/submit-success.svg'} quality={100} alt={'submit-success'} />
                         : <StaticImage src={'../../../assets/images/icons/submit-error.svg'} quality={100} alt={'submit-error'} />

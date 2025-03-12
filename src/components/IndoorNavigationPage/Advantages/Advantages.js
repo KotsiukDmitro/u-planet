@@ -31,7 +31,7 @@ const Advantages = () => {
 
     return (
         <div className={'container mx-auto mb-28 px-5'}>
-            <h1 className={'relative mb-20 text-[23px] xl:text-[40px] font-light text-[#48494e] after:absolute after:w-14 after:h-[3px] after:bg-[#24d5d1] after:left-0  after:-bottom-8'}>Advantages</h1>
+            <h1 className={'relative mb-20 text-[23px] xl:text-[40px] font-light text-[#48494e] after:absolute after:w-14 after:h-[3px] after:bg-greenCustom after:left-0  after:-bottom-8'}>Advantages</h1>
             <div className={'grid md:grid-cols-2 gap-12 md:gap-20'}>
                 <TemplateItem advantages={owner} title={titleOwen} subTitle ={subTitleOwen}/>
                 <TemplateItem advantages={visitor} title={titleVisitor} subTitle ={subTitleVisitor}/>
@@ -44,7 +44,7 @@ const Advantages = () => {
 const TemplateItem = ({advantages, title, subTitle})=> {
     return (
         <div>
-            <h2 className={'text-[#24d5d1] font-bold uppercase mb-1 text-[22px] md:text-[17px] xl:text-[26px]'}>{title}</h2>
+            <h2 className={'text-greenCustom font-bold uppercase mb-1 text-[22px] md:text-[17px] xl:text-[26px]'}>{title}</h2>
             <p className={'text-[#515151] font-bold mb-5 md:mb-10 text-[16px] md:ext-[11px] xl:text-[16px]'}>{subTitle}</p>
             <ol className={'list-decimal pl-4 xl:pl-6 text-[#515151] text-[16px] md:text-[11px] xl:text-[16px] leading-7 tracking-wide'}>
                     {advantages.map(item => {

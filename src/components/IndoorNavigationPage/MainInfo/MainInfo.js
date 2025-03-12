@@ -39,7 +39,7 @@ const MainInfo = () => {
                     </div>
                     <h1 className={'text-[60px] sm:text-[80px] xl:text-[128px] text-white font-extrabold leading-none'}>Indoor</h1>
                     <h2 className={'text-[28px] sm:text-[38px] xl:text-[62px] text-white font-extrabold mb-3 md:mb-8 xl:mb-10'}>Navigation</h2>
-                    <div className={'md:hidden flex flex-col uppercase text-[13px] sm:text-[18px] text-[#24D5D1] font-light'}>
+                    <div className={'md:hidden flex flex-col uppercase text-[13px] sm:text-[18px] text-greenCustom font-light'}>
                     {purposes.map((purpose, index) => {
                         return <span key={`${index}-purpose-mobile`}>{purpose}</span>
                     })}
@@ -55,7 +55,7 @@ const MainInfo = () => {
             </div>
            
             <div className={'container absolute bottom-4 xl:bottom-7 left-0 right-0 mx-auto hidden md:block'}>
-                <div className={'flex justify-between mt-auto uppercase text-[10px] lg:text-[12px] xl:text-[16px] text-[#24D5D1] font-light'}>
+                <div className={'flex justify-between mt-auto uppercase text-[10px] lg:text-[12px] xl:text-[16px] text-greenCustom font-light'}>
                     {purposes.map((purpose, index) => {
                         return <span key={`${index}-purpose`}>{purpose}</span>
                     })}

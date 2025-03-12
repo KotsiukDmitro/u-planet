@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className={'md:flex justify-between mb-8 md:mb-0'}>
                     <div>
                         <StaticImage src={'../../../assets/images/main-logo.png'} alt="logo" />
-                        <div className="bg-[#24d5d1] w-14 h-1 mt-8 mb-8"></div>
+                        <div className="bg-greenCustom w-14 h-1 mt-8 mb-8"></div>
                     </div>
                     <div className={'flex md:flex-col items-end'}>
                         <div className={'text-[#5a5c69] text-[17px] md:text-[26px] md:mb-6 mr-5 md:mr-0'}>FOLLOW THE JOURNEY:</div>
@@ -32,8 +32,8 @@ const Footer = () => {
                     <div className={'mb-3 lg:mb-0'}>
                         <LinksFooter />
                     </div>
-                    <div className={'flex items-center ml-auto mt-auto mb-1 gap-3 md:gap-5 text-[#24d5d1] text-[12px] md:text-[16px]'}>
-                        <a href={route('skype')} className={'border-r border-r-[#24d5d1] pr-3 md:pr-5'}>+1(720)951-9470</a>
+                    <div className={'flex items-center ml-auto mt-auto mb-1 gap-3 md:gap-5 text-greenCustom text-[12px] md:text-[16px]'}>
+                        <a href={route('skype')} className={'border-r border-r-greenCustom pr-3 md:pr-5'}>+1(720)951-9470</a>
                         <span>info@uplanet.biz</span>
                     </div>
                 </div>

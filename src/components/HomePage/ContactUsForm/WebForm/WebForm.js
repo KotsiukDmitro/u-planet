@@ -131,10 +131,10 @@ const FormContact = ({ webformClass = 'webform', buttonName = 'Send Message' }) 
                 <div className={'recaptcha-message text-gray-500 text-center mt-8 sm:mt-14 font-semibold text-xs'}>
                     This site is protected by reCAPTCHA and the Google&nbsp;
                     <a href={'https://policies.google.com/privacy?hl=en'} target={'_blank'} rel={'noopener noreferrer'} 
-                    className={'text-[#24d5d1]'}>
+                    className={'text-greenCustom'}>
                         Privacy Policy</a> and&nbsp;
                     <a href={'https://policies.google.com/terms?hl=en'} target={'_blank'} rel={'noopener noreferrer'}
-                    className={'text-[#24d5d1]'}>
+                    className={'text-greenCustom'}>
                         Terms of Service
                     </a> apply.
                 </div>

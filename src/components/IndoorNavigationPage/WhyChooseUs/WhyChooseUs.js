@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
             </div>
             <div className={'container mx-auto z-10 px-5 md:px-10 pt-14 md:pt-0'}>
                 <div className={'z-10 text-white max-w-[700px]'}>
-                    <h1 className={'text-[26px] md:text-[23px] xl:text-[36px] mb-14 relative after:absolute after:w-14 after:h-0.5 after:md:h-[3px] after:bg-[#24d5d1] after:left-0 after:-bottom-6'}>Why choose us?</h1>
+                    <h1 className={'text-[26px] md:text-[23px] xl:text-[36px] mb-14 relative after:absolute after:w-14 after:h-0.5 after:md:h-[3px] after:bg-greenCustom after:left-0 after:-bottom-6'}>Why choose us?</h1>
                     <p className={'text-[15px] md:text-[11px] xl:text-[16px] mb-5 '}>
                         The Platform we have created provides <b>the highest positioning accuracy - 0.5 - 1 meter.</b> That is what makes it possible for guests to determine their precise and accurate location.
                     </p>

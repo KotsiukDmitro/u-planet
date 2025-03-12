@@ -17,14 +17,14 @@
 }
 
 .pagination-link:hover {
-    color: #24D5D1;
+    color: var(--color-green);
     background: rgba(237, 237, 237, 0.52);
     border-radius: 10px;
 }
 
 .pagination-link.active {
     font-weight: 700;
-    color: #24D5D1;
+    color: var(--color-green);
     background: #EDEDED;
 }
 
