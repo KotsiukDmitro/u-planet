@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Slider from 'react-slick'
 import { graphql, useStaticQuery } from 'gatsby'
 import CustomTitleComponent from "../../common/CustomTitleComponent/CustomTitleComponent";
@@ -8,7 +8,7 @@ import './OurClients.css'
 
 const OurClients = ({ load }) => {
 
-    const reviews = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allNodeReview(sort: {field_node_weight: ASC}) {
         edges {
@@ -23,47 +23,39 @@ const OurClients = ({ load }) => {
         }
       }
     }
-    `).allNodeReview.edges
+    `)
+  const reviews = useMemo(() => data.allNodeReview.edges, [data])
 
-    const settings = {
-        dots: true,
-        autoplay: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        lazyLoad: true,
-        customPaging: (i) => (
-            <div className="custom-dot"></div>
-        ),
-        dotsClass: "slick-dots custom-dots",
-        responsive: [
-          {
-              breakpoint: 768,
-              settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-              }
-          }
-      ]
+  const settings = useMemo(() => ({
+    dots: true,
+    autoplay: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    lazyLoad: true,
+    customPaging: () => <div className="custom-dot" />,
+    dotsClass: 'slick-dots custom-dots',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1, slidesToScroll: 1 }
+      }
+    ]
+  }), [])
 
-    }
-
-    return (
-        <div id='OurClients' className={'ourClients container mx-auto flex flex-col justify-center items-center mb-14 sm:mb-28 xl:mb-40 px-5'}>
-            <CustomTitleComponent name='Our Clients. Testimonials' />
-            {load &&
-                <div className={'w-full'}>
-                    <Slider {...settings}>
-                        {reviews.map((r) =>
-                            <ClientSlide key={r.node.id} body={r.node.body.value} name={r.node.title}
-                                location={r.node.field_company} />
-                        )}
-                    </Slider>
-                </div>
-            }
-        </div>
-    )
+  return (
+    <div id='OurClients' className={'ourClients container mx-auto flex flex-col justify-center items-center mb-14 sm:mb-28 xl:mb-40 px-5'}>
+      <CustomTitleComponent name='Our Clients. Testimonials' />
+      {load &&
+        <Slider {...settings}>
+          {reviews.map(({ node }) => (
+            <ClientSlide key={node.id} body={node.body.value} name={node.title} location={node.field_company} />
+          ))}
+        </Slider>
+      }
+    </div>
+  )
 }
 
 export default OurClients

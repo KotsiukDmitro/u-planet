@@ -22,7 +22,7 @@ const Footer = () => {
                     </div>
                     <div className={'flex md:flex-col items-end'}>
                         <div className={'text-[#5a5c69] text-[17px] md:text-[26px] md:mb-6 mr-5 md:mr-0'}>FOLLOW THE JOURNEY:</div>
-                        <div className={'flex items-center md:mr-2'}>
+                        <div className={'flex items-center md:mr-2 mb-1'}>
                             <SocialLinks />
                         </div>
                     </div>

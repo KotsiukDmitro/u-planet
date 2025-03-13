@@ -20,11 +20,11 @@ const WhatIndoorNav = () => {
 
     const navigation = [
         { img: images[0], body: 'trying to find a car in a parking' },
-        { img: images[2], body: 'attending a museum looking for the exhibit' },
-        { img: images[5], body: 'wandering in an airport finding a registration desk or ATM' },
-        { img: images[4], body: 'at a conference looking for the most interesting stands' },
-        { img: images[3], body: 'roaming in a shopping mall trying to find necessary shop or department' },
-        { img: images[1], body: 'looking for a particular office in a large business center' },
+        { img: images[1], body: 'attending a museum looking for the exhibit' },
+        { img: images[2], body: 'wandering in an airport finding a registration desk or ATM' },
+        { img: images[3], body: 'at a conference looking for the most interesting stands' },
+        { img: images[4], body: 'roaming in a shopping mall trying to find necessary shop or department' },
+        { img: images[5], body: 'looking for a particular office in a large business center' },
     ]
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useScrollContext } from "../../../hooks/useScrollContext";
 import { route } from "../../../routes";
@@ -11,45 +11,41 @@ import * as s from './DropdownSocial.module.css'
 
 const DropdownSocial = () => {
 
-    const {scroll, isTransparent} = useScrollContext()
+    const { scroll, isTransparent } = useScrollContext()
     const [isOpen, setIsOpen] = useState(false)
-    const dropdownRef = useRef(null)
 
-    const toggleDropdown = () => {
-        setIsOpen((prev) => !prev)
-    }
+    const isScrolled = scroll || isTransparent
 
-    const handleClickClose = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(false)
-        }
-    }
+    const toggleDropdown = () => setIsOpen((prev) => !prev)
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleClickClose)
-        return () => {
-            document.removeEventListener('mousedown', handleClickClose)
+        const handleClickClose = (event) => {
+            if (!event.target.closest('.dropdown-social')) {
+                setIsOpen(false)
+            }
         }
+        document.addEventListener('mousedown', handleClickClose)
+        return () => document.removeEventListener('mousedown', handleClickClose)
     }, [])
 
     return (
-
-        <div className={'relative inline-block'} ref={dropdownRef}>
+        <div className={'relative inline-block dropdown-social'}>
             <button onClick={toggleDropdown} className={'focus:outline-none'}>
-                <img src={isOpen ? iconMinus : iconPlus} alt={isOpen ? 'close' : 'open'} className={'opacity-85 hover:opacity-100'} />
+                <img src={isOpen ? iconMinus : iconPlus}
+                    alt={isOpen ? 'close' : 'open'}
+                    className={'opacity-85 hover:opacity-100'} />
             </button>
-            {isOpen && <>
-                <div className={['absolute -left-2 w-9 rounded mt-2.5 py-2 px-2', scroll || isTransparent ? s.modalScrolled : s.modal].join(' ')}>
-                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-5'} scroll={scroll} isTransparent={isTransparent} />
+            {isOpen &&
+                <div className={`absolute -left-2 w-9 rounded mt-2.5 py-2 px-2 ${isScrolled ? s.modalScrolled : s.modal}`}>
+                    <SocialLinks classNameGroup={'flex flex-col item-center text-center ml-0 mb-5'} />
                     <AnchorLink to={route('home.contact-us')}>
-                        <img src={scroll || isTransparent ? contact_dark : contact} alt="contact-us" className={`h-[18px] opacity-50 hover:opacity-100 ${(scroll || isTransparent) ? 'hover:[filter:invert(62%)_sepia(78%)_saturate(800%)_hue-rotate(140deg)_brightness(85%)_contrast(110%)]': ''}`} />
+                        <img src={isScrolled ? contact_dark : contact}
+                            alt="contact-us"
+                            className={`h-[18px] opacity-50 hover:opacity-100 ${isScrolled ? 'hover:[filter:invert(62%)_sepia(78%)_saturate(800%)_hue-rotate(140deg)_brightness(85%)_contrast(110%)]' : ''}`} />
                     </AnchorLink>
                 </div>
-            </>
-
             }
         </div>
-
     )
 }
 

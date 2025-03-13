@@ -19,9 +19,9 @@ const WhoUses = () => {
     const photos = WhoUsesPlatform.allFile.nodes.map(image => getImage(image))
 
     const places = [
-        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[2] },
-        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[0], logo: photos[1] },
-        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[3] },
+        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[0] },
+        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[1], logo: photos[3] },
+        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[2] },
     ]    
 
     return (

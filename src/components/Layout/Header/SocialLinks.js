@@ -14,7 +14,8 @@ import linkedin_dark from '../../../assets/images/social/linkedin-dark.svg'
 
 const SocialLinks = ({ classNameGroup }) => {
 
-    const {scroll, isTransparent} = useScrollContext()
+    const { scroll, isTransparent } = useScrollContext()
+    const isScrolled = scroll || isTransparent
 
     const socialLinks = [
         { name: 'facebook', src: fb, darkSrc: fb_dark },
@@ -28,10 +29,10 @@ const SocialLinks = ({ classNameGroup }) => {
             {socialLinks.map(({ name, src, darkSrc }, index) => (
                 <a key={name} href={route(name)}>
                     <img
-                        src={scroll || isTransparent ? darkSrc : src}
+                        src={isScrolled ? darkSrc : src}
                         alt={name}
                         className={`h-5 opacity-50 hover:opacity-100 ${index === 0 ? 'pl-0.5' : ''}
-                            ${(scroll || isTransparent)
+                            ${isScrolled
                                 ? 'hover:[filter:invert(62%)_sepia(78%)_saturate(800%)_hue-rotate(140deg)_brightness(85%)_contrast(110%)]'
                                 : ''
                             }`}
