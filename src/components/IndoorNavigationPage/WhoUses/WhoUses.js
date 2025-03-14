@@ -19,9 +19,9 @@ const WhoUses = () => {
     const photos = WhoUsesPlatform.allFile.nodes.map(image => getImage(image))
 
     const places = [
-        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[0] },
-        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[1], logo: photos[3] },
-        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[2] },
+        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[3] },
+        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[2], logo: photos[1] },
+        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[0] },
     ]    
 
     return (
@@ -37,11 +37,8 @@ const WhoUses = () => {
                             {place.logo && <GatsbyImage image={place.logo} alt="Kozak Palace" objectFit="contain" className={'max-w-16 sm:max-w-max'} />}
                             <div className={'text-white font-bold ml-2 text-[15px] lg:text-[18px]'}>{place.name}</div>
                         </div>
-
-
                     </div>
                 })}
-
             </div>
             <p className={'text-[#1c1c1c] mb-6 xl:mb-10 text-center text-[13px] xl:text-[20px] leading-7 xl:leading-10 md:px-10 xl:px-20'}>
                 Whenever indoor navigation technologies attract your attention and you would like to implement

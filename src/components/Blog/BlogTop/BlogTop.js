@@ -28,13 +28,13 @@ const BlogTop = ({ post, currentPage = 1, isBlogPage = false }) => {
     const time = useMemo(() => new Date(created).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), [created])
     const timeChanged = useMemo(() => new Date(changed).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), [changed])
     const cutBody = useMemo(() => body.replace(/(<([^>]+)>)/ig, '').substring(0, 156) + '...', [body])
-    const TitleTag = isBlogPage ? 'div' : 'h1'
+    const TitleTag = useMemo(() => isBlogPage ? 'div' : 'h1', [isBlogPage])
 
 
     return (
         <>
             {isBlogPage &&
-                <h1 className={'text-[#3B3E49] text-3xl sm:text-[56px] pt-28 lg:pt-40  pb-10 sm:pb-0 px-5 sm:px-0'}>
+                <h1 className={'text-[#3B3E49] text-3xl sm:text-[56px] pt-28 lg:pt-40 pb-10 sm:pb-0 px-5 sm:px-0'}>
                     Blog{currentPage > 1 && ` | Page ${currentPage}`}
                 </h1>
             }

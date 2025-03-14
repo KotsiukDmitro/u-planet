@@ -40,7 +40,7 @@ const Advantages = () => {
           const isLast = index === advantages.length - 1
           return <div key={`${index}-advantage`} className={`flex gap-4 ${isLast && 'md:col-start-2'} sm:mb-10 md:mb-0`}>
             <div className={'min-w-10 min-h-10 sm:min-w-16 sm:min-h-16 md:min-w-[30px] md:min-h-[30px] lg:min-w-10 lg:min-h-10'}>
-              <GatsbyImage image={advantage.image} alt="advantage" className={'max-w-10 max-h-10 sm:max-w-16 sm:max-h-16 md:max-w-[30px] md:max-h-[30px] lg:max-w-10 lg:max-h-10'} objectFit="contain" />
+              <GatsbyImage image={advantage.image} alt="advantage" className={'max-w-10 max-h-10 sm:max-w-16 sm:max-h-16 md:max-w-[30px] md:max-h-[30px] lg:max-w-10 lg:max-h-10'} objectFit="contain" loading="lazy" />
             </div>
 
             <div className={'text-[#48494e] font-light md:pt-0.5 text-[19px] sm:text-[32px] md:text-[10px] lg:text-[13px] xl:text-[15px]'}>{advantage.body}</div>

@@ -8,8 +8,8 @@ const BlogPage = ({ data }) => {
   const { currentPage, pageCount: numPages, hasNextPage, hasPreviousPage } = data.allNodeArticle.pageInfo
 
   return (
-    <Layout isTransparent={true}>
-      <div className={'mx-auto px-0 sm:px-3'} style={{ maxWidth: '1395px' }}>
+    <Layout isTransparent >
+      <div className={'mx-auto px-0 sm:px-3 max-w-[1395px]'} >
         <PostsList posts={data.allNodeArticle.nodes} currentPage={currentPage} totalPages={numPages}
           hasNextPage={hasNextPage} hasPreviousPage={hasPreviousPage} />
       </div>

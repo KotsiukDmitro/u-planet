@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { graphql, Link } from 'gatsby'
 import { Layout } from '../../components/Layout'
@@ -16,12 +16,15 @@ const SingleBlogPost = ({ data, pageContext }) => {
     body_images
   } = data.nodeArticle
 
-  const splittedBody = bodyValue.split(/<img [^>]*src="[^"]*"[^>]*>/gm)
+  const splittedBody = useMemo(
+    () => bodyValue.split(/<img [^>]*src="[^"]*"[^>]*>/gm),
+    [bodyValue]
+  )
 
   const { nextPost, previousPost } = pageContext
 
   return (
-    <Layout isTransparent={true}>
+    <Layout isTransparent >
       <div className={'mx-auto sm:pt-7 px-0 sm:px-4 lg:px-3 mt-20 mb-10 lg:mb-0'} style={{ maxWidth: '1450px' }}>
         <BlogTop post={data.nodeArticle} />
       </div>
@@ -45,16 +48,18 @@ const SingleBlogPost = ({ data, pageContext }) => {
               )
             })}
           </div>
-          <div className={'hidden sm:flex items-center justify-between mt-16 text-[#828282] text-base pagination-btns'}>
-            <Link to={previousPost} className={'flex items-center hover:text-greenCustom'}>
-              <img src={arrow} alt="previous" width={25} className={'mr-4 opacity-70 pagination-btn-arrow'} />
-              PREVIOUS
-            </Link>
-            <Link to={nextPost} className={'flex items-center hover:text-greenCustom'}>
-              NEXT
-              <img src={arrow} alt="previous" width={25} className={'ml-4 opacity-70 rotate-180 pagination-btn-arrow'} />
-            </Link>
-          </div>
+          {(previousPost || nextPost) &&
+            <div className={'hidden sm:flex items-center justify-between mt-16 text-gray-500 text-base pagination-btns'}>
+              <Link to={previousPost} className={'flex items-center hover:text-greenCustom'}>
+                <img src={arrow} alt="previous" width={25} className={'mr-4 opacity-70 pagination-btn-arrow'} />
+                PREVIOUS
+              </Link>
+              <Link to={nextPost} className={'flex items-center hover:text-greenCustom'}>
+                NEXT
+                <img src={arrow} alt="previous" width={25} className={'ml-4 opacity-70 rotate-180 pagination-btn-arrow'} />
+              </Link>
+            </div>
+          }
         </div>
       </div>
     </Layout>
@@ -76,17 +81,9 @@ query SingleBlogPost($id: String) {
         og_title
         title
       }
-      path {
-        alias
-      }
-      body {
-        value
-      }
-      body_images {
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
+      path {alias}
+      body {value}
+      body_images { childImageSharp {gatsbyImageData }}
       title
       created
       changed

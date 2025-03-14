@@ -4,9 +4,9 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import { route } from "../../../routes";
 import CustomButton from "../../common/CustomButton/CustomButton";
 
-const Info = ()=> {
+const Info = () => {
 
-    const MainInfoIcons = useStaticQuery(graphql`
+  const MainInfoIcons = useStaticQuery(graphql`
         query {
           allFile(filter: {relativeDirectory: {eq: "shopify/mainInfo/icons"}}) {
             nodes {
@@ -18,26 +18,26 @@ const Info = ()=> {
         }
         `)
 
-    const icons = MainInfoIcons.allFile.nodes.map(image => getImage(image))   
+  const icons = MainInfoIcons.allFile.nodes.map(image => getImage(image))
 
-    return (
-        <div className={'text-center md:text-left'}>
-                    <StaticImage src={'../../../assets/images/shopify/mainInfo/shopify-logo.png'} alt="logo-shopify" className={'w-[100px] sm:w-[130px] lg:w-[170px] xl:w-[215px] 2xl:w-auto mb-1 sm:mb-5 xl:mb-[60px]'} />
-                    <h2 className={'text-[#221f1f] font-bold mb-2 md:mb-10 text-[28px] md:text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px]'}>
-                        eCommerce - Your Big<br /> Business Opportunity
-                    </h2>
-                    <div className={'flex gap-3 lg:gap-10 items-center justify-center md:justify-start mb-10'}>
-                        {icons.map((icon, index) => {
-                            return <GatsbyImage image={icons[index]} key={`${index}-icon-eCommerce`} alt="icon-eCommerce" className={'max-h-6 lg:max-h-8 xl:max-h-max'} objectFit="contain" />
-                        })}
-                    </div>
-                    <Link to={route('home.contact-us')}>
-                        <CustomButton classNameButton={'uppercase'}>
-                            build now
-                        </CustomButton>
-                    </Link>
-                </div>
-    )
+  return (
+    <div className={'text-center md:text-left'}>
+      <StaticImage src={'../../../assets/images/shopify/mainInfo/shopify-logo.png'} alt="logo-shopify" className={'w-[100px] sm:w-[130px] lg:w-[170px] xl:w-[215px] 2xl:w-auto mb-1 sm:mb-5 xl:mb-[60px]'} />
+      <h2 className={'text-[#221f1f] font-bold mb-2 md:mb-10 text-[28px] md:text-[22px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px]'}>
+        eCommerce - Your Big<br /> Business Opportunity
+      </h2>
+      <div className={'flex gap-3 lg:gap-10 items-center justify-center md:justify-start mb-10'}>
+        {icons.map((_, index) => {
+          return <GatsbyImage image={icons[index]} key={`${index}-icon-eCommerce`} alt="icon-eCommerce" className={'max-h-6 lg:max-h-8 xl:max-h-max'} objectFit="contain" />
+        })}
+      </div>
+      <Link to={route('home.contact-us')}>
+        <CustomButton classNameButton={'uppercase'}>
+          build now
+        </CustomButton>
+      </Link>
+    </div>
+  )
 }
 
 export default Info

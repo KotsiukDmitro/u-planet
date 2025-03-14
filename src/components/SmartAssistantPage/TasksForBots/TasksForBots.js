@@ -13,7 +13,7 @@ const TasksForBots = () => {
                     />
                 </div>
 
-                <div className={'xl:max-w-[1200px] md:w-full grid items-center  md:grid-cols-2 justify-between md:gap-5 z-10'}>
+                <div className={'xl:max-w-[1200px] md:w-full grid items-center md:grid-cols-2 justify-between md:gap-5 z-10'}>
                     <div className={'hidden md:block'}>
                         <Tasks />
                     </div>

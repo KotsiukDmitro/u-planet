@@ -20,8 +20,8 @@ const PostItem = ({ post }) => {
 
     return (
         <div className={['flex mb-10 md:mb-8', s.articleWrapper].join(' ')}>
-            <Link to={path} className={'h-full w-full cursor-pointer'}>
-                <GatsbyImage className={'w-full rounded-xl'} loading={'lazy'} alt={title} image={image} objectFit='contain' />
+            <Link to={path} className={'cursor-pointer'}>
+                <GatsbyImage className={'w-full rounded-xl'} loading={'lazy'} alt={title} image={image} />
                 <p className={['mt-5 2xl:mb-5 2xl:text-[22px]', s.title].join(' ')}>{apaStyleBlogTitle(title)}</p>
                 <p className={['leading-normal font-semibold text-[#929292] 2xl:text-base', s.date].join(' ')}>{time}</p>
             </Link>

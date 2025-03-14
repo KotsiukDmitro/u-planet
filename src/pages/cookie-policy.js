@@ -4,7 +4,7 @@ import {CookiePolicy} from "../components/common/PrivacyPages"
 
 const CookiePolicyPage = () => {
     return (
-        <Layout isTransparent={true} >
+        <Layout isTransparent >
             <CookiePolicy />
         </Layout>
     )

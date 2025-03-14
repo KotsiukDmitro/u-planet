@@ -4,7 +4,7 @@ import {TermsConditions} from "../components/common/PrivacyPages"
 
 const TermsConditionsPage = () => {
     return (
-        <Layout isTransparent={true} >
+        <Layout isTransparent >
             <TermsConditions />
         </Layout>
     )

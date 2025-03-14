@@ -82,7 +82,9 @@ const SingleProject = ({ data, pageContext }) => {
 
     useEffect(() => {
         const startAutoplay = setTimeout(() => {
-            singleProjectSlider.current.slickPlay()
+            if (singleProjectSlider.current) {
+                singleProjectSlider.current.slickPlay()
+            }
         }, 3000)
 
         return () => {
@@ -91,7 +93,7 @@ const SingleProject = ({ data, pageContext }) => {
     }, [])
 
     return (
-        <Layout isTransparent={true}>
+        <Layout isTransparent >
             <div className={['mx-auto px-0 md:px-5', style.singleProjectPage].join(' ')}>
                 <AnchorLink className={'text-greenCustom items-center inline-flex mt-5 ml-5 md:ml-0'} to={route('home.portfolio')}>
                     <img src={arrowBack} alt='arrow-back' className={'mr-2'} />
@@ -102,7 +104,7 @@ const SingleProject = ({ data, pageContext }) => {
                     {prevProject && (
                         <Link to={prevProject} className={'flex'}>
                             <img src={arrowPrev} alt='arrow-prev' className={'mr-2'} />
-                            <span className=''>Previous Project</span>
+                            <span>Previous Project</span>
                         </Link>
                     )}
                     {nextProject && (
@@ -120,23 +122,25 @@ const SingleProject = ({ data, pageContext }) => {
                             <ProjectLink viewLink={viewLink} />
                         </div>}
                     </div>
-                    
+
                     <div className={'w-full mb-0 md:mb-14'}>
                         <div className={'-mt-2 md:mt-0'}>
                             <Slider {...settings} ref={singleProjectSlider}>
                                 {(coverVideoUrl && projectVideoUrl) &&
-                                    <ProjectVideo videoUrl={projectVideoUrl} sliderRef={singleProjectSlider}
+                                    <ProjectVideo
+                                        videoUrl={projectVideoUrl}
+                                        sliderRef={singleProjectSlider}
                                         videoCover={coverVideoUrl} />
                                 }
                                 {slider_images.map(node => {
                                     const slide = node.localFile
                                     const imgData = getImage(slide)
-                                    return (
+                                    return imgData ?(
                                         <GatsbyImage className={'single-project-image'}
                                             loading={'lazy'} objectFit={'contain'}
                                             key={slide.id} alt={apStyleTitleCase(title)}
                                             image={imgData} />
-                                    )
+                                    ) : null
                                 })}
                             </Slider>
                         </div>

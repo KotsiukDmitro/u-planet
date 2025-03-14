@@ -10,7 +10,7 @@ const Dream = () => {
 
             <div className={'absolute w-full h-full'}>
                 <StaticImage src={'../../../assets/images/shopify/dream/main-bg.png'}
-                    layout="fullWidth" alt="Background" className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit="cover"
+                    layout='fullWidth' alt='Background' className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit='cover'
                 />
             </div>
 

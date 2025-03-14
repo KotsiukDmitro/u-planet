@@ -40,10 +40,10 @@ const MainInfo = () => {
                     <h1 className={'text-[60px] sm:text-[80px] xl:text-[128px] text-white font-extrabold leading-none'}>Indoor</h1>
                     <h2 className={'text-[28px] sm:text-[38px] xl:text-[62px] text-white font-extrabold mb-3 md:mb-8 xl:mb-10'}>Navigation</h2>
                     <div className={'md:hidden flex flex-col uppercase text-[13px] sm:text-[18px] text-greenCustom font-light'}>
-                    {purposes.map((purpose, index) => {
-                        return <span key={`${index}-purpose-mobile`}>{purpose}</span>
-                    })}
-                </div>
+                        {purposes.map((purpose, index) => {
+                            return <span key={`${index}-purpose-mobile`}>{purpose}</span>
+                        })}
+                    </div>
                     <div className={'mt-[200px] sm:mt-[350px] md:mt-0 flex justify-center md:block'}>
                         <CustomButton classNameButton={'uppercase btn'}>get in touch</CustomButton>
                     </div>
@@ -53,7 +53,7 @@ const MainInfo = () => {
                         alt="Background" className={'max-w-[360px] sm:max-w-[500px] xl:max-w-full h-full'} loading={'lazy'} quality={100} objectFit="contain" />
                 </div>
             </div>
-           
+
             <div className={'container absolute bottom-4 xl:bottom-7 left-0 right-0 mx-auto hidden md:block'}>
                 <div className={'flex justify-between mt-auto uppercase text-[10px] lg:text-[12px] xl:text-[16px] text-greenCustom font-light'}>
                     {purposes.map((purpose, index) => {

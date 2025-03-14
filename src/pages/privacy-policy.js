@@ -4,7 +4,7 @@ import {PrivacyPolicy} from "../components/common/PrivacyPages"
 
 const PrivacyPolicyPage = () => {
     return (
-        <Layout isTransparent={true} >
+        <Layout isTransparent >
             <PrivacyPolicy />
         </Layout>
     )
