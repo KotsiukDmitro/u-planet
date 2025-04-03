@@ -4,9 +4,7 @@ const fs = require('fs')
 const { createRemoteFileNode } = require("gatsby-source-filesystem")
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-
-  createTypes(`
+  actions.createTypes(`
     type node__article implements Node {
       body_images: [File] @link(from: "fields.localFile")
     }
@@ -14,214 +12,133 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.onCreateNode = async ({ node, actions, createNodeId, getCache }) => {
+  if (node.internal.type !== "node__article") return
+
   const { createNode, createNodeField } = actions
+  const images = (node.body?.value.match(/<img [^>]*src="([^"]*)"[^>]*>/gm) || [])
+    .map(img => img.replace(/.*src="([^"]*)".*/, `$1`))
+    .map(url => new URL(url, process.env.GATSBY_API_BASE_URL).href)
 
-  if (node.internal.type === 'node__article') {
-    const { id: nodeId, body: { value: bodyValue } } = node
-
-    const findImgRegEx = /<img [^>]*src="[^"]*"[^>]*>/gm
-    const replaceSrcRegEx = /.*src="([^"]*)".*/
-
-    let images = bodyValue
-      .match(findImgRegEx) || []
-
-    images = images.map(x => x.replace(replaceSrcRegEx, new URL('$1', process.env.GATSBY_API_BASE_URL)))
-
-    const fileIdList = []
-
-    for (let image of images) {
-      const fileNode = await createRemoteFileNode({
-        url: image,
-        parentNodeId: nodeId,
-        createNode,
-        createNodeId,
-        getCache
-      })
-
-      if (fileNode) {
-        fileIdList.push(fileNode.id)
+  const fileIdList = await Promise.all(
+    images.map(async image => {
+      try {
+        const fileNode = await createRemoteFileNode({
+          url: image,
+          parentNodeId: node.id,
+          createNode,
+          createNodeId,
+          getCache,
+        })
+        return fileNode?.id
+      } catch (error) {
+        return null
       }
-    }
+    })
+  )
 
-    createNodeField({ node, name: "localFile", value: fileIdList })
-  }
+  createNodeField({ node, name: "localFile", value: fileIdList.filter(Boolean) })
 }
 
+const validateMetaTags = (nodes, nodeType, reporter) => {
+  nodes.forEach(({ title, field_metatags }) => {
+    if (!field_metatags || !field_metatags.title || !field_metatags.description || !field_metatags.og_title || !field_metatags.og_description) {
+      reporter.panicOnBuild(`❌ SEO параметры отсутствуют или неполные для ${nodeType}: ${title}`)
+    }
+  })
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+  const queries = await graphql(`
+    {
+      allNodePage(filter: { status: { eq: true } }) { nodes { title field_metatags { title description og_title og_description } } }
+      allNodeOurWork(filter: { status: { eq: true } }) { nodes { title field_metatags { title description og_title og_description } } }
+      allNodeArticle(filter: { status: { eq: true } }) { nodes { title field_metatags { title description og_title og_description } } }
+    }
+  `)
 
-  // Validation
-  const allNodes = await graphql(`
-      query {
-        allNodePage(filter: {status: {eq: true}}) {
-          nodes {
-            title
-            field_metatags {
-              title
-              description
-              og_title
-              og_description
-            }
-          }
-        }
-        allNodeOurWork(filter: {status: {eq: true}}) {
-          nodes {
-            title
-            field_metatags {
-              title
-              description
-              og_title
-              og_description
-            }
-          }
-        }
-        allNodeArticle(filter: {status: {eq: true}}) {
-          nodes {
-            title
-            field_metatags {
-              title
-              description
-              og_title
-              og_description
-            }
-          }
-        }
-      }
-    `)
-  const metatagsValidation = (nodes, nodeType = 'страницы') => {
-    nodes.map(node => {
-      if (!node.field_metatags) {
-        reporter.panicOnBuild(`❌ Никакие из SEO параметров не заполнены для ${nodeType} с названием ${node.title}`)
-      }
+  reporter.info("Начало валидации")
+  validateMetaTags(queries.data.allNodePage.nodes, "страницы", reporter)
+  validateMetaTags(queries.data.allNodeOurWork.nodes, "проекта", reporter)
+  validateMetaTags(queries.data.allNodeArticle.nodes, "статьи блога", reporter)
+  reporter.info("Валидация прошла успешно")
 
-      const { title, description, og_title, og_description } = node.field_metatags
-      if (!title || !description || !og_title || !og_description) {
-        reporter.panicOnBuild(`❌ Некоторые из SEO параметров(${!title ? 'title/' : ''}${!description ? 'description/' : ''}${!og_title ? 'og_title/' : ''}${!og_description ? 'og_description' : ''}) не заполнены для ${nodeType} с названием ${node.title}`)
-      }
-    })
-  }
-
-  reporter.info('Начало валидации')
-  metatagsValidation(allNodes.data.allNodePage.nodes)
-  metatagsValidation(allNodes.data.allNodeOurWork.nodes, 'проекта')
-  metatagsValidation(allNodes.data.allNodeArticle.nodes, 'статьи блога')
-  reporter.info('Валидация прошла успешно')
-
-  const articlePostTemplate = path.resolve(`src/templates/SingleBlogPost/single-blog-post.js`)
-  const articlePostIds = await graphql(`
+  const articleTemplate = path.resolve("src/templates/SingleBlogPost/single-blog-post.js")
+  const { edges: articles } = (await graphql(`
     query {
-      allNodeArticle(sort: {created: DESC}, filter: {status: {eq: true}}) {
+      allNodeArticle(sort: { created: DESC }, filter: { status: { eq: true } }) {
         edges {
-          node {
-            id
-            path {
-              alias
-            }
-          }
-          next {
-            path {
-              alias
-            }
-          }
-          previous {
-            path {
-              alias
-            }
-          }
+          node { id path { alias } }
+          previous { path { alias } }
+          next { path { alias } }
         }
       }
     }
-  `)
-  const postEdges = articlePostIds.data.allNodeArticle.edges
+  `)).data.allNodeArticle
 
-  postEdges.forEach(edge => {
+  articles.forEach(({ node, previous, next }, i) => {
     createPage({
-      path: edge.node.path.alias,
-      component: articlePostTemplate,
+      path: node.path.alias,
+      component: articleTemplate,
       context: {
-        id: edge.node.id,
-        nextPost: edge.next?.path.alias || postEdges[0].node.path.alias,
-        previousPost: edge.previous?.path.alias || postEdges[postEdges.length - 1].node.path.alias
-      }
+        id: node.id,
+        nextPost: next?.path.alias || articles[0].node.path.alias,
+        previousPost: previous?.path.alias || articles[articles.length - 1].node.path.alias,
+      },
     })
   })
 
   const postsPerPage = 10
-  const numPages = Math.ceil(postEdges.length / postsPerPage)
-  Array.from({ length: numPages }).forEach((_, i) => {
+  Array.from({ length: Math.ceil(articles.length / postsPerPage) }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
-      component: path.resolve(`src/templates/Blog/blog-page.js`),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage
-      }
+      component: path.resolve("src/templates/Blog/blog-page.js"),
+      context: { limit: postsPerPage, skip: i * postsPerPage },
     })
   })
 
-  const projectIds = await graphql(`
-      query {
-        allNodeOurWork(filter: {status: {eq: true}}) {
-          edges {
-            node {
-              id
-              path {
-                alias
-              }
-              field_metatags {
-                robots
-              }
-            }
-            previous {
-              path {
-                alias
-              }
-            }
-            next {
-              path {
-                alias
-              }
-            }
-          }
+  const projects = (await graphql(`
+    query {
+      allNodeOurWork(filter: { status: { eq: true } }) {
+        edges {
+          node { id path { alias } field_metatags { robots } }
+          previous { path { alias } }
+          next { path { alias } }
         }
       }
-    `)
-  const regexp = /noindex|nofollow|noarchive|nosnippet|noimageindex|notranslate/ig
-  projectIds.data.allNodeOurWork.edges.forEach(edge => {
+    }
+  `)).data.allNodeOurWork.edges
+
+  const noindexRegex = /noindex|nofollow|noarchive|nosnippet|noimageindex|notranslate/ig
+  projects.forEach(({ node, previous, next }) => {
     createPage({
-      path: edge.node.path.alias,
-      component: path.resolve(`src/templates/SingleProject/single-project.js`),
+      path: node.path.alias,
+      component: path.resolve("src/templates/SingleProject/single-project.js"),
       context: {
-        id: edge.node.id,
-        noindex: regexp.test(edge.node.field_metatags.robots),
-        prevProject: edge.previous ? edge.previous.path.alias : null,
-        nextProject: edge.next ? edge.next.path.alias : null,
-      }
+        id: node.id,
+        noindex: noindexRegex.test(node.field_metatags.robots),
+        prevProject: previous?.path.alias || null,
+        nextProject: next?.path.alias || null,
+      },
     })
   })
-
 }
 
 exports.onPostBuild = () => {
-  if (fs.existsSync('./public/sitemap-0.xml')) {
-    fs.renameSync('./public/sitemap-0.xml', './public/sitemap.xml')
+  const sitemapPath = "./public/sitemap-0.xml"
+  if (fs.existsSync(sitemapPath)) {
+    fs.renameSync(sitemapPath, "./public/sitemap.xml")
   }
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === `build-javascript`) {
-    actions.setWebpackConfig({
-      devtool: false,
-
-    })
+  if (stage === "build-javascript") {
+    actions.setWebpackConfig({ devtool: false })
   }
 
-  if (stage === 'build-javascript' || stage === 'develop') {
+  if (["build-javascript", "develop"].includes(stage)) {
     const config = getConfig()
-    const miniCssExtractPlugin = config.plugins.find(
-      plugin => (plugin.constructor.name === 'MiniCssExtractPlugin')
-    )
+    const miniCssExtractPlugin = config.plugins.find(plugin => plugin.constructor.name === "MiniCssExtractPlugin")
     if (miniCssExtractPlugin) miniCssExtractPlugin.options.ignoreOrder = true
     actions.replaceWebpackConfig(config)
   }
