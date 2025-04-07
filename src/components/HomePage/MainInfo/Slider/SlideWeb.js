@@ -10,7 +10,7 @@ const SlideWeb = () => {
     return (
         <div className={'relative min-h-screen sm:flex items-center'}>
             <div className={'w-full h-full absolute z-[-10]'}>
-                <StaticImage className={'w-full min- h-full'} src={'../../../../assets/images/main-info/slide-web/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
+                <StaticImage className={'w-full min-h-full'} src={'../../../../assets/images/main-info/slide-web/slide-bg.jpg'} alt={'main-bg'} loading={'lazy'} quality={100} />
             </div>
 
             <div className={'container flex flex-col lg:flex-row lg:gap-10 mx-auto px-5 pt-20 sm:pt-0'}>
