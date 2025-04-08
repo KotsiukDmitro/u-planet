@@ -30,6 +30,7 @@ const MainInfo = () => {
                     layout="fullWidth" alt="Background" className={'inset-0 w-full h-full'} loading={'lazy'} quality={100} objectFit="fill"
                 />
             </div>
+
             <div className={'container relative m-auto z-10 uppercase'}>
                 <div className={'xl:mb-10 sm:px-20 md:px-0'}>
                     <div className={'mb-5 flex gap-3 xl:gap-0'}>

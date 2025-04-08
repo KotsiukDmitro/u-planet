@@ -9,6 +9,7 @@ const WhatIndoorNav = () => {
         query {
             allFile(filter: {relativeDirectory: {eq: "indoor-navigation/what-navigation"}}) {
                 nodes {
+                    name
                     childImageSharp {
                     gatsbyImageData
                     }
@@ -16,15 +17,15 @@ const WhatIndoorNav = () => {
             }
         }
     `)
-    const images = ImagesWhatIndoorNav.allFile.nodes.map(image => getImage(image))
+    const imageMap = Object.fromEntries(ImagesWhatIndoorNav.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const navigation = [
-        { img: images[0], body: 'trying to find a car in a parking' },
-        { img: images[1], body: 'attending a museum looking for the exhibit' },
-        { img: images[2], body: 'wandering in an airport finding a registration desk or ATM' },
-        { img: images[3], body: 'at a conference looking for the most interesting stands' },
-        { img: images[4], body: 'roaming in a shopping mall trying to find necessary shop or department' },
-        { img: images[5], body: 'looking for a particular office in a large business center' },
+        { key: 'parking', body: 'trying to find a car in a parking' },
+        { key: 'museum', body: 'attending a museum looking for the exhibit' },
+        { key: 'airport', body: 'wandering in an airport finding a registration desk or ATM' },
+        { key: 'expo', body: 'at a conference looking for the most interesting stands' },
+        { key: 'mall', body: 'roaming in a shopping mall trying to find necessary shop or department' },
+        { key: 'office', body: 'looking for a particular office in a large business center' },
     ]
 
 
@@ -37,21 +38,21 @@ const WhatIndoorNav = () => {
                 each of us feels a lack of assistance with navigation after entering a premises too:
             </p>
             <div className={'grid grid-cols-2 md:grid-cols-3 mb-10 md:mb-20'}>
-                {navigation.map((item, index) => {
-                    return (<div className={'relative w-full'} key={`${index}-navigation`}>
-                        <GatsbyImage image={item.img} alt="navigation" className={'w-full'} />
+                {navigation.map(({key, body}) => {
+                    return (<div className={'relative w-full'} key={key}>
+                        <GatsbyImage image={imageMap[key]} alt={key} className={'w-full'} />
 
                         <div className={'absolute top-[90px] sm:top-[130px] lg:top-[170px] z-10 text-[12px] sm:text-[20px] md:text-[12px] lg:text-[14px] xl:text-[22px] text-white font-bold pr-3 pl-5 sm:pl-10 lg:pl-20 max-w-[200px] sm:max-w-[250px] xl:max-w-[320px]'}>
-                            {item.body}
+                            {body}
                         </div>
 
                     </div>)
                 })}
             </div>
 
-            <div className={'md:flex'}>
-                <h2 className={'text-[23px] xl:text-[36px] text-[#48494e] px-5 relative md:w-2/6 mb-5'}>Sounds familiar?</h2>
-                <div className={'px-5 md:w-4/6'}>
+            <div className={'md:flex gap-5 px-5'}>
+                <h2 className={'text-[23px] xl:text-[36px] text-[#48494e] relative md:w-2/6 mb-5'}>Sounds familiar?</h2>
+                <div className={'md:w-4/6'}>
                     <h2 className={'text-[18px] sm:text-[24px] md:text-[19px] xl:text-[30px] text-greenCustom font-bold '}>
                         Indoor Navigation is the exact<br /> solution in such situations
                     </h2>

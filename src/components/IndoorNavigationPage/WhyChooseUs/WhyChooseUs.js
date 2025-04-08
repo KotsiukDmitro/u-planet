@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
     return (
         <div className={'bg-[#3055be] h-full mb-20 md:mb-28 flex items-center justify-end'}>
             <div className={'h-full hidden md:block'}>
-                <StaticImage src={'../../../assets/images/indoor-navigation/why-choose-us/choose-bg.png'} alt="background" objectFit="contain" className={''} />
+                <StaticImage src={'../../../assets/images/indoor-navigation/why-choose-us/choose-bg.png'} alt="background" objectFit="contain" />
             </div>
             <div className={'container mx-auto z-10 px-5 md:px-10 pt-14 md:pt-0'}>
                 <div className={'z-10 text-white max-w-[700px]'}>
@@ -21,12 +21,10 @@ const WhyChooseUs = () => {
                     </p>
                 </div>
                 <div className={'md:hidden px-10'}>
-                <StaticImage src={'../../../assets/images/indoor-navigation/why-choose-us/choose-mobile.png'} alt="mobile" />
+                <StaticImage src={'../../../assets/images/indoor-navigation/why-choose-us/choose-mobile.png'} alt="mobile-bg" />
             </div>
-            </div>
-            
+            </div>           
         </div>
-
     )
 }
 

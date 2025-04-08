@@ -9,6 +9,7 @@ const WhoUses = () => {
         query {
             allFile(filter: {relativeDirectory: {eq: "indoor-navigation/who-uses"}}) {
                 nodes {
+                    name
                     childImageSharp {
                     gatsbyImageData
                     }
@@ -16,12 +17,12 @@ const WhoUses = () => {
             }
         }
     `)
-    const photos = WhoUsesPlatform.allFile.nodes.map(image => getImage(image))
+    const photos = Object.fromEntries(WhoUsesPlatform.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const places = [
-        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos[3] },
-        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos[2], logo: photos[0] },
-        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos[1] },
+        { name: <>Zaporizhzhya<br />Regional Lore Museum,<br />Ukraine</>, img: photos['museum-zaporizhzhya'] },
+        { name: <>Kozak Palace<br />Zaporizhzha, Ukraine</>, img: photos['kozak-palace'], logo: photos['kozak-palace-logo'] },
+        { name: <>The Museum of<br />Textile Industry in<br />Bulgaria</>, img: photos['museum-bulgaria'] },
     ]    
 
     return (
