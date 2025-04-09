@@ -9,6 +9,7 @@ const TechStack = () => {
         query TechStack {
           allFile(filter: {relativeDirectory: {eq: "online-stream/tech-stack"}}) {
             nodes {
+              name
               childImageSharp {
                 gatsbyImageData
               }
@@ -17,21 +18,21 @@ const TechStack = () => {
         }
         `)
 
-    const images = TechStackContent.allFile.nodes.map(image => getImage(image))
+    const images = Object.fromEntries(TechStackContent.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const techStack = [
-        { image: images[0], name: 'WebRTC' },
-        { image: images[1], name: 'RTP forward' },
-        { image: images[5], name: 'REST API' },
-        { image: images[3], name: 'WebSockets' },
-        { image: images[4], name: 'FFmpeg' },
-        { image: images[2], name: "Browsers WebRTC API's" },
-        { image: images[6], name: 'iOS/Android' },
-        { image: images[7], name: 'GStreamer' },
-        { image: images[8], name: "HTML5 Audio/Video API's" },
-        { image: images[9], name: 'Janus' },
-        { image: images[10], name: 'RTMP/HLS streaming' },
-        { image: images[11], name: 'Node.js' },
+        { image: images['rtc'], name: 'WebRTC' },
+        { image: images['rtp'], name: 'RTP forward' },
+        { image: images['rest'], name: 'REST API' },
+        { image: images['socket'], name: 'WebSockets' },
+        { image: images['ffmpeg'], name: 'FFmpeg' },
+        { image: images['browsers'], name: "Browsers WebRTC API's" },
+        { image: images['ios-android'], name: 'iOS/Android' },
+        { image: images['gstream'], name: 'GStreamer' },
+        { image: images['html5'], name: "HTML5 Audio/Video API's" },
+        { image: images['janus'], name: 'Janus' },
+        { image: images['hls'], name: 'RTMP/HLS streaming' },
+        { image: images['node'], name: 'Node.js' },
     ]
 
     return (

@@ -10,6 +10,7 @@ const Features = () => {
         query {
             allFile(filter: {relativeDirectory: {eq: "online-stream/features/icons"}}) {
                 nodes {
+                    name
                     childImageSharp {
                     gatsbyImageData
                     }
@@ -17,17 +18,17 @@ const Features = () => {
             }
         }
     `)
-    const icons = IconsFeatures.allFile.nodes.map(image => getImage(image))
+    const icons = Object.fromEntries(IconsFeatures.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const features = [
-        { icon: icons[6], body: 'Audio/Video streaming in real-time (broadcasting)' },
-        { icon: icons[2], body: 'Media stream recording and converting' },
-        { icon: icons[3], body: 'Collaboration in shared Audio/Video rooms' },
-        { icon: icons[1], body: 'Any media recording can be stored, uploaded to cloud or any online service' },
-        { icon: icons[7], body: 'Real-time transcoding of media streams' },
-        { icon: icons[0], body: 'Text chat integration' },
-        { icon: icons[4], body: 'Screen capturing/sharing' },
-        { icon: icons[5], body: 'Statistic' },
+        { icon: icons['stream'], body: 'Audio/Video streaming in real-time (broadcasting)' },
+        { icon: icons['rec'], body: 'Media stream recording and converting' },
+        { icon: icons['rooms'], body: 'Collaboration in shared Audio/Video rooms' },
+        { icon: icons['cloud'], body: 'Any media recording can be stored, uploaded to cloud or any online service' },
+        { icon: icons['time'], body: 'Real-time transcoding of media streams' },
+        { icon: icons['chat'], body: 'Text chat integration' },
+        { icon: icons['share'], body: 'Screen capturing/sharing' },
+        { icon: icons['statistic'], body: 'Statistic' },
     ]
 
 
@@ -50,7 +51,6 @@ const Features = () => {
 
                     )}
                 </ul>
-
             </div>
         </div>
     )

@@ -10,6 +10,7 @@ const Advantages = () => {
             query {
               allFile(filter: {relativeDirectory: {eq: "smart-assistant/advantages"}}) {
                 nodes {
+                  name
                   childImageSharp {
                     gatsbyImageData
                   }
@@ -17,19 +18,20 @@ const Advantages = () => {
               }
             }
             `)
-  const images = ImagesAdvantages.allFile.nodes.map(image => getImage(image))
+
+  const images = Object.fromEntries(ImagesAdvantages.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
   const advantages = [
-    { image: images[6], body: 'Popularization of the existing service, attraction of new customers' },
-    { image: images[4], body: 'Easy and quick cross-platform implementation (web and messengers)' },
-    { image: images[9], body: 'Top-notch development tools' },
-    { image: images[0], body: 'Easy integrationEasy integration with existing systems / APIs / customer\'s software packages' },
-    { image: images[1], body: 'Less time-consuming content update' },
-    { image: images[5], body: 'Integration with different IoT platforms (smart home and other IoT devices)' },
-    { image: images[7], body: 'Reduction of the cost of development' },
-    { image: images[3], body: 'Flexible control of the bot\'s behaviour' },
-    { image: images[2], body: 'Low-cost hosting, serverless solutions' },
-    { image: images[8], body: 'Machine learning, teaching the bot within a niche area of activity' },
+    { image: images['popularization'], body: 'Popularization of the existing service, attraction of new customers' },
+    { image: images['implementation'], body: 'Easy and quick cross-platform implementation (web and messengers)' },
+    { image: images['tools'], body: 'Top-notch development tools' },
+    { image: images['apis'], body: 'Easy integrationEasy integration with existing systems / APIs / customer\'s software packages' },
+    { image: images['consuming'], body: 'Less time-consuming content update' },
+    { image: images['platforms'], body: 'Integration with different IoT platforms (smart home and other IoT devices)' },
+    { image: images['reduction'], body: 'Reduction of the cost of development' },
+    { image: images['flexible'], body: 'Flexible control of the bot\'s behaviour' },
+    { image: images['cost'], body: 'Low-cost hosting, serverless solutions' },
+    { image: images['teaching'], body: 'Machine learning, teaching the bot within a niche area of activity' },
   ]
 
   return (
