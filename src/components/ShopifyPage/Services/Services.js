@@ -9,6 +9,7 @@ const Services = () => {
         query {
           allFile(filter: {relativeDirectory: {eq: "shopify/services"}}) {
             nodes {
+              name
               childImageSharp {
                 gatsbyImageData
               }
@@ -16,17 +17,17 @@ const Services = () => {
           }
         }
         `)
-    const icons = ServicesIcons.allFile.nodes.map(image => getImage(image))
+    const icons = Object.fromEntries(ServicesIcons.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const services = [
-        { icon: icons[3], body: 'Custom full-scale<br/> ecommerce store<br/> development' },
-        { icon: icons[6], body: 'Ecommerce store<br/> maintenance<br/> and support' },
-        { icon: icons[0], body: 'Shopify App<br/> development<br/> - public and private' },
-        { icon: icons[2], body: 'Shopify App<br/> Customization' },
-        { icon: icons[7], body: 'Themes building' },
-        { icon: icons[1], body: 'Custom themes<br/> with theme.liquid' },
-        { icon: icons[4], body: 'Responsive<br/> web design' },
-        { icon: icons[5], body: 'SEO<br/> optimization' }
+        { icon: icons['full-scale'], body: <>Custom full-scale<br/> ecommerce store<br/> development</> },
+        { icon: icons['support'], body: <>Ecommerce store<br/> maintenance<br/> and support</> },
+        { icon: icons['applications'], body: <>Shopify App<br/> development<br/> - public and private</> },
+        { icon: icons['customization'], body: <>Shopify App<br/> Customization</> },
+        { icon: icons['theme-building'], body: <>Themes building</> },
+        { icon: icons['custom-themes'], body: <>Custom themes<br/> with theme.liquid</> },
+        { icon: icons['responsive'], body: <>Responsive<br/> web design</> },
+        { icon: icons['seo'], body: <>SEO<br/> optimization</> }
     ]
 
 
@@ -39,14 +40,10 @@ const Services = () => {
                         <div className={'h-[75px] lg:h-[145px] mb-10 flex justify-center'}>
                             <GatsbyImage image={service.icon} alt="service-icon" objectFit="contain" className={'max-h-[75px] lg:max-h-max'} />
                         </div>
-
-                        <p dangerouslySetInnerHTML={{ __html: service.body }}
-                            className={'text-center uppercase mt-auto text-[#5f6467] font-light leading-6 text-[14px] lg:text-[16px]'}
-                        />
+                        <p className={'text-center uppercase mt-auto text-[#5f6467] font-light leading-6 text-[14px] lg:text-[16px]'}>{service.body}</p>
                     </div>
                 })}
             </div>
-
         </div>
     )
 }

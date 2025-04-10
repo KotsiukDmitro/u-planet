@@ -25,6 +25,7 @@ const OurServices = ()=> {
         query {
           allFile(filter: {relativeDirectory: {eq: "services/images"}}) {
             nodes {
+              name
               childImageSharp {
                 gatsbyImageData
               }
@@ -32,15 +33,14 @@ const OurServices = ()=> {
           }
         }
         `)
-    const images = ImagesServices.allFile.nodes.map(image => getImage(image))
-
-   
+    const images = Object.fromEntries(ImagesServices.allFile.nodes.map((node) => [node.name, getImage(node)]))
+      
     const services = [
       {
         title: 'Web Design & Development',
         subTitle: <>Websites and web applications <br /> of any complexity</>,
         content: <>Full range of web development services: websites and web applications for all types of business, corporate web portals, social networking apps, landing pages. Creating comprehensive <Link to={route('shopify')} className={'text-greenCustom'}>eCommerce solutions</Link> on different platforms, custom <Link to={route('shopify')} className={'text-greenCustom'}>Shopify</Link> stores development, design and implementation</>,
-        image: images[3],
+        image: images['web-design'],
         btnName: 'start project',
         path: route('home.contact-us'),
         icons: [icon_html5, icon_css3, icon_drupal, icon_wordpress],
@@ -53,7 +53,7 @@ const OurServices = ()=> {
         title: 'Mobile apps development',
         subTitle: 'iOS/Android',
         content: 'Native mobile apps development. Messengers, Video, Social, GPS, etc.',
-        image: images[0],
+        image: images['app-design'],
         btnName: 'start project', 
         path: route('home.contact-us'),
         icons: [icon_android, icon_apple, icon_windows]
@@ -61,7 +61,7 @@ const OurServices = ()=> {
       {
         title: 'Comprehensive enterprise solutions',
         content: 'Full range of software development services for manufacturing, enterprises, banking, small and medium businesses, and consultancy services.',
-        image: images[1],
+        image: images['graphic-design'],
         btnName: 'start project', 
         path: route('home.contact-us'),
         icons: [icon_file, icon_object, icon_cart],
@@ -70,7 +70,7 @@ const OurServices = ()=> {
         title: 'Development & Software testing',
         subTitle: 'Quality Assurance',
         content: 'The testing process is a critical part of the software development cycle in our company. For each project, depending on its complexity and requirements, an individual testing plan is created. This plan allows us to release a product of the highest quality, while saving critical development time and resources.',
-        image: images[2],
+        image: images['quality-level'],
         btnName: 'learn more', 
         path: route('qa'),
         icons: [icon_android, icon_apple, icon_chrome],

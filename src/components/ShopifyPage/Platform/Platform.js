@@ -12,6 +12,7 @@ const Platform = () => {
         query {
           allFile(filter: {relativeDirectory: {eq: "shopify/platform/icons"}}) {
             nodes {
+              name
               childImageSharp {
                 gatsbyImageData
               }
@@ -19,19 +20,19 @@ const Platform = () => {
           }
         }
         `)
-    const icons = PlatformIcons.allFile.nodes.map(image => getImage(image))
+    const icons = Object.fromEntries(PlatformIcons.allFile.nodes.map((node) => [node.name, getImage(node)]))
 
     const solutions = [
         {
-            img: icons[0],
+            img: icons['commerce'],
             body: 'With a complete Shopify eCommerce solution you can set up a custom online store, organize your goods, accept online payments, manage orders - all in one place with a few clicks.'
         },
         {
-            img: icons[2],
+            img: icons['experience'],
             body: 'We at UPlanet have plenty of experience in building Shopify online stores, apps and themes. We have successfully implemented a number of Shopify eCommerce stores and now we\'re maintaining them.'
         },
         {
-            img: icons[1],
+            img: icons['cycle'],
             body: 'We handle all the cycle of online Shopify store development from themes design and Shopify apps development to responsive web design and SEO optimization. It allows us create full-scale and outstanding eStores for you!'
         },
     ]
@@ -41,9 +42,9 @@ const Platform = () => {
             <p className={'text-greenCustom text-[14px] sm:text-[16px] mb-3'}>Shopify is a well known platform</p>
             <CustomTitleComponent name={`For Development Online Stores <br/>of Any Level and Size.`} />
             <StaticImage src={'../../../assets/images/shopify/platform/main-logo.png'} alt="shopify" className={'mt-10 lg:mt-20 mb-10 lg:mb-20 max-w-[340px] sm:max-w-max sm:w-[450px] lg:w-[600px] xl:w-auto'} objectFit="contain" />
-            <div className={'columns-1 md:columns-3 gap-4 md:mb-20'}>
+            <div className={'columns-1 md:columns-3 gap-11 md:mb-20'}>
                 {solutions.map(solution => {
-                    return <div key={solution.body} className={'px-3'}>
+                    return <div key={solution.body}>
                         <div className={'relative after:absolute after:w-[50px] after:h-[3px] after:bg-greenCustom after:m-auto after:left-0 after:right-0 after:-bottom-7 mb-14 lg:mb-20'}>
                             <GatsbyImage image={solution.img} alt="solution-icon" className={'w-[65px] sm:w-auto'} />
                         </div>
